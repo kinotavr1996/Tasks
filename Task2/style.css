@@ -110,22 +110,21 @@ select {
     border: 1px solid #969696;
     border-radius: 5px;
 }
-
-.rotated{
-     width: 15px;
+.rotated {
+    width: 15px;
     min-width: 0;
 }
-.rotated .btn{
+.rotated .btn {
     transform: rotate(90deg);
     margin: 40px -40px;
 }
-.content.rotate-right.rotate-left{
+.content.rotate-right.rotate-left {
     width: 96.6366%;
 }
-.content.rotate-left{
+.content.rotate-left {
     width: 82%;
 }
-.content.rotate-right{
+.content.rotate-right {
     width: 82%;
 }
 .btn {
@@ -142,7 +141,7 @@ select {
 .content-inside {
     padding: 15px 30px 15px 15px;
 }
-.expand{
+.expand {
     z-index: 3;
 }
 /*--------------Start adaptive--------------------*/
