@@ -1,0 +1,74 @@
+﻿@model CRUDTest.User
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>User</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="LastName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FirstMidName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FirstMidName" class="form-control" />
+                <span asp-validation-for="FirstMidName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Phone" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="UserGendre" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="UserGendre" class="form-control">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option><!-- Here maybe better use  asp-items="ViewBag.UserGendre"-->
+                </select>
+                <span asp-validation-for="UserGendre" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Country" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select class="form-control" asp-for="Country">
+                    <option value="Canada">Canada</option>
+                    <option value="US">US</option>
+                    <option value="Israel">Israel</option>
+                    <option value="Ukraine">Ukraine</option>
+                    <option value="Other">Other</option>
+                </select>
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type = "submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts
+{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
