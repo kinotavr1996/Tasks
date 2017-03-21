@@ -35,6 +35,7 @@ $(function () {
         for (var i = 0; i < states.length; i++) {
             if (states[i].toLowerCase().indexOf(str) !== -1) {
                 temp = states[i].split(str);
+				if(!temp[1]) temp[1] = '';
                 $('.dialog').append('<div>' + temp[0] + '<b>' + str + '</b>'+ temp[1] + '</div>');
                 temp = null;
             }
