@@ -76,6 +76,7 @@ footer {
 .input-group {
     padding: 5px 0;
 }
+
 .info-block {
     display: block;
     position: relative;
@@ -157,11 +158,19 @@ select {
     .content {
         width: 100%;
     }
+	.input-group.ckeckbox{
+    width: 50%;
+	margin: 0 auto;
+	}
 }
 @media only screen and (max-width: 768px) {
     .info-block {
         width: 100%;
     }
+	.input-group.ckeckbox{
+    width: 100%;
+	margin: 0 auto;
+	}
     .info-input,
     .info-text {
         width: 100%;
