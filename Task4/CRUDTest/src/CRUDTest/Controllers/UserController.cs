@@ -116,7 +116,35 @@ namespace CRUDTest.Controllers
             }
             return View(user);
         }
-
+[HttpPost, ActionName("Edit")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditPost(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var userToUpdate = await _context.Users.SingleOrDefaultAsync(s => s.ID == id);
+            if (await TryUpdateModelAsync<User>(
+                userToUpdate,
+                "",
+                s => s.FirstMidName, s => s.LastName, s => s.UserGendre,s => s.Phone,s => s.Country))
+            {
+                try
+                {
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction("Index");
+                }
+                catch (DbUpdateException /* ex */)
+                {
+                    //Log the error (uncomment ex variable name and write a log.)
+                    ModelState.AddModelError("", "Unable to save changes. " +
+                        "Try again, and if the problem persists, " +
+                        "see your system administrator.");
+                }
+            }
+            return View(userToUpdate);
+        }
         // POST: User/Edit/5
        
         public async Task<IActionResult> Delete(int? id, bool? saveChangesError = false)
