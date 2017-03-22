@@ -24,7 +24,7 @@ $(document).ready(function(){
     var alreadyFilled = false,
 		selector = this,
 		dialog = '<div class="dialog"></div>',
-		_close = '<span class="autocomplete_close">Cancel</span>',
+		_close = '<span class="autocomplete_close">Delete</span>',
 		states = options.source;
 	$(this).after(_close);
 	$(this).after(dialog);
@@ -47,19 +47,12 @@ $(document).ready(function(){
         }
 
     });
-    $('body').on('click', '.dialog > div', function () {
-		/*
-		$(selector).val($(this).attr('data-id'));
-        $(selector).text($(this).text()).focus();
-		*/
+    $('body').on('click', '.dialog > div', function () {		
 		for(var i= 0;i < states.length;i++){
 			if(states[i][options['key']] == $(this).attr('data-id')){
 				options.changed(states[i]);
 			}
 		}
-		
-		
-		
         $(selector).val($(this).text()).focus();
 		$(selector).attr('data-id',$(this).attr('data-id'));
         $('.autocomplete_close').addClass('visible');
@@ -75,23 +68,28 @@ $(document).ready(function(){
     });
 
     function match(str) {
+		clearDialog();
         str = str.toLowerCase();
-        clearDialog();
+       
         for (var i = 0; i < states.length; i++) {
-            if (options.source[i][options['label']].toLowerCase().indexOf(str) !== -1) {
-                temp = states[i][options['label']].split(str);
-				if(!temp[1])
-					$('.dialog').append('<div>' + temp[0] +'</div>');
-				if(temp[1])
-					$('.dialog').append('<div>' + temp[0] + '<b>' + str + '</b>'+ temp[1] + '</div>');
-                temp = null;
+			var index = states[i][options['label']].toLowerCase().indexOf(str);
+            if (index !== -1) {
+				temp = states[i][options['label']].split(str);	
+				for(var j = 1;j < temp.length; j++)
+					temp[0] += '<b>' + str + '</b>' + temp[j];			
+                $('.dialog').append('<div>' + temp[0] +'</div>');
             }
-        }   
+        }
+		str = null;
+		
     }
     $(this).on('input', function () {
+		
+		 initDialog();
         $('.dialog').addClass('open');
-        alreadyFilled = false;
-         if($(this).val())
+        alreadyFilled = false;	
+		
+        if($(this).val())
              match($(this).val());
     });
     $('body').click(function (e) {
