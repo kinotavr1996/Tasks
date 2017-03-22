@@ -62,6 +62,7 @@ $(document).ready(function(){
 		clearDialog();
 		initDialog();
         alreadyFilled = false;
+		$(selector).val(' ');
         $('.dialog').addClass('open');
         $(this).val('').focus();
         $(this).removeClass('visible');
@@ -75,15 +76,14 @@ $(document).ready(function(){
 				temp = states[i][options['label']].split(str);	
 				for(var j = 1;j < temp.length; j++)
 					temp[0] += '<b>' + str + '</b>' + temp[j];			
-                $('.dialog').append('<div>' + temp[0] +'</div>');
+                $('.dialog').append('<div data-id="'+states[i][options['key']] +'">' + temp[0] +'</div>');
             }
         }
 		str = null;
 		
     }
-    $(this).on('input', function () {
-		
-		 initDialog();
+    $(this).on('input', function () {		
+		initDialog();
         $('.dialog').addClass('open');
         alreadyFilled = false;	
 		
