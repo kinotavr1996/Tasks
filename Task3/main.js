@@ -69,10 +69,8 @@ $(document).ready(function(){
 
     function match(str) {
 		clearDialog();
-        str = str.toLowerCase();
-       
         for (var i = 0; i < states.length; i++) {
-			var index = states[i][options['label']].toLowerCase().indexOf(str);
+			var index = states[i][options['label']].indexOf(str);
             if (index !== -1) {
 				temp = states[i][options['label']].split(str);	
 				for(var j = 1;j < temp.length; j++)
