@@ -15,6 +15,7 @@ $(document).ready(function() {
         }
     };
     jQuery('input.autocomplete').autocomplete(options);
+    jQuery('.autocompleted').autocomplete(options);
 
 });
 
@@ -25,40 +26,49 @@ $(document).ready(function() {
 
         var alreadyFilled = false,
             selector = this,
-            dialog = '<div class="dialog"></div>',
-            _close = '<span class="autocomplete_close">Delete</span>',
-            wrapper = '<div class="autocomplete-wrapper"></div>'
-        states = options.source;
-        $(this).after(wrapper);
-        $('.autocomplete-wrapper').append(selector);
-        $('.autocomplete-wrapper').append(_close);
-        $('.autocomplete-wrapper').append(dialog);
+			dialog = [],
+			_close = [],
+			wrapper = [];
+		
+			dialog[0] = selector.attr('class') + '-dialog',
+            _close[0] = selector.attr('class') + '-autocomplete_close',
+            wrapper[0] = selector.attr('class') + '-autocomplete-wrapper ';
+            dialog[1] = '<div class="'+ dialog[0] + ' MyPluginDialog"></div>',
+            _close[1] = '<span class="' + _close[0] + ' MyPluginClose">Delete</span>',
+            wrapper[1] = '<div class="' + wrapper[0] + ' MyPluginWrapper"></div>';
+        states = options.source;		
+        $(this).after(wrapper[1]);
+		
+        $('.' + wrapper[0]).append(selector);
+		
+        $('.' + wrapper[0]).append(_close[1]);
+		
+        $('.' + wrapper[0]).append(dialog[1]);
 
-
-
+		
         function initDialog() {
             clearDialog();
             console.log(options["key"]);
             for (var i = 0; i < states.length; i++) {
 
-                $('.dialog').append('<div data-id="' + states[i][options['key']] + '">' + options.source[i][options['label']] + '</div>');
+                $('.' + dialog[0]).append('<div data-id="' + states[i][options['key']] + '">' + options.source[i][options['label']] + '</div>');
             }
         }
 
         function clearDialog() {
-            $('.dialog').empty();
+            $('.' + dialog[0]).empty();
         }
         $(this).click(function() {
             if (!alreadyFilled) {
-                $('.dialog').addClass('open');
+                $('.' + dialog[0]).addClass('open');
             }
 
         });
-        $('body').on('click', '.dialog > div', function() {
+        $('body').on('click', '.' + dialog[0] + ' > div', function() {
             $(selector).val($(this).text()).focus();
             $(selector).attr('data-id', $(this).attr('data-id'));
 
-            $('.autocomplete_close').addClass('visible');
+            $('.' +  _close[0]).addClass('visible');
             alreadyFilled = true;
             for (var i = 0; i < states.length; i++) {
                 if (states[i][options['key']] == $(this).attr('data-id')) {
@@ -67,12 +77,12 @@ $(document).ready(function() {
                 }
             }
         });
-        $('.autocomplete_close').click(function() {
+        $('.' +  _close[0]).click(function() {
             clearDialog();
             initDialog();
             alreadyFilled = false;
             $(selector).val('');
-            $('.dialog').addClass('open');
+            $('.' + dialog[0]).addClass('open');
             $(this).val('').focus();
             $(this).removeClass('visible');
         });
@@ -85,7 +95,7 @@ $(document).ready(function() {
                     temp = states[i][options['label']].split(str);
                     for (var j = 1; j < temp.length; j++)
                         temp[0] += '<b>' + str + '</b>' + temp[j];
-                    $('.dialog').append('<div data-id="' + states[i][options['key']] + '">' + temp[0] + '</div>');
+                    $('.' + dialog[0]).append('<div data-id="' + states[i][options['key']] + '">' + temp[0] + '</div>');
                 }
             }
             str = null;
@@ -93,14 +103,14 @@ $(document).ready(function() {
         }
         $(this).on('input', function() {
             initDialog();
-            $('.dialog').addClass('open');
+            $('.' + dialog[0]).addClass('open');
             alreadyFilled = false;
             if ($(this).val())
                 match($(this).val());
         });
         $('body').click(function(e) {
             if (!$(e.target).is("input, .autocomplete_close")) {
-                $('.dialog').removeClass('open');
+                $('.' + dialog[0]).removeClass('open');
             }
         });
         initDialog();

@@ -5,13 +5,13 @@ body {
   font-family: 'helvetica neue';
   box-sizing: border-box;
 }
-.autocomplete-wrapper {
+.MyPluginWrapper {
   background: #fff;
   position: relative;
   width: 400px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
 }
-.autocomplete_close {
+.MyPluginClose {
   position: absolute;
   font-size: 13px;
   z-index: 10;
@@ -21,7 +21,7 @@ body {
   cursor: pointer;
   display: none;
 }
-.autocomplete_close.visible {
+.MyPluginClose.visible {
   display: block;
 }
 input {
@@ -33,7 +33,7 @@ input {
   font-size: 14px;
   color: #666;
 }
-.dialog {
+.MyPluginDialog {
   width: 100%;
   display: none;
   min-height: 40px;
@@ -41,15 +41,15 @@ input {
   overflow: scroll;
   border-top: 1px solid #f4f4f4;
 }
-.dialog.open {
+.MyPluginDialog.open {
   display: block;
 }
-.dialog div {
+.MyPluginDialog div {
   padding: 20px 10px;
   font-size: 13px;
   cursor: pointer;
   transition: all 0.2s;
 }
-.dialog div:hover {
+.MyPluginDialog div:hover {
   background: #f2f2f2;
 }
