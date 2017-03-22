@@ -53,12 +53,13 @@ $(document).ready(function() {
             });
 
             $dialog.on('click', 'div', function() {
-                $input.val($(this).text()).focus();
-                $input.attr('data-id', $(this).attr('data-id'));
+				var chosenElement = $(this);
+                $input.val(chosenElement.text()).focus();
+                $input.attr('data-id', chosenElement.attr('data-id'));
                 $close.addClass('visible');
                 alreadyFilled = true;
                 for (var i = 0; i < states.length; i++) {
-                    if (states[i][options['key']] == $(this).attr('data-id')) {
+                    if (states[i][options['key']] == chosenElement.attr('data-id')) {
                         options.changed(states[i]);
                         break;
                     }
@@ -80,7 +81,7 @@ $(document).ready(function() {
                 for (var i = 0; i < states.length; i++) {
                     var index = states[i][options['label']].indexOf(str);
                     if (index !== -1) {
-                        temp = states[i][options['label']].split(str);
+                        var temp = states[i][options['label']].split(str);
                         for (var j = 1; j < temp.length; j++)
                             temp[0] += '<b>' + str + '</b>' + temp[j];
                         $dialog.append('<div data-id="' + states[i][options['key']] + '">' + temp[0] + '</div>');
