@@ -65,13 +65,14 @@ footer {
     min-width: 200px;
     border: 2px solid #c0c0c0;
     text-align: right;
-    float: left;
+    float: right;
 }
 .left-panel,
 .right-panel {
-       width: 16.563%;
+    width: 16%;
     display: inline-block;
     border-top: none;
+    box-sizing: border-box;
 }
 .input-group {
     padding: 5px 0;
@@ -112,7 +113,7 @@ select {
     border-radius: 5px;
 }
 .rotated {
-    width: 15px;
+    width: 1.5%;
     min-width: 0;
 }
 .rotated .btn {
@@ -120,13 +121,13 @@ select {
     margin: 40px -40px;
 }
 .content.rotate-right.rotate-left {
-    width: 98.1366%;
+        width: 97%;
 }
 .content.rotate-left {
-    width: 82.4%;
+    width: 82.5%;
 }
 .content.rotate-right {
-    width: 82.4%;
+    width: 82.5%;
 }
 .btn {
     min-width: 95px;
