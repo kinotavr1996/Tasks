@@ -25,9 +25,13 @@ $(document).ready(function(){
 		selector = this,
 		dialog = '<div class="dialog"></div>',
 		_close = '<span class="autocomplete_close">Delete</span>',
+		wrapper = '<div class="autocomplete-wrapper"></div>'
 		states = options.source;
-	$(this).after(_close);
-	$(this).after(dialog);
+	$(this).after(wrapper);
+	$('.autocomplete-wrapper').append(selector);
+	$('.autocomplete-wrapper').append(_close);
+	$('.autocomplete-wrapper').append(dialog);
+	
 	
 	
     function initDialog() {
@@ -48,15 +52,17 @@ $(document).ready(function(){
 
     });
     $('body').on('click', '.dialog > div', function () {		
+        $(selector).val($(this).text()).focus();
+		$(selector).attr('data-id',$(this).attr('data-id'));
+		
+        $('.autocomplete_close').addClass('visible');
+        alreadyFilled = true;
 		for(var i= 0;i < states.length;i++){
 			if(states[i][options['key']] == $(this).attr('data-id')){
 				options.changed(states[i]);
+				break;
 			}
 		}
-        $(selector).val($(this).text()).focus();
-		$(selector).attr('data-id',$(this).attr('data-id'));
-        $('.autocomplete_close').addClass('visible');
-        alreadyFilled = true;
     });
     $('.autocomplete_close').click(function () {
 		clearDialog();
@@ -85,8 +91,7 @@ $(document).ready(function(){
     $(this).on('input', function () {		
 		initDialog();
         $('.dialog').addClass('open');
-        alreadyFilled = false;	
-		
+        alreadyFilled = false;		
         if($(this).val())
              match($(this).val());
     });
