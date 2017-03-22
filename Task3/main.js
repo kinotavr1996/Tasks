@@ -15,7 +15,7 @@ $(document).ready(function() {
         }
     };
     jQuery('input.autocomplete').autocomplete(options);
-    jQuery('.autocompleted').autocomplete(options);
+    //jQuery('.autocompleted').autocomplete(options);
 
 });
 
@@ -23,52 +23,38 @@ $(document).ready(function() {
 
 (function($) {
     $.fn.autocomplete = function(options) {
-
+		$(this).each(function(){
         var alreadyFilled = false,
-            selector = this,
-            dialog = [],
-            _close = [],
-            wrapper = [];
-
-        dialog[0] = selector.attr('class') + '-dialog',
-            _close[0] = selector.attr('class') + '-autocomplete_close',
-            wrapper[0] = selector.attr('class') + '-autocomplete-wrapper ';
-        dialog[1] = '<div class="' + dialog[0] + ' MyPluginDialog"></div>',
-            _close[1] = '<span class="' + _close[0] + ' MyPluginClose">Delete</span>',
-            wrapper[1] = '<div class="' + wrapper[0] + ' MyPluginWrapper"></div>';
+			$input = $(this),
+			$wrapper = $('<div class="MyPluginWrapper"></div>'),
+			$close = $('<span class="MyPluginClose">Delete</span>'),
+			$dialog = $('<div class="MyPluginDialog"></div>');						
+			
+		$input.after($wrapper);
+		$wrapper.append($input);
+		$wrapper.append($close);
+		$wrapper.append($dialog);
         states = options.source;
-        $(this).after(wrapper[1]);
-
-        $('.' + wrapper[0]).append(selector);
-
-        $('.' + wrapper[0]).append(_close[1]);
-
-        $('.' + wrapper[0]).append(dialog[1]);
-
-
         function initDialog() {
-            clearDialog();
-            console.log(options["key"]);
+            clearDialog();           
             for (var i = 0; i < states.length; i++) {
-
-                $('.' + dialog[0]).append('<div data-id="' + states[i][options['key']] + '">' + options.source[i][options['label']] + '</div>');
+                $dialog.append('<div data-id="' + states[i][options['key']] + '">' + options.source[i][options['label']] + '</div>');
             }
         }
 
         function clearDialog() {
-            $('.' + dialog[0]).empty();
+            $dialog.empty();
         }
-        $(this).click(function() {
+		$input.click(function() {
             if (!alreadyFilled) {
-                $('.' + dialog[0]).addClass('open');
+                $dialog.addClass('open');
             }
-
         });
-        $('body').on('click', '.' + dialog[0] + ' > div', function() {
-            $(selector).val($(this).text()).focus();
-            $(selector).attr('data-id', $(this).attr('data-id'));
-
-            $('.' + _close[0]).addClass('visible');
+		
+       $dialog.on('click','div',function() {		   
+           $input.val( $(this).text()).focus();
+           $input.attr('data-id',  $(this).attr('data-id'));
+            $close.addClass('visible');
             alreadyFilled = true;
             for (var i = 0; i < states.length; i++) {
                 if (states[i][options['key']] == $(this).attr('data-id')) {
@@ -77,15 +63,15 @@ $(document).ready(function() {
                 }
             }
         });
-        $('.' + _close[0]).click(function() {
+        $close.click(function() {
             clearDialog();
             initDialog();
             alreadyFilled = false;
-            $(selector).val('');
-            $(selector).attr('data-id','');
-            $('.' + dialog[0]).addClass('open');
-            $(this).val('').focus();
-            $(this).removeClass('visible');
+			$input.val('');
+            $input.attr('data-id','');
+            $dialog.addClass('open');
+            $input.val('').focus();
+            $input.removeClass('visible');
         });
 
         function match(str) {
@@ -96,24 +82,26 @@ $(document).ready(function() {
                     temp = states[i][options['label']].split(str);
                     for (var j = 1; j < temp.length; j++)
                         temp[0] += '<b>' + str + '</b>' + temp[j];
-                    $('.' + dialog[0]).append('<div data-id="' + states[i][options['key']] + '">' + temp[0] + '</div>');
+                    $dialog.append('<div data-id="' + states[i][options['key']] + '">' + temp[0] + '</div>');
                 }
             }
             str = null;
 
         }
-        $(this).on('input', function() {
+       $input.on('input', function() {
             initDialog();
-            $('.' + dialog[0]).addClass('open');
+            $dialog.addClass('open');
             alreadyFilled = false;
-            if ($(this).val())
-                match($(this).val());
+            if ($input.val())
+                match($input.val());
         });
         $('body').click(function(e) {
             if (!$(e.target).is("input, .autocomplete_close")) {
-                $('.' + dialog[0]).removeClass('open');
+                $dialog.removeClass('open');
             }
         });
         initDialog();
-    }
+});
+   
+ }
 })(jQuery);
