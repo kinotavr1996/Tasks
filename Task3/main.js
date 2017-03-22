@@ -26,26 +26,26 @@ $(document).ready(function() {
 
         var alreadyFilled = false,
             selector = this,
-			dialog = [],
-			_close = [],
-			wrapper = [];
-		
-			dialog[0] = selector.attr('class') + '-dialog',
+            dialog = [],
+            _close = [],
+            wrapper = [];
+
+        dialog[0] = selector.attr('class') + '-dialog',
             _close[0] = selector.attr('class') + '-autocomplete_close',
             wrapper[0] = selector.attr('class') + '-autocomplete-wrapper ';
-            dialog[1] = '<div class="'+ dialog[0] + ' MyPluginDialog"></div>',
+        dialog[1] = '<div class="' + dialog[0] + ' MyPluginDialog"></div>',
             _close[1] = '<span class="' + _close[0] + ' MyPluginClose">Delete</span>',
             wrapper[1] = '<div class="' + wrapper[0] + ' MyPluginWrapper"></div>';
-        states = options.source;		
+        states = options.source;
         $(this).after(wrapper[1]);
-		
+
         $('.' + wrapper[0]).append(selector);
-		
+
         $('.' + wrapper[0]).append(_close[1]);
-		
+
         $('.' + wrapper[0]).append(dialog[1]);
 
-		
+
         function initDialog() {
             clearDialog();
             console.log(options["key"]);
@@ -68,7 +68,7 @@ $(document).ready(function() {
             $(selector).val($(this).text()).focus();
             $(selector).attr('data-id', $(this).attr('data-id'));
 
-            $('.' +  _close[0]).addClass('visible');
+            $('.' + _close[0]).addClass('visible');
             alreadyFilled = true;
             for (var i = 0; i < states.length; i++) {
                 if (states[i][options['key']] == $(this).attr('data-id')) {
@@ -77,11 +77,12 @@ $(document).ready(function() {
                 }
             }
         });
-        $('.' +  _close[0]).click(function() {
+        $('.' + _close[0]).click(function() {
             clearDialog();
             initDialog();
             alreadyFilled = false;
             $(selector).val('');
+            $(selector).attr('data-id','');
             $('.' + dialog[0]).addClass('open');
             $(this).val('').focus();
             $(this).removeClass('visible');
