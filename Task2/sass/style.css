@@ -1,3 +1,14 @@
+@import "compass/reset";
+
+@mixin respond-to($media) {
+  @if $media == laptop {
+    @media only screen and (max-width: 1224px) { @content; }
+  }  
+  @else if $media == tablets {
+    @media only screen and (min-width: 768px) { @content; }
+  }
+}
+
 html,
 body {
     height: 100%;
@@ -55,9 +66,7 @@ footer {
     z-index: 1;
 }
 .left-panel {
-    min-width: 150px;
-    /*border: 2px solid black;*/
-    
+    min-width: 150px;    
     text-align: left;
     float: left;
 }
@@ -73,9 +82,16 @@ footer {
     display: inline-block;
     border-top: none;
     box-sizing: border-box;
+	@include respond-to(laptop) { display:none; };
 }
 .input-group {
     padding: 5px 0;
+	&.checkbox{
+		@include respond-to(laptop) {
+			width: 50%;
+			margin: 0 auto; 
+			};
+	}
 }
 
 .info-block {
@@ -83,6 +99,8 @@ footer {
     position: relative;
     float: left;
     width: 33.333%;
+	@include respond-to(laptop) { width: 100%; };	
+	@include respond-to(tablets) { width: 100%; };
 }
 .info-text,
 .info-input {
@@ -115,19 +133,24 @@ select {
 .rotated {
     width: 1.5%;
     min-width: 0;
-}
-.rotated .btn {
+
+.btn {
     transform: rotate(90deg);
     margin: 40px -40px;
 }
-.content.rotate-right.rotate-left {
+}
+.content{
+	@include respond-to(laptop) { width: 100%!important; };
+	&.rotate-right.rotate-left {
         width: 97%;
-}
-.content.rotate-left {
+	}
+
+&.rotate-left {
     width: 82.5%;
 }
-.content.rotate-right {
+&.rotate-right {
     width: 82.5%;
+}
 }
 .btn {
     min-width: 95px;
@@ -148,25 +171,10 @@ select {
 }
 /*--------------Start adaptive--------------------*/
 
-@media only screen and (max-width: 1224px) {
-    .info-block {
-        width: 100%;
-    }
-    .right-panel,
-    .left-panel {
-        display: none;
-    }
-    .content {
-        width: 100%!important;
-    }
-	.input-group.ckeckbox{
-    width: 50%;
-	margin: 0 auto;
-	}
-}
+
 @media only screen and (max-width: 768px) {
     .info-block {
-        width: 100%;
+        
     }
 	.input-group.ckeckbox{
     width: 100%;
