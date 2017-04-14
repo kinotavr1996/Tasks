@@ -322,11 +322,3 @@ select {
 .expand {
   z-index: 3;
 }
-
-/*--------------Start adaptive--------------------*/
-@media only screen and (max-width: 768px) {
-  /* line 192, ../sass/style.scss */
-  .ckeckbox .info-text {
-    width: 85%;
-  }
-}

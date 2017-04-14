@@ -181,15 +181,3 @@ select {
 .expand {
     z-index: 3;
 }
-/*--------------Start adaptive--------------------*/
-
-
-@media only screen and (max-width: 768px) {
-  
-	
-   
-   
-    .ckeckbox .info-text {
-        width: 85%;
-    }
-}
