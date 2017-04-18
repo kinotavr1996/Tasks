@@ -42,7 +42,8 @@ Parsed:any;
         this.products=this.Parsed.products;
         console.log(this.products);
          this.setPage(1);
-        console.log('Bind done');        
+        console.log('Bind done'); 
+              
     }
 
 setPage(page: number) {

@@ -1,46 +1,43 @@
-<div class="container">
-    <table>
+<div class="container table-responsive">
+    
+    <input type="text" class="search">
+    
+    <table class="table table-bordered table-striped"> 
         <thead>
-            <th>
-            </th>
-            <th class="hand" (click)="Sort('productId');">
+            
+            <th class="hand text-center" (click)="Sort('productId');">
                 Product ID
             </th>
-            <th class="hand" (click)="Sort('productName');">
+            <th class="hand text-center" (click)="Sort('productName');">
                 Product Name
             </th>
-            <th class="hand" (click)="Sort('productPrice');">
+            <th class="hand text-center" (click)="Sort('productPrice');">
                 Product Price
             </th>
-            <th class="hand" (click)="Sort('productUnits');">
+            <th class="hand text-center" (click)="Sort('productUnits');">
                 Product Units
             </th>
         </thead>
         <tbody>
             <template ngFor let-p [ngForOf]="products" [ngForTrackBy]="assetTrackBy" >
-            <tr >
-                <td id="{{ p.productId  }}"  (click)="GetChildTable(p.productId)">
-                   <img class="hand" src='./src/plus.png' alt="Expand" width="20" height="20"> 
-                </td>
-                <td>
+            <tr >                
+                <td class="text-center">
                     {{p.productId}}
-                </td>
-                <td>
+                </td >
+                <td class="text-center product">
                     {{p.productName}}
                 </td>
-                <td>
+                <td class="text-center">
                     {{p.productPrice}}
                 </td>
-                <td>
+                <td class="text-center">
                     {{p.productUnits}}
                 </td>
             </tr>
             <tr id="{{'promotion' + p.productId}}"  style="display:none;" [ngClass]="{show : childTableDispaly== true}">
                 <td colspan="5">
                     <table>
-                        <thead>
-                            <th>
-                            </th>
+                        <thead>                          
                             <th>
                                 Promotion ID 
                             </th>
