@@ -1,0 +1,33 @@
+@import '~assets/styles/common.less';
+@search-color: #bcbcbc;
+.input {
+    padding: 11px 0;
+    position: relative;
+    .search {
+        top: 25px;
+        left: 9px;
+        position: absolute;
+        display: block;
+        height: 15px;
+        width: 15px;
+        background-image: url('/src/assets/images/icons/search.svg');
+        background-size: cover;
+        .clearfix;
+    }
+}
+
+input {
+    color: @search-color;
+    border-radius: 7px;
+    background-color: @core-bg-color;
+    float: left;
+    font-size: 16px;
+    height: 42px;
+    line-height: 42px;
+    margin-right: 12px;
+    outline: medium none;
+    padding: 0 0 0 35px;
+    width: 344px;
+    border: solid 1px #d5d5d5;
+    .placeholder(@search-color);
+}

@@ -1,0 +1,49 @@
+@import '~assets/styles/common.less';
+.logo {
+    background-image: @logo;
+}
+
+.sidebar {
+    &-logo {
+        &-container {
+            background-color: @blue3;
+            padding: 23px 0 23px 28px;
+        }
+        display: block;
+        width: @logo-width;
+        height: @logo-height;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    width: @sidebar-width;
+    background-color: @blue1;
+    height: 100%;
+    display: block;
+    height: 100%;
+    position: fixed;
+    .clearfix;
+    &-items {}
+    &-item {
+        cursor: pointer;
+        box-sizing: border-box;
+        border-left: @sidebar-item-border;
+        &.active {
+            background-color: @blue2;
+            border-left: @sidebar-item-border-active;
+        }
+        padding: 21px 0;
+        display: flex;
+        align-items: center;
+        &-icon {
+            margin-left: 26px;
+            height: @sidebar-icon-size;
+            width: @sidebar-icon-size;
+        }
+        &-title {
+            margin-left: 20px;
+            font-size: @sidebar-title-font-size;
+            font-weight: @sidebar-title-font-weight;
+            color: @sidebar-text-color;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+<div class="sidebar">
+    <div class="sidebar-logo-container" [routerLink]="'/dashboard'">
+        <div class="logo sidebar-logo">
+        </div>
+    </div>
+    <ul class="sidebar-items">
+        <li class="sidebar-item" *ngFor="let sidebarItem of sidebarItems" [routerLinkActive]="['active']" [routerLink]="sidebarItem.link">
+            <img class="sidebar-item-icon" [src]="sidebarItem.iconUrl" alt="">
+            <span class="sidebar-item-title">{{sidebarItem.text |localize}}</span>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,22 @@
+.clearfix {
+    &:after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+}
+
+.placeholder(@color) {
+    &::-webkit-input-placeholder {
+        color: @color;
+    }
+    &::-moz-placeholder {
+        color: @color;
+    }
+    &:-ms-input-placeholder {
+        color: @color;
+    }
+    &:-moz-placeholder {
+        color: @color;
+    }
+}

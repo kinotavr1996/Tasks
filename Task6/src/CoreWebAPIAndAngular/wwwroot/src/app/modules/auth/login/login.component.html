@@ -1,0 +1,11 @@
+<div class="login">
+    <div class="login-container">
+        <form (submit)="onSubmit()" novalidate>
+            <custom-input [name]="'email'" #email="ngModel" [(ngModel)]="model.email" [type]="'email'" [placeholder]="'E-mail'" [page]="'login'"
+                [validator]="validator.isEmailValid(email)"></custom-input>
+            <custom-input [name]="'password'" #password="ngModel" [(ngModel)]="model.password" [type]="'password'" [placeholder]="'Password'"
+                [page]="'login'" [validator]="validator.isPasswordValid(password)"></custom-input>
+            <app-button name="submit" [capture]="'Login'" [styles]="'blue full-width'"></app-button>
+        </form>
+    </div>
+</div>

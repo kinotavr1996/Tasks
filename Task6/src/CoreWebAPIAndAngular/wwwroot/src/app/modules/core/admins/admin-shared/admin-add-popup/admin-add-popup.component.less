@@ -1,0 +1,53 @@
+@import '~assets/styles/common.less';
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+    &-container {
+        background-color: white;
+    }
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 19px;
+        border-bottom: solid 1px #d5d5d5;
+    }
+    &-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #777777;
+    }
+    &-close {
+        background-image: @close-white;
+        width: 31px;
+        height: 31px;
+        background-color: #d8d8d8;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        background-size: 15px 15px;
+        background-position: center center;
+        cursor: pointer;
+    }
+    &-submit-right {
+        display: flex;
+        justify-content: flex-end;
+        margin: 15px 0;
+    }
+}
+
+.admin-add-popup {
+    .popup-container {
+        width: 439px;
+    }
+    .popup-body {
+        padding: 0 40px;
+    }
+}

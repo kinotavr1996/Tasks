@@ -1,0 +1,61 @@
+<div class="admin-list">
+    <app-page-title [pageTitle]="'admins__title'">
+        <div class="page-right">
+            <div class="add-admin" (click)="onAddAdmin()">
+                <span class="add-admin-icon"></span>
+                <span class="add-admin-text">{{'admins__add_admin'|localize}}</span>
+            </div>
+            <app-search></app-search>
+        </div>
+    </app-page-title>
+    <div class="admin-list-container container">
+        <div class="admin-list-table ">
+            <div class="table">
+                <div class="table-header">
+                    <div class="table-cell table-icon"></div>
+                    <div class="table-cell table-name" (click)="Sort('firstName');">{{'admins__name_admins'|localize}}</div>
+                    <div class="table-cell table-email" (click)="Sort('lastName');">{{'admins__lastname_admins'|localize}}</div>
+                    <div class="table-cell table-date" (click)="Sort('firstName');">{{'admins__city'|localize}}</div>
+                    <div class="table-cell table-status" (click)="Sort('firstName');">{{'admins__status'|localize}}</div>
+                </div>
+                <div class="table-row" *ngFor="let customer of customers">
+                    <div class="table-cell table-icon">
+                        <span class="avatar"></span>
+                    </div>
+                    <div class="table-cell table-name">
+                        <span>{{customer?.firstName}}</span>
+                    </div>
+                    <div class="table-cell table-email">
+                        <span>{{customer?.lastName}}</span>
+                    </div>
+                    <div class="table-cell table-date">
+                        <span>{{customer?.address.city}}</span>
+                    </div>
+                    <div class="table-cell table-status">
+                        <span class="active"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display:inline-block;">
+        <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <a (click)="_setPage(1)">First</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <a (click)="_setPage(pager.currentPage - 1)">Previous</a>
+            </li>
+            <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                <a (click)="_setPage(page)">{{page}}</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <a (click)="_setPage(pager.currentPage + 1)">Next</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <a (click)="_setPage(pager.totalPages)">Last</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<app-admin-add-popup [(visability)]="isAddVisible" (submit)="handlerSubmit($event)"></app-admin-add-popup>
