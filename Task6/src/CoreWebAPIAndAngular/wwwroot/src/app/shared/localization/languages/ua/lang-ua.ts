@@ -1,4 +1,4 @@
-import { LANG_UA_ADMINS_COMPONENT_TRANS } from './pages/admins/admins.translate';
+import { LANG_UA_CUSTOMER_COMPONENT_TRANS } from './pages/customer/customer.translate';
 import { LANG_UA_SIDEBAR_COMPONENT_TRANS } from './pages/sidebar/sidebar.translate';
 import { LANG_UA_HEADER_COMPONENT_TRANS } from './pages/header/header.translate';
 
@@ -12,5 +12,5 @@ Object.assign(
     LANG_UA_TRANS,
     LANG_UA_HEADER_COMPONENT_TRANS,
     LANG_UA_SIDEBAR_COMPONENT_TRANS,
-    LANG_UA_ADMINS_COMPONENT_TRANS);
+    LANG_UA_CUSTOMER_COMPONENT_TRANS);
 

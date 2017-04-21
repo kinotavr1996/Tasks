@@ -1,19 +1,16 @@
 import { RouterModule, Routes } from '@angular/router';
-
 import { CoreComponent } from './core.component';
 import { ModuleWithProviders } from '@angular/core';
-import { adminsRoutes } from './admins/admins.routing';
-import { companyRoutes } from './company/company.routing';
-import { dashboardRoutes } from './dashboard/dashboard.routing';
+import { customerRoutes } from './customer/customer.routing';
+
 
 export const coreRoutes: Routes = [{
     path: '',
     component: CoreComponent,
     children: [
-        { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-        ...dashboardRoutes,
-        ...adminsRoutes,
-        ...companyRoutes
+        { path: '', redirectTo: 'customer', pathMatch: 'full' },
+        ...customerRoutes,
+
     ]
 }];
 

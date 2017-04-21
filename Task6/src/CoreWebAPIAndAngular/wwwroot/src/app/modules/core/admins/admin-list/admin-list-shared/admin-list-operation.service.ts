@@ -1,3 +1,0 @@
-export class AdminListOperationService {
-
-}

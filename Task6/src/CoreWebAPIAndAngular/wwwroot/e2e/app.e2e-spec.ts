@@ -1,10 +1,10 @@
-import { BankOfPalletsClientAdminPage } from './app.po';
+import { CustomerPage } from './app.po';
 
-describe('bank-of-pallets-client-admin App', () => {
-  let page: BankOfPalletsClientAdminPage;
+describe('customer App', () => {
+  let page: CustomerPage;
 
   beforeEach(() => {
-    page = new BankOfPalletsClientAdminPage();
+    page = new CustomerPage();
   });
 
   it('should display message saying app works', () => {
