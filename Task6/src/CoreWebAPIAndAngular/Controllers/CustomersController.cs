@@ -19,17 +19,17 @@ namespace CoreWebAPIAndAngular.Controllers
         }
 
         // GET api/customers
-       //// [HttpGet]
-       // [ProducesResponseType(typeof(List<Customer>), 200)]
-       // [ProducesResponseType(typeof(List<Customer>), 404)]
-       // public ActionResult Get()
-       // {
-       //     if (_customers == null)
-       //     {
-       //        
-       //     }
-       //     return Ok(_customers);
-       // }
+        //// [HttpGet]
+        // [ProducesResponseType(typeof(List<Customer>), 200)]
+        // [ProducesResponseType(typeof(List<Customer>), 404)]
+        // public ActionResult Get()
+        // {
+        //     if (_customers == null)
+        //     {
+        //        
+        //     }
+        //     return Ok(_customers);
+        // }
 
         // GET api/customers/sortParametr
         [HttpGet("", Name = "GetWithSortParametr")]
@@ -50,8 +50,8 @@ namespace CoreWebAPIAndAngular.Controllers
                     case "lastName":
                         cust = (orderBy == "ASC") ? _customers.OrderBy(x => x.LastName).ToList() : _customers.OrderByDescending(x => x.LastName).ToList();
                         break;
-                    case "city":
-                        cust = (orderBy == "ASC") ? _customers.OrderBy(x => x.Address.City).ToList() : _customers.OrderByDescending(x => x.Address.City).ToList();
+                    case "email":
+                        cust = (orderBy == "ASC") ? _customers.OrderBy(x => x.Email).ToList() : _customers.OrderByDescending(x => x.Email).ToList();
                         break;
                     default:
                         break;
@@ -62,10 +62,10 @@ namespace CoreWebAPIAndAngular.Controllers
             {
                 return NotFound("No customers found!");
             }
-            
-           
+
+
         }
-         
+
 
         // GET api/customers/1
         [HttpGet("{id}", Name = "GetCustomerRoute")]

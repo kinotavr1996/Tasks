@@ -1,0 +1,61 @@
+<div class="customer-list">
+    <app-page-title [pageTitle]="'customers__title'">
+        <div class="page-right">
+            <div class="add-customer" (click)="onAddcustomer()">
+                <span class="add-customer-icon"></span>
+                <span class="add-customer-text">{{'customers__add_customer'|localize}}</span>
+            </div>
+
+        </div>
+    </app-page-title>
+    <div class="customer-list-container container">
+        <div class="customer-list-table ">
+            <div class="table">
+                <div class="table-header">
+                    <div class="table-cell table-icon"></div>
+                    <div class="table-cell table-name" (click)="Sort('firstName');">{{'customers__name_customers'|localize}}</div>
+                    <div class="table-cell table-email" (click)="Sort('lastName');">{{'customers__lastname_customers'|localize}}</div>
+                    <div class="table-cell table-date" (click)="Sort('email');">{{'customers__email'|localize}}</div>
+                    <div class="table-cell table-status" (click)="Sort('firstName');">{{'customers__status'|localize}}</div>
+                </div>
+                <div class="table-row" *ngFor="let customer of customers">
+                    <div class="table-cell table-icon">
+                        <span class="avatar"></span>
+                    </div>
+                    <div class="table-cell table-name">
+                        <span>{{customer?.firstName}}</span>
+                    </div>
+                    <div class="table-cell table-email">
+                        <span>{{customer?.lastName}}</span>
+                    </div>
+                    <div class="table-cell table-date">
+                        <span>{{customer?.email}}</span>
+                    </div>
+                    <div class="table-cell table-status">
+                        <span class="active"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display:inline-block;">
+        <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <a (click)="_setPage(1)">First</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <a (click)="_setPage(pager.currentPage - 1)">Previous</a>
+            </li>
+            <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                <a (click)="_setPage(page)">{{page}}</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <a (click)="_setPage(pager.currentPage + 1)">Next</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <a (click)="_setPage(pager.totalPages)">Last</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<app-customer-add-popup [(visability)]="isAddVisible" (submit)="handlerSubmit($event)"></app-customer-add-popup>
