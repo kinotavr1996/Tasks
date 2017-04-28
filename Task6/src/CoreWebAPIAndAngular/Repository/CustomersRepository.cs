@@ -1,5 +1,7 @@
 ﻿using CoreWebAPIAndAngular.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,63 +11,51 @@ namespace CoreWebAPIAndAngular.Repository
     //Fake Repository that's added as a Singleton in Startup.cs
     public class CustomersRepository : ICustomersRepository
     {
-        //Cheap way to create a cache of data
-        //Purely for demo!
-        List<Customer> _customers = new List<Customer>
+        private CustomerContext dbContext;
+        public CustomersRepository(CustomerContext context) 
         {
-
-                new Customer { Id = 1, FirstName="John", LastName="Doe", Email = "email@mail.com" ,
-                                Address = new Address { Id=1, City="Chandler", State="AZ", Zip=85249 }},
-                new Customer { Id = 2, FirstName="Jane", LastName="Doe", Email = "email@mail.com" ,
-                                Address = new Address { Id=2, City="Chandler", State="AZ", Zip=85249 }},
-                new Customer { Id = 3, FirstName="Tina", LastName="Smith",  Email = "email@mail.com" ,
-                                Address = new Address { Id=3, City="Redmond", State="WA", Zip=98052 }},
-                 new Customer { Id = 4, FirstName="John", LastName="Doe", Email = "email@mail.com" ,
-                                Address = new Address { Id=1, City="Chandler", State="AZ", Zip=85249 }},
-                new Customer { Id = 5, FirstName="Jane", LastName="Doe", Email = "email@mail.com" ,
-                                Address = new Address { Id=2, City="Chandler", State="AZ", Zip=85249 }},
-                new Customer { Id = 6, FirstName="Tina", LastName="Smith",  Email = "email@mail.com" ,
-                                Address = new Address { Id=3, City="Redmond", State="WA", Zip=98052 }},
-                 new Customer { Id = 7, FirstName="John", LastName="Doe", Email = "email@mail.com" ,
-                                Address = new Address { Id=1, City="Chandler", State="AZ", Zip=85249 }},
-                new Customer { Id = 8, FirstName="Jane", LastName="Doe", Email = "email@mail.com" ,
-                                Address = new Address { Id=2, City="Chandler", State="AZ", Zip=85249 }},
-                new Customer { Id = 9, FirstName="Tina", LastName="Smith",  Email = "email@mail.com" ,
-                                Address = new Address { Id=3, City="Redmond", State="WA", Zip=98052 }},
-                 new Customer { Id = 10, FirstName="John", LastName="Doe", Email = "email@mail.com" ,
-                                Address = new Address { Id=1, City="Chandler", State="AZ", Zip=85249 }},
-                new Customer { Id = 11, FirstName="Jane", LastName="Doe", Email = "email@mail.com" ,
-                                Address = new Address { Id=2, City="Chandler", State="AZ", Zip=85249 }},
-                new Customer { Id = 323, FirstName="Tina", LastName="Smith",  Email = "email@mail.com" ,
-                                Address = new Address { Id=3, City="Redmond", State="WA", Zip=98052 }},
-                 new Customer { Id = 42, FirstName="John", LastName="Doe", Email = "email@mail.com" ,
-                                Address = new Address { Id=1, City="Chandler", State="AZ", Zip=85249 }},
-                new Customer { Id = 21, FirstName="Jane", LastName="Doe", Email = "email@mail.com" ,
-                                Address = new Address { Id=2, City="Chandler", State="AZ", Zip=85249 }},
-                new Customer { Id = 32, FirstName="Tina", LastName="Smith",  Email = "email@mail.com" ,
-                                Address = new Address { Id=3, City="Redmond", State="WA", Zip=98052 }},
-                 new Customer { Id = 13, FirstName="John", LastName="Doe", Email = "email@mail.com" ,
-                                Address = new Address { Id=1, City="Chandler", State="AZ", Zip=85249 }},
-                new Customer { Id = 24, FirstName="Jane", LastName="Doe", Email = "email@mail.com" ,
-                                Address = new Address { Id=2, City="Chandler", State="AZ", Zip=85249 }},
-                new Customer { Id = 35, FirstName="Tina", LastName="Smith",  Email = "email@mail.com" ,
-                                Address = new Address { Id=3, City="Redmond", State="WA", Zip=98052 }},
-                 new Customer { Id = 16, FirstName="John", LastName="Doe", Email = "email@mail.com" ,
-                                Address = new Address { Id=1, City="Chandler", State="AZ", Zip=85249 }},
-                new Customer { Id = 27, FirstName="Jane", LastName="Doe", Email = "email@mail.com" ,
-                                Address = new Address { Id=2, City="Chandler", State="AZ", Zip=85249 }},
-                new Customer { Id = 39, FirstName="Tina", LastName="Smith",  Email = "email@mail.com" ,
-                                Address = new Address { Id=3, City="Redmond", State="WA", Zip=98052 }},
-
-        };
-
-        public List<Customer> Customers
-        {
-            get
-            {
-                return _customers;
-            }
+            dbContext = context;
         }
+        
+        public List<Customer> GetCustomers()
+        {
+           return dbContext.Customer.Include(c=>c.Address).ToList(); 
+        }
+        public List<Customer> GetCustomersWithParametrs(string sortBy, string orderBy, int limit, int pageNumber)
+        {
+            int _skipPage = pageNumber * limit;
+            IQueryable<Customer> customers = dbContext.Customer.Include(c => c.Address);                       
+            switch (sortBy)
+            {
+                case "firstName":
+                    customers = (orderBy == "ASC") ? customers.OrderBy(x => x.FirstName) : customers.OrderByDescending(x => x.FirstName);
+                    break;
+                case "lastName":
+                    customers = (orderBy == "ASC") ? customers.OrderBy(x => x.LastName) : customers.OrderByDescending(x => x.LastName);
+                    break;
+                case "email":
+                    customers = (orderBy == "ASC") ? customers.OrderBy(x => x.Email) : customers.OrderByDescending(x => x.Email);
+                    break;
+                default:
+                    break;
+            }
 
+
+            return customers.Skip(_skipPage).Take(limit).ToList(); 
+        }
+        public void AddCustomer(Customer customer)
+        {
+            dbContext.Customer.Add(customer);
+            dbContext.SaveChanges();
+        }
+        public Customer GetCustomerById(int id)
+        {            
+             return  dbContext.Customer.Where(x => x.Id == id).FirstOrDefault();              
+        }
+        public void Delete(int id)
+        {
+            dbContext.Customer.Remove(dbContext.Customer.Single(x => x.Id == id));
+            dbContext.SaveChanges();
+        }
     }
 }

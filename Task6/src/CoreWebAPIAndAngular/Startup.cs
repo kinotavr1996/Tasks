@@ -10,6 +10,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
 using CoreWebAPIAndAngular.Repository;
+using CoreWebAPIAndAngular.Model;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace CoreWebAPIAndAngular
 {
@@ -41,7 +44,8 @@ namespace CoreWebAPIAndAngular
 
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
-
+          //  var connection = @"Server=OLEG-PC;Database=customers;Trusted_Connection=True;";
+            services.AddDbContext<CustomerContext>(options => options.UseSqlServer(Configuration.GetConnectionString("CustomerDb")));
             services.AddMvc();
         }
 
