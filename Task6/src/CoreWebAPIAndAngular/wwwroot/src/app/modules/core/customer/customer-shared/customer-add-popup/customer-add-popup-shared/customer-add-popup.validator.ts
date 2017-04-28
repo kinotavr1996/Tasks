@@ -20,10 +20,10 @@ export class AddCustomerPopupValidatior extends Validator {
         if (this._validate(this.email, control, modelProperty)) {
             if (!this._isNotEmptyOrWhitespace(value)) {
                 this.email.isValid = false;
-                this.email.message = 'add_admin_popup__required_email';
+                this.email.message = 'add_customer_popup__required_email';
             } else if (!this._isEmailValid(value)) {
                 this.email.isValid = false;
-                this.email.message = 'add_admin_popup__invalid_email';
+                this.email.message = 'add_customer_popup__invalid_email';
             }
         }
         return this.email;
@@ -35,7 +35,7 @@ export class AddCustomerPopupValidatior extends Validator {
         if (this._validate(this.firstName, control, modelProperty)) {
             if (!this._isNotEmptyOrWhitespace(value)) {
                 this.firstName.isValid = false;
-                this.firstName.message = 'add_admin_popup__required_firstname';
+                this.firstName.message = 'add_customer_popup__required_firstname';
             }
         }
         return this.firstName;
@@ -47,7 +47,7 @@ export class AddCustomerPopupValidatior extends Validator {
         if (this._validate(this.lastName, control, modelProperty)) {
             if (!this._isNotEmptyOrWhitespace(value)) {
                 this.lastName.isValid = false;
-                this.lastName.message = 'add_admin_popup__required_lastname';
+                this.lastName.message = 'add_customer_popup__required_lastname';
             }
         }
         return this.lastName;

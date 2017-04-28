@@ -29,14 +29,7 @@ export class CustomerListComponent implements OnInit {
         this.sortColumn = 'firstName';
         this._setPage(1);
     }
-    getCustomers() {
-        this._httpService.getCustomers()
-            .subscribe(customers => {
-                this.customers = UserModel.fromJSONArray(customers);
-                this.totalResults = this.customers.length;
-                this.customers = this.customers.slice(this.pager.startIndex, this.pager.endIndex + 1);
-            });
-    }
+
     onAddcustomer() {
         this.isAddVisible = true;
     }
@@ -50,19 +43,18 @@ export class CustomerListComponent implements OnInit {
     Sort(columnName: string) {
         if (this.sortOrder == 'ASC') {
             this.sortOrder = "DESC";
-            this._httpService.getSortingCustomers(columnName, this.sortOrder)
+            this.sortColumn = columnName;
+            this._httpService.getSortingCustomers(columnName, this.sortOrder, this.elementsPerPage, this.currentPageOffset)
                 .subscribe(customers => {
                     this.customers = UserModel.fromJSONArray(customers);
-                    this.customers = this.customers.slice(this.pager.startIndex, this.pager.endIndex + 1);
                 });
             console.log(this.customers);
         }
         else {
             this.sortOrder = "ASC";
-            this._httpService.getSortingCustomers(columnName, this.sortOrder)
+            this._httpService.getSortingCustomers(columnName, this.sortOrder, this.elementsPerPage, this.currentPageOffset)
                 .subscribe(customers => {
                     this.customers = UserModel.fromJSONArray(customers);
-                    this.customers = this.customers.slice(this.pager.startIndex, this.pager.endIndex + 1);
                 });
             console.log(this.customers);
         }
@@ -75,6 +67,9 @@ export class CustomerListComponent implements OnInit {
         }
         this.currentPageOffset = page;
         this.pager = this.pagerService.getPager(this.totalResults, page, this.elementsPerPage);
-        this.getCustomers();
+        this._httpService.getSortingCustomers(this.sortColumn, this.sortOrder, this.elementsPerPage, page)
+            .subscribe(customers => {
+                this.customers = UserModel.fromJSONArray(customers);
+            });
     }
 }

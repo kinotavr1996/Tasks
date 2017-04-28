@@ -6,7 +6,9 @@ export class UserModel {
         public id: number,
         public firstName: string,
         public lastName: string,
+        public email: string,
         public address: AddressModel
+
     ) { }
 
     static fromJSON(object: any): UserModel {
@@ -14,6 +16,7 @@ export class UserModel {
             object['id'],
             object['firstName'],
             object['lastName'],
+            object['email'],
             AddressModel.fromJSON(object['address'])
         );
     }
