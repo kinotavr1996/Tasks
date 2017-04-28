@@ -1,0 +1,31 @@
+@import '~assets/styles/common.less';
+header {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: @header-height;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 37px 0 230px;
+    .clearfix;
+    .droopdown {
+        font-size: 18px;
+        font-weight: 600;
+        text-align: left;
+        color: #777777;
+    }
+    .avatar {
+        margin: 0 20px;
+        background-image: @person-icon;
+        width: @avatar-size;
+        height: @avatar-size;
+        background-repeat: no-repeat;
+        background-size: 22px 22px;
+        background-position: center center;
+        border-radius: 50%;
+        background-color: #f1f1f1;
+        border: solid 2px #2988ff;
+    }
+}

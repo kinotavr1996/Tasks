@@ -1,0 +1,20 @@
+@import '~assets/styles/common.less';
+.page {
+    display: flex;
+    justify-content: space-between;
+    &-title {
+        padding: @page-title-padding;
+        font-size: 18px;
+        font-weight: 600;
+        color: #bcbcbc;
+    }
+}
+
+:host {
+    position: fixed;
+    top: @header-height;
+    background-color: @core-bg-color;
+    height: @page-title-height;
+    right: 0;
+    left: @sidebar-width + 11px;
+}
