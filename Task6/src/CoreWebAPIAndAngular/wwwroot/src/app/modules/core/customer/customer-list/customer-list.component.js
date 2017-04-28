@@ -29,14 +29,7 @@ export class CustomerListComponent implements OnInit {
         this.sortColumn = 'firstName';
         this._setPage(1);
     }
-    getCustomers() {
-        this._httpService.getCustomers()
-            .subscribe(customers => {
-                this.customers = UserModel.fromJSONArray(customers);
-                this.totalResults = this.customers.length;
-                this.customers = this.customers.slice(this.pager.startIndex, this.pager.endIndex + 1);
-            });
-    }
+    
     onAddcustomer() {
         this.isAddVisible = true;
     }
