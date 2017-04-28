@@ -72,7 +72,7 @@ namespace CoreWebAPIAndAngular.Controllers
         }
 
         // PUT api/customers/5
-       /* [HttpPut("{id}")]
+      /* [HttpPut("{id}")]
         [ProducesResponseType(typeof(Customer), 200)]
         [ProducesResponseType(typeof(Customer), 404)]
         [ProducesResponseType(typeof(Customer), 400)]
@@ -83,7 +83,7 @@ namespace CoreWebAPIAndAngular.Controllers
                 return BadRequest(this.ModelState);
             }
 
-            var cust = _customers.Where(c => c.Id == id).SingleOrDefault();
+            var cust = _customerRepository.GetCustomerById(id);
             if (cust == null)
             {
                 return NotFound("Unable to update customer - not found!");

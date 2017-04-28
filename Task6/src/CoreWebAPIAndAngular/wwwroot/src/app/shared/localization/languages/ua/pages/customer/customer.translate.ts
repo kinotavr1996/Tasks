@@ -13,10 +13,14 @@ export const LANG_UA_CUSTOMER_COMPONENT_TRANS = {
     'customers__input_last_name': 'Вкажіть прізвище',
     'customers__input_first_name_placeholder': 'Ім\'я користувача',
     'customers__input_last_name_placeholder': 'Прізвище користувача',
+    'customers__input_city_placeholder': 'Місто',
+    'customers__input_country_placeholder': 'Країна',
+    'customers__input_zip_placeholder': 'Код',
 
     // Add customer popup validation messages
     'add_customer_popup__required_email': 'Введіть email',
     'add_customer_popup__invalid_email': 'Невірний формат',
     'add_customer_popup__required_firstname': 'Введіть ім\'я',
-    'add_customer_popup__required_lastname': 'Введіть прізвище'
+    'add_customer_popup__required_lastname': 'Введіть прізвище',
+
 };

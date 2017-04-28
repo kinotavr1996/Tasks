@@ -10,10 +10,22 @@
             <form (submit)="onSubmit()" novalidate>
                 <custom-input [name]="'email'" #email="ngModel" [(ngModel)]="model.email" [type]="'email'" [label]="'customers__input_email'"
                     [placeholder]="'email'" [page]="'customer-add-popup'" [validator]="validator.isEmailValid(email)"></custom-input>
+
                 <custom-input [name]="'firstname'" #firstname="ngModel" [(ngModel)]="model.firstName" [type]="'text'" [label]="'customers__input_first_name'"
                     [placeholder]="'customers__input_first_name_placeholder'" [page]="'customer-add-popup'" [validator]="validator.isFirstnameValid(firstname)"></custom-input>
+
                 <custom-input [name]="'lastname'" #lastname="ngModel" [(ngModel)]="model.lastName" [type]="'text'" [label]="'customers__input_last_name'"
                     [placeholder]="'customers__input_last_name_placeholder'" [page]="'customer-add-popup'" [validator]="validator.isLastnameValid(lastname)"></custom-input>
+
+                <custom-input [name]="'city'" [(ngModel)]="model.address.city" [type]="'text'" [label]="'customers__input_city_placeholder'"
+                    [placeholder]="'customers__input_city_placeholder'" [page]="'customer-add-popup'"></custom-input>
+
+                <custom-input [name]="'country'" [(ngModel)]="model.address.country" [type]="'text'" [label]="'customers__input_country_placeholder'"
+                    [placeholder]="'customers__input_country_placeholder'" [page]="'customer-add-popup'"></custom-input>
+
+                <custom-input [name]="'postcode'" [(ngModel)]="model.address.postcode" [type]="'text'" [label]="'customers__input_zip_placeholder'"
+                    [placeholder]="'customers__input_zip_placeholder'" [page]="'customer-add-popup'"></custom-input>
+
                 <div class="popup-submit-right">
                     <app-button name="submit" [capture]="'Submit'" [styles]="'size-180 blue'"></app-button>
                 </div>

@@ -45,7 +45,7 @@ namespace CoreWebAPIAndAngular.Repository
         }
         public void AddCustomer(Customer customer)
         {
-            dbContext.Customer.Add(customer);
+            dbContext.Customer.Add(new Customer { FirstName = customer.FirstName, Email = customer.Email, LastName = customer.LastName, Address = new Address { City = customer.Address.City, State = customer.Address.State, Zip = customer.Address.Zip } });
             dbContext.SaveChanges();
         }
         public Customer GetCustomerById(int id)
