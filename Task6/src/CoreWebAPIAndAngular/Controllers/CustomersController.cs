@@ -17,31 +17,16 @@ namespace CoreWebAPIAndAngular.Controllers
         {
             _customers = repo.Customers;
         }
-
-        // GET api/customers
-        //// [HttpGet]
-        // [ProducesResponseType(typeof(List<Customer>), 200)]
-        // [ProducesResponseType(typeof(List<Customer>), 404)]
-        // public ActionResult Get()
-        // {
-        //     if (_customers == null)
-        //     {
-        //        
-        //     }
-        //     return Ok(_customers);
-        // }
-
         // GET api/customers/sortParametr
         [HttpGet("", Name = "GetWithSortParametr")]
         [ProducesResponseType(typeof(List<Customer>), 200)]
         [ProducesResponseType(typeof(List<Customer>), 404)]
-        public ActionResult Get([FromQuery]string sortBy, [FromQuery]string orderBy)
+        public ActionResult Get([FromQuery]string sortBy, [FromQuery]string orderBy, [FromQuery]int limit, [FromQuery]int pageNumber)
         {
             if (_customers != null)
-            {
-                if (string.IsNullOrEmpty(sortBy) || string.IsNullOrEmpty(orderBy))
-                    return Ok(_customers);
-                var cust = new List<Customer>();
+            {                       
+                int _skipPage = pageNumber * limit;
+                IEnumerable<Customer> cust = _customers;
                 switch (sortBy)
                 {
                     case "firstName":
@@ -56,6 +41,7 @@ namespace CoreWebAPIAndAngular.Controllers
                     default:
                         break;
                 }
+                cust = cust.Skip(_skipPage).Take(limit);
                 return Ok(cust);
             }
             else
@@ -65,7 +51,8 @@ namespace CoreWebAPIAndAngular.Controllers
 
 
         }
-
+    
+         
 
         // GET api/customers/1
         [HttpGet("{id}", Name = "GetCustomerRoute")]

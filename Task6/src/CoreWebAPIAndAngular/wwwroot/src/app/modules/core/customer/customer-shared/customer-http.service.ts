@@ -10,9 +10,9 @@ export class CustomerHttpService {
         return this._httpService.get(AppConfig.urls.customers)
             .map(res => res.json());
     }
-    getSortingCustomers(sortBy: string, orderBy: string) {
+    getSortingCustomers(sortBy: string, orderBy: string, limit: number, pageNumber: number) {
         return this._httpService.get(AppConfig.urls.customers
-            + "?sortBy=" + sortBy + "&orderBy=" + orderBy)
+            + "?sortBy=" + sortBy + "&orderBy=" + orderBy + "&limit=" + limit + "&pageNumber=" + pageNumber)
             .map(res => res.json());
     }
     postCustomer(data) {

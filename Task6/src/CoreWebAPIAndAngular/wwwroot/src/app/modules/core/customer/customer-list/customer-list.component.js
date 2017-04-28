@@ -1,90 +1,82 @@
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = require('@angular/core');
-var customer_http_service_1 = require("app/modules/core/customer/customer-shared/customer-http.service");
-var user_model_1 = require("app/shared/models/user.model");
-var paginator_component_1 = require('app/shared/components/controls/paginator/paginator.component');
-var CustomerListComponent = (function () {
-    function CustomerListComponent(_httpService, pagerService) {
-        this._httpService = _httpService;
-        this.pagerService = pagerService;
-        this.isAddVisible = false;
-        this.customers = [];
-        this.sortOrder = 'ASC';
-        this.totalResults = 20;
-        this.elementsPerPage = 5;
-        this.pager = {};
-    }
-    CustomerListComponent.prototype.ngOnInit = function () {
+import { CustomerAddPopupModel } from './../customer-shared/customer-add-popup/customer-add-popup-shared/customer-add-popup.model';
+import { Component, Input, OnInit } from '@angular/core';
+import { CustomerHttpService } from "app/modules/core/customer/customer-shared/customer-http.service";
+import { UserModel } from "app/shared/models/user.model";
+import { PagerService } from 'app/shared/components/controls/paginator/paginator.component'
+
+import { UserAddPopupModel } from "app/modules/core/customer/customer-list/customer-list-shared/customer-user-popup.model";
+
+@Component({
+    templateUrl: './customer-list.component.html',
+    styleUrls: ['./customer-list.component.less'],
+    providers: [CustomerHttpService]
+})
+export class CustomerListComponent implements OnInit {
+    isAddVisible: boolean = false;
+    customers: UserModel[] = [];
+    currentPageOffset: number;
+    sortColumn: string;
+    sortOrder: string = 'ASC';
+    totalResults: number = 20;
+    elementsPerPage: number = 5;
+    pager: any = {};
+    pagedItems: any[];
+
+    constructor(private _httpService: CustomerHttpService, private pagerService: PagerService) { }
+
+    ngOnInit() {
         this.currentPageOffset = 1;
         this.sortColumn = 'firstName';
         this._setPage(1);
-    };
-    CustomerListComponent.prototype.getCustomers = function () {
-        var _this = this;
+    }
+    getCustomers() {
         this._httpService.getCustomers()
-            .subscribe(function (customers) {
-            _this.customers = user_model_1.UserModel.fromJSONArray(customers);
-            _this.totalResults = _this.customers.length;
-            _this.customers = _this.customers.slice(_this.pager.startIndex, _this.pager.endIndex + 1);
-        });
-    };
-    CustomerListComponent.prototype.onAddcustomer = function () {
+            .subscribe(customers => {
+                this.customers = UserModel.fromJSONArray(customers);
+                this.totalResults = this.customers.length;
+                this.customers = this.customers.slice(this.pager.startIndex, this.pager.endIndex + 1);
+            });
+    }
+    onAddcustomer() {
         this.isAddVisible = true;
-    };
-    CustomerListComponent.prototype.handlerSubmit = function (user) {
+    }
+
+    handlerSubmit(user: UserAddPopupModel) {
         this._httpService.postCustomer(user)
-            .subscribe(function (res) {
-            console.log(res);
-        });
-    };
-    CustomerListComponent.prototype.Sort = function (columnName) {
-        var _this = this;
+            .subscribe(res => {
+                console.log(res);
+            });
+    }
+    Sort(columnName: string) {
         if (this.sortOrder == 'ASC') {
             this.sortOrder = "DESC";
-            this._httpService.getSortingCustomers(columnName, this.sortOrder)
-                .subscribe(function (customers) {
-                _this.customers = user_model_1.UserModel.fromJSONArray(customers);
-                _this.customers = _this.customers.slice(_this.pager.startIndex, _this.pager.endIndex + 1);
-            });
+            this.sortColumn = columnName;
+            this._httpService.getSortingCustomers(columnName, this.sortOrder, this.elementsPerPage, this.currentPageOffset)
+                .subscribe(customers => {
+                    this.customers = UserModel.fromJSONArray(customers);
+                });
             console.log(this.customers);
         }
         else {
             this.sortOrder = "ASC";
-            this._httpService.getSortingCustomers(columnName, this.sortOrder)
-                .subscribe(function (customers) {
-                _this.customers = user_model_1.UserModel.fromJSONArray(customers);
-                _this.customers = _this.customers.slice(_this.pager.startIndex, _this.pager.endIndex + 1);
-            });
+            this._httpService.getSortingCustomers(columnName, this.sortOrder, this.elementsPerPage, this.currentPageOffset)
+                .subscribe(customers => {
+                    this.customers = UserModel.fromJSONArray(customers);
+                });
             console.log(this.customers);
         }
-    };
-    CustomerListComponent.prototype._setPage = function (page) {
+
+    }
+
+    private _setPage(page: number) {
         if (page < 1 || page > this.pager.totalPages) {
             return;
         }
         this.currentPageOffset = page;
         this.pager = this.pagerService.getPager(this.totalResults, page, this.elementsPerPage);
-        this.getCustomers();
-    };
-    CustomerListComponent = __decorate([
-        core_1.Component({
-            templateUrl: './customer-list.component.html',
-            styleUrls: ['./customer-list.component.less'],
-            providers: [customer_http_service_1.CustomerHttpService]
-        }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof customer_http_service_1.CustomerHttpService !== 'undefined' && customer_http_service_1.CustomerHttpService) === 'function' && _a) || Object, (typeof (_b = typeof paginator_component_1.PagerService !== 'undefined' && paginator_component_1.PagerService) === 'function' && _b) || Object])
-    ], CustomerListComponent);
-    return CustomerListComponent;
-    var _a, _b;
-}());
-exports.CustomerListComponent = CustomerListComponent;
-//# sourceMappingURL=customer-list.component.js.map
+        this._httpService.getSortingCustomers(this.sortColumn, this.sortOrder, this.elementsPerPage, page)
+            .subscribe(customers => {
+                this.customers = UserModel.fromJSONArray(customers);
+            });
+    }
+}
