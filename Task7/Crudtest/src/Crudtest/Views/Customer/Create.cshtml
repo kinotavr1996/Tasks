@@ -1,0 +1,19 @@
+﻿@model Crudtest.DTO.CustomerDTO
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form asp-controller="Customer" asp-action="Create" method="post">
+    <div class="form-group">       
+        @Html.EditorFor(m => m.FirstName, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "First Name", @required = "true", @maxlength = "128" } })
+    </div>
+    <div class="form-group">
+        @Html.EditorFor(m => m.LastName, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "Last Name", @maxlength = "128" } })
+    </div> 
+    <div class="form-group">
+        @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "Email", @maxlength = "128" } })
+    </div> 
+       
+     
+    <input type="submit" value="Submit" class="btn btn-default" />      
+</form>

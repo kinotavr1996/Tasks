@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Crudtest.Models
+namespace Crudtest.ViewModel
 {
-    public class Product
+    public class ProductListVM
     {
         public int Id { get; set; }
         public string ProductName { get; set; }
         public double Price { get; set; }
-        public ICollection<ProductOrder> ProductOrders { get; set; }
     }
 }

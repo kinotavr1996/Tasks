@@ -1,0 +1,66 @@
+﻿@model Crudtest.PaginatedList<Crudtest.ViewModel.ProductListVM>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-currentFilter="@ViewData["CurrentFilter"]" asp-route-orderBy="@ViewData["OrderBy"]" asp-route-sortOrder="productname" asp-route-currentFilter="@ViewData["CurrentFilter"]" >Product name</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-currentFilter="@ViewData["CurrentFilter"]" asp-route-orderBy="@ViewData["OrderBy"]"  asp-route-sortOrder="price" asp-route-currentFilter="@ViewData["CurrentFilter"]" >Price</a>
+            </th>
+          
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+              
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>              
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-page="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   asp-route-orderBy="@ViewData["CurrentOrderBy"]"
+   class="btn btn-default @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-page="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   asp-route-orderBy="@ViewData["CurrentOrderBy"]"
+   class="btn btn-default @nextDisabled">
+    Next
+</a>

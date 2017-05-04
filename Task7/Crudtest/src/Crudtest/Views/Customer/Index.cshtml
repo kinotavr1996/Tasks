@@ -1,9 +1,12 @@
-﻿@model Crudtest.PaginatedList<Crudtest.ViewModel.CustomerVM>
+﻿@model Crudtest.PaginatedList<Crudtest.ViewModel.CustomerListVM>
 @{
     ViewData["Title"] = "Home Page";
 }
 <h2>Index</h2>
 
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
 <form asp-action="Index" method="get">
     <div class="form-actions no-color">
         <p>
@@ -24,16 +27,8 @@
             </th>
             <th>
                 <a asp-action="Index" asp-route-currentFilter="@ViewData["CurrentFilter"]" asp-route-orderBy="@ViewData["OrderBy"]" asp-route-sortOrder="email" asp-route-currentFilter="@ViewData["CurrentFilter"]">E-mail</a>
-            </th>
-            <th>
-                <a asp-action="Index" asp-route-currentFilter="@ViewData["CurrentFilter"]" asp-route-orderBy="@ViewData["OrderBy"]" asp-route-sortOrder="productname" asp-route-currentFilter="@ViewData["CurrentFilter"]" >Product name</a>
-            </th>
-            <th>
-                <a asp-action="Index" asp-route-currentFilter="@ViewData["CurrentFilter"]" asp-route-orderBy="@ViewData["OrderBy"]"  asp-route-sortOrder="price" asp-route-currentFilter="@ViewData["CurrentFilter"]" >Price</a>
-            </th>
-            <th>
-                <a asp-action="Index" asp-route-currentFilter="@ViewData["CurrentFilter"]" asp-route-orderBy="@ViewData["OrderBy"]" asp-route-sortOrder="orderdate" asp-route-currentFilter="@ViewData["CurrentFilter"]">Order date</a>
-            </th>
+            </th>        
+         
 
             <th></th>
         </tr>
@@ -50,17 +45,12 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Email)
-                </td>
+                </td>             
                 <td>
-                    @Html.DisplayFor(modelItem => item.ProductName)
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.OrderDate)
-                </td>
-               
             </tr>
         }
     </tbody>

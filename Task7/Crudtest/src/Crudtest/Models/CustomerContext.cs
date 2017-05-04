@@ -18,8 +18,10 @@ namespace Crudtest.Models
         {
             modelBuilder.Entity<ProductOrder>().HasKey(x => new { x.ProductId, x.OrderId});
         }
-        public DbSet<Order> Address { get; set; }
+        public DbSet<Product> Products { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<ProductOrder> ProductOrder { get; set; }
+
         public DbSet<Order> Orders { get; set; }
 
     }

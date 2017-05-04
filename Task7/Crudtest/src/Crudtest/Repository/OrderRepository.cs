@@ -15,9 +15,9 @@ namespace Crudtest.Repository
             dbContext = context;
         }
 
-        public List<Customer> GetOrders()
+        public List<Order> GetOrders()
         {
-            return dbContext.Customers.ToList();
+            return dbContext.Orders.ToList();
         }
 
         public void AddOrder(Order order)
@@ -27,16 +27,16 @@ namespace Crudtest.Repository
         }
         public Order GetOrderById(int id)
         {
-            return dbContext.Orders.Where(x => x.OrderId == id).FirstOrDefault();
+            return dbContext.Orders.Where(x => x.Id == id).FirstOrDefault();
         }
-        public void Delete(int id)
+        public void DeleteOrder(int id)
         {
-            dbContext.Orders.Remove(dbContext.Orders.Single(x => x.OrderId == id));
+            dbContext.Orders.Remove(dbContext.Orders.Single(x => x.Id == id));
             dbContext.SaveChanges();
         }
-        public void EditCustomer(Order order)
+        public void EditOrder(Order order)
         {
-            var _order = dbContext.Orders.FirstOrDefault(x => x.OrderId == order.OrderId);
+            var _order = dbContext.Orders.FirstOrDefault(x => x.Id == order.Id);
             _order.OrderDate = order.OrderDate;
             dbContext.SaveChanges();
         }
