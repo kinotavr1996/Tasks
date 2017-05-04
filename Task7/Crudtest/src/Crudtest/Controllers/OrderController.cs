@@ -43,12 +43,8 @@ namespace Crudtest.Controllers
 
             return View(order);
         }
-        public async Task<IActionResult> Edit(int? id, [Bind("OrderDate")] OrderDTO order)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        public async Task<IActionResult> Edit(int id, [Bind("OrderDate")] OrderDTO order)
+        {     
             if (ModelState.IsValid)
             {
                 _orderRepository.EditOrder(new Order { OrderDate = order.OrderDate });
@@ -56,13 +52,9 @@ namespace Crudtest.Controllers
             }
             return View(order);
         }
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-            _orderRepository.DeleteOrder((int)id);
+        public async Task<IActionResult> Delete(int id)
+        {               
+            _orderRepository.DeleteOrder(id);
             return RedirectToAction("Index");
 
 

@@ -26,6 +26,7 @@ namespace Crudtest.Controllers
             ViewData["CurrentFilter"] = searchString;
             ViewData["CurrentSort"] = sortOrder;
             ViewData["CurrentOrderBy"] = orderBy;
+            int pageSize = 4;
             if (searchString != null)
             {
                 page = 1;
@@ -53,8 +54,7 @@ namespace Crudtest.Controllers
                     break;
 
             }
-            ViewData["OrderBy"] = orderBy == "ASC" ? "DESC" : "ASC";
-            int pageSize = 4;
+            ViewData["OrderBy"] = orderBy == "ASC" ? "DESC" : "ASC";          
             foreach (var customer in customers)
             {
                 custVM.Add(new CustomerListVM { Id = customer.Id, FirstName = customer.FirstName, LastName = customer.LastName, Email = customer.Email });
@@ -84,32 +84,23 @@ namespace Crudtest.Controllers
         {
             var customer = _customerRepository.GetCustomerById(id);
 
-            return View(new CustomerDTO { FirstName = customer.FirstName,LastName = customer.LastName, Email = customer.Email});
+            return View(new CustomerDTO { FirstName = customer.FirstName, LastName = customer.LastName, Email = customer.Email });
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(int? id, [Bind("FirstName,LastName,Email")] CustomerDTO customer)
+        public async Task<IActionResult> Edit(int id, [Bind("FirstName,LastName,Email")] CustomerDTO customer)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            
             if (ModelState.IsValid)
             {
-                _customerRepository.EditCustomer(new Customer { Id = (int)id, FirstName = customer.FirstName, LastName = customer.LastName, Email = customer.Email });
+                _customerRepository.EditCustomer(new Customer { Id = id, FirstName = customer.FirstName, LastName = customer.LastName, Email = customer.Email });
                 return RedirectToAction("Index");
             }
             return View(customer);
         }
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-            _customerRepository.Delete((int)id);
+        public async Task<IActionResult> Delete(int id)
+        {               
+            _customerRepository.Delete(id);
             return RedirectToAction("Index");
-
-
         }
     }
 }

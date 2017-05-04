@@ -82,26 +82,18 @@ namespace Crudtest.Controllers
             return View(new ProductDTO { Price = product.Price, ProductName = product.ProductName });
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(int? id, [Bind("Price,ProductName")] ProductDTO product)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        public async Task<IActionResult> Edit(int id, [Bind("Price,ProductName")] ProductDTO product)
+        {               
             if (ModelState.IsValid)
             {
-                _productRepository.EditProduct(new Product { Id = (int)id, Price = product.Price, ProductName = product.ProductName });
+                _productRepository.EditProduct(new Product { Id = id, Price = product.Price, ProductName = product.ProductName });
                 return RedirectToAction("Index");
             }
             return View(product);
         }
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-            _productRepository.DeleteProduct((int)id);
+        public async Task<IActionResult> Delete(int id)
+        {            
+            _productRepository.DeleteProduct(id);
             return RedirectToAction("Index");
 
 
