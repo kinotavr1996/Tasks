@@ -85,7 +85,7 @@ namespace Crudtest.Controllers
             return View(customer);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("FirstName,LastName,Email")] Customer customer)
+        public async Task<IActionResult> Edit(Customer customer)
         {
 
             if (ModelState.IsValid)
