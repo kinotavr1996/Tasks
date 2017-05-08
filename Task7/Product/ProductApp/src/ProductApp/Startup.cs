@@ -72,7 +72,7 @@ namespace Crudtest
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
             DbInitializer.Initialize(context);
-            context.Database.MigrateAsync();
+           
         }
     }
 }
