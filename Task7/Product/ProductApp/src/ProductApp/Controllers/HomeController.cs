@@ -2,7 +2,7 @@
 using Crudtest.Repository;
 using System.Threading.Tasks;
 using System;
-using System.Linq;    
+using System.Linq;
 using System.Collections.Generic;
 using Crudtest.Models;
 using Crudtest.DTO;
@@ -52,7 +52,7 @@ namespace Crudtest.Controllers
 
             }
             ViewData["OrderBy"] = orderBy == "ASC" ? "DESC" : "ASC";
-            int pageSize = 4;           
+            int pageSize = 4;
             return View(await PaginatedList<Product>.CreateAsync(products, page ?? 1, pageSize));
         }
         [HttpGet]

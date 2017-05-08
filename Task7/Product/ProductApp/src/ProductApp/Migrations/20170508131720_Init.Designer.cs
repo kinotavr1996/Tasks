@@ -8,8 +8,8 @@ using Crudtest.Models;
 namespace WebApplication1.Migrations
 {
     [DbContext(typeof(CustomerContext))]
-    [Migration("20170508104704_Initial")]
-    partial class Initial
+    [Migration("20170508131720_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,13 +22,17 @@ namespace WebApplication1.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<double>("Price");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("Money")
+                        .HasMaxLength(255);
 
-                    b.Property<string>("ProductName");
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
+                    b.ToTable("Product");
                 });
         }
     }

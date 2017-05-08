@@ -8,8 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Crudtest.Models;
+using Crudtest.Repository; 
 using Microsoft.EntityFrameworkCore;
-using Crudtest.Repository;
 
 namespace Crudtest
 {
