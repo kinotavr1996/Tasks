@@ -8,8 +8,8 @@ using Crudtest.Models;
 namespace WebApplication1.Migrations
 {
     [DbContext(typeof(CustomerContext))]
-    [Migration("20170508095135_Init_migration")]
-    partial class Init_migration
+    [Migration("20170508101203_Init2")]
+    partial class Init2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

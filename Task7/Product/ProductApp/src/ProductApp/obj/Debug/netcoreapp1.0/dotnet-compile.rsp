@@ -1,5 +1,5 @@
---temp-output:C:\Users\Oleh\Desktop\New folder\ProductApp\src\ProductApp\obj\Debug\netcoreapp1.0\
---out:C:\Users\Oleh\Desktop\New folder\ProductApp\src\ProductApp\bin\Debug\netcoreapp1.0\ProductApp.dll
+--temp-output:D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\obj\Debug\netcoreapp1.0\
+--out:D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\bin\Debug\netcoreapp1.0\ProductApp.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -204,17 +204,17 @@
 --reference:C:\Users\Oleh\.nuget\packages\System.Threading.Timer\4.3.0\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Oleh\.nuget\packages\System.Xml.ReaderWriter\4.3.0\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Oleh\.nuget\packages\System.Xml.XDocument\4.3.0\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"C:\Users\Oleh\Desktop\New folder\ProductApp\src\ProductApp\obj\Debug\netcoreapp1.0\ProductAppdotnet-compile.deps.json",ProductApp.deps.json
-C:\Users\Oleh\Desktop\New folder\ProductApp\src\ProductApp\Program.cs
-C:\Users\Oleh\Desktop\New folder\ProductApp\src\ProductApp\Startup.cs
-C:\Users\Oleh\Desktop\New folder\ProductApp\src\ProductApp\Controllers\HomeController.cs
-C:\Users\Oleh\Desktop\New folder\ProductApp\src\ProductApp\DTO\ProductDTO.cs
-C:\Users\Oleh\Desktop\New folder\ProductApp\src\ProductApp\Migrations\20170508095135_Init_migration.cs
-C:\Users\Oleh\Desktop\New folder\ProductApp\src\ProductApp\Migrations\20170508095135_Init_migration.Designer.cs
-C:\Users\Oleh\Desktop\New folder\ProductApp\src\ProductApp\Migrations\CustomerContextModelSnapshot.cs
-C:\Users\Oleh\Desktop\New folder\ProductApp\src\ProductApp\Models\CustomerContext.cs
-C:\Users\Oleh\Desktop\New folder\ProductApp\src\ProductApp\Models\DbInitializer.cs
-C:\Users\Oleh\Desktop\New folder\ProductApp\src\ProductApp\Models\Product.cs
-C:\Users\Oleh\Desktop\New folder\ProductApp\src\ProductApp\Repository\IProductRepository.cs
-C:\Users\Oleh\Desktop\New folder\ProductApp\src\ProductApp\Repository\ProductRepository.cs
-C:\Users\Oleh\Desktop\New folder\ProductApp\src\ProductApp\ViewModel\PaginatedList.cs
+--resource:"D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\obj\Debug\netcoreapp1.0\ProductAppdotnet-compile.deps.json",ProductApp.deps.json
+D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Program.cs
+D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Startup.cs
+D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Controllers\HomeController.cs
+D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\DTO\ProductDTO.cs
+D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Migrations\20170508101203_Init2.cs
+D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Migrations\20170508101203_Init2.Designer.cs
+D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Migrations\CustomerContextModelSnapshot.cs
+D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Models\CustomerContext.cs
+D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Models\DbInitializer.cs
+D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Models\Product.cs
+D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Repository\IProductRepository.cs
+D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Repository\ProductRepository.cs
+D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\ViewModel\PaginatedList.cs

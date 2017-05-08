@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace WebApplication1.Migrations
 {
-    public partial class Init_migration : Migration
+    public partial class Init2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
