@@ -214,6 +214,8 @@ D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Contr
 D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\DTO\ProductDTO.cs
 D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Migrations\20170508131720_Init.cs
 D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Migrations\20170508131720_Init.Designer.cs
+D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Migrations\20170508132843_Nullable.cs
+D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Migrations\20170508132843_Nullable.Designer.cs
 D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Migrations\CustomerContextModelSnapshot.cs
 D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Models\CustomerContext.cs
 D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Models\DbInitializer.cs

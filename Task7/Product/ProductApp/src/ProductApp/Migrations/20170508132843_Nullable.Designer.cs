@@ -8,9 +8,10 @@ using Crudtest.Models;
 namespace WebApplication1.Migrations
 {
     [DbContext(typeof(CustomerContext))]
-    partial class CustomerContextModelSnapshot : ModelSnapshot
+    [Migration("20170508132843_Nullable")]
+    partial class Nullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1")
@@ -27,7 +28,6 @@ namespace WebApplication1.Migrations
 
                     b.Property<string>("ProductName")
                         .IsRequired()
-                        .HasColumnName("Name")
                         .HasMaxLength(255);
 
                     b.HasKey("Id");

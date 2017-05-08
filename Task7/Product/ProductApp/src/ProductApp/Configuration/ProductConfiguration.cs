@@ -11,8 +11,8 @@ namespace Crudtest.Configuration
             entity.ToTable("Product");
 
             entity.HasKey(c => c.Id);
-            entity.Property(c => c.ProductName).HasMaxLength(255).IsRequired();
-            entity.Property(c => c.Price).HasMaxLength(255).HasColumnType("Money");
+            entity.Property(c => c.ProductName).HasMaxLength(255).IsRequired().HasColumnName("Name");
+            entity.Property(c => c.Price).HasMaxLength(255).HasColumnType("Money").IsRequired(false);
                                                                            
             // etc.
         }
