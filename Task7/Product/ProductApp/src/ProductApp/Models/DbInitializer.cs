@@ -11,8 +11,7 @@ namespace Crudtest.Models
         public static void Initialize(CustomerContext context)
         {
             context.Database.Migrate();
-            context.SaveChanges();
-
+          
         }
     }
 }
