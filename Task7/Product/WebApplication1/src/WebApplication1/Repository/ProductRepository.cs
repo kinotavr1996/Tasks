@@ -1,6 +1,5 @@
 ﻿using Crudtest.DTO;
-using Crudtest.Models;
-using Crudtest.ViewModel;
+using Crudtest.Models;   
 using System;
 using System.Collections.Generic;
 using System.Linq;

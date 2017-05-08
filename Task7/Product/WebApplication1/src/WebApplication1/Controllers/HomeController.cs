@@ -2,8 +2,7 @@
 using Crudtest.Repository;
 using System.Threading.Tasks;
 using System;
-using System.Linq;
-using Crudtest.ViewModel;
+using System.Linq;    
 using System.Collections.Generic;
 using Crudtest.Models;
 using Crudtest.DTO;
@@ -37,7 +36,7 @@ namespace Crudtest.Controllers
             }
 
             var products = _productRepository.GetProducts();
-            List<ProductListVM> prodVM = new List<ProductListVM>();
+            List<Product> prodVM = new List<Product>();
             if (!String.IsNullOrEmpty(searchString))
             {
                 products = products.Where(s => s.ProductName.ToUpper().Contains(searchString.ToUpper())).ToList();
@@ -53,12 +52,8 @@ namespace Crudtest.Controllers
 
             }
             ViewData["OrderBy"] = orderBy == "ASC" ? "DESC" : "ASC";
-            int pageSize = 4;
-            foreach (var product in products)
-            {
-                prodVM.Add(new ProductListVM { Id = product.Id, Price = product.Price, ProductName = product.ProductName });
-            }
-            return View(await PaginatedList<ProductListVM>.CreateAsync(prodVM, page ?? 1, pageSize));
+            int pageSize = 4;           
+            return View(await PaginatedList<Product>.CreateAsync(products, page ?? 1, pageSize));
         }
         [HttpGet]
         public async Task<IActionResult> Create()
