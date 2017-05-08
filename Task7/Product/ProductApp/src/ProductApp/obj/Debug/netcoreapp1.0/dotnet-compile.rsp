@@ -209,9 +209,6 @@ D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Progr
 D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Startup.cs
 D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Controllers\HomeController.cs
 D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\DTO\ProductDTO.cs
-D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Migrations\20170508101203_Init2.cs
-D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Migrations\20170508101203_Init2.Designer.cs
-D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Migrations\CustomerContextModelSnapshot.cs
 D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Models\CustomerContext.cs
 D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Models\DbInitializer.cs
 D:\testing\examples\tableApp\Tasks\Task7\Product\ProductApp\src\ProductApp\Models\Product.cs
