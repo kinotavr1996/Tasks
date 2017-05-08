@@ -1,0 +1,27 @@
+﻿@model CustomerApp.Model.Customer
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form asp-controller="Home" asp-action="Create" method="post">
+    <div class="form-group">       
+        <input asp-for="FirstName" placeholder="First name" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input asp-for="LastName" placeholder="Last name" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div> 
+    <div class="form-group">
+        <input asp-for="Email" placeholder="E-mail" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div> 
+    <div class="form-group">       
+        <input asp-for="PhoneNumber"  placeholder="Phone number" class="form-control" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div> 
+
+       
+     
+    <input type="submit" value="Submit" class="btn btn-default" />      
+</form>
