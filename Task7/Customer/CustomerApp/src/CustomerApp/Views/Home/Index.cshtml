@@ -1,6 +1,6 @@
-﻿@model CustomerApp.ViewModel.PaginatedList<CustomerApp.Model.Customer>
+﻿@model CustomerApp.ViewModel.CustomerListViewModel
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home Page"; 
 }
 <h2>Customers</h2>
 
@@ -10,7 +10,7 @@
 <form asp-action="Index" method="get">
     <div class="form-actions no-color">
         <p>
-            Find by first name: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            Find by first name: <input type="text" name="SearchString" value="@Model.Filter" />
             <input type="submit" value="Search" class="btn btn-default" /> |
             <a asp-action="Index">Back to Full List</a>
         </p>
@@ -18,32 +18,27 @@
 </form>
 <table class="table">
     <thead>
-        <tr>
+        <tr>            
             <th>
-                <a asp-action="Index" asp-route-currentFilter="@ViewData["CurrentFilter"]" asp-route-orderBy="@ViewData["OrderBy"]" asp-route-sortOrder="lastName" asp-route-currentFilter="@ViewData["CurrentFilter"]">Last name</a>
+                <a asp-action="Index" asp-route-currentFilter="@Model.Filter" asp-route-orderBy="@Model.Order.Destination" asp-route-sortOrder="fullname">Fullname</a>
             </th>
             <th>
-                <a asp-action="Index" asp-route-currentFilter="@ViewData["CurrentFilter"]" asp-route-orderBy="@ViewData["OrderBy"]" asp-route-sortOrder="firstName" asp-route-currentFilter="@ViewData["CurrentFilter"]">First name</a>
-            </th>
-            <th>
-                <a asp-action="Index" asp-route-currentFilter="@ViewData["CurrentFilter"]" asp-route-orderBy="@ViewData["OrderBy"]" asp-route-sortOrder="email" asp-route-currentFilter="@ViewData["CurrentFilter"]">E-mail</a>
+                <a asp-action="Index" asp-route-currentFilter="@Model.Filter" asp-route-orderBy="@Model.Order.Destination" asp-route-sortOrder="email">E-mail</a>
             </th>        
             <th>
-                <a asp-action="Index" asp-route-currentFilter="@ViewData["CurrentFilter"]" asp-route-orderBy="@ViewData["OrderBy"]" asp-route-sortOrder="phoneNumber" asp-route-currentFilter="@ViewData["CurrentFilter"]">Phone</a>
+                <a asp-action="Index" asp-route-currentFilter="@Model.Filter" asp-route-orderBy="@Model.Order.Destination" asp-route-sortOrder="phoneNumber">Phone</a>
             </th>
 
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model.Items)
         {
             <tr>
+                
                 <td>
-                    @Html.DisplayFor(modelItem => item.LastName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FirstName)
+                    @Html.DisplayFor(modelItem => item.FullName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Email)
@@ -67,18 +62,18 @@
 }
 
 <a asp-action="Index"
-   asp-route-sortOrder="@ViewData["CurrentSort"]"
-   asp-route-page="@(Model.PageIndex - 1)"
-   asp-route-currentFilter="@ViewData["CurrentFilter"]"
-   asp-route-orderBy="@ViewData["CurrentOrderBy"]"
+   asp-route-sortOrder="@Model.Order.Destination"
+   asp-route-page="@(Model.Page - 1)"
+   asp-route-currentFilter="@Model.Filter"
+   asp-route-orderBy="@Model.Filter"
    class="btn btn-default @prevDisabled">
     Previous
 </a>
 <a asp-action="Index"
-   asp-route-sortOrder="@ViewData["CurrentSort"]"
-   asp-route-page="@(Model.PageIndex + 1)"
-   asp-route-currentFilter="@ViewData["CurrentFilter"]"
-   asp-route-orderBy="@ViewData["CurrentOrderBy"]"
+   asp-route-sortOrder="@Model.Order.Destination"
+   asp-route-page="@(Model.Page + 1)"
+   asp-route-currentFilter="@Model.Filter"
+   asp-route-orderBy="@Model.Filter"
    class="btn btn-default @nextDisabled">
     Next
 </a>

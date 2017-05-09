@@ -21,43 +21,51 @@ namespace Crudtest.Controllers
         }
         public async Task<IActionResult> Index(string sortOrder, string orderBy, string searchString, string currentFilter, int? page)
         {
-            orderBy = String.IsNullOrEmpty(orderBy) ? "ASC" : orderBy;
-            ViewData["CurrentFilter"] = searchString;
-            ViewData["CurrentSort"] = sortOrder;
-            ViewData["CurrentOrderBy"] = orderBy;
-            int pageSize = 4;
-            if (searchString != null)
+         
+            CustomerListViewModel customerList = new CustomerListViewModel();
+      
+            customerList.Filter = searchString;
+            customerList.Order.Column = sortOrder;
+            customerList.Order.Destination = String.IsNullOrEmpty(orderBy) ? "ASC" : orderBy;
+            
+            if (customerList.Filter != null)
             {
-                page = 1;
+                customerList.Page = 1;
             }
             else
             {
-                searchString = currentFilter;
+                customerList.Filter = currentFilter;
             }
-            var customers = _customerRepository.GetCustomers();           
-            if (!String.IsNullOrEmpty(searchString))
+            var customers = _customerRepository.GetCustomers(); 
+            foreach(var c in customers)
             {
-                customers = customers.Where(s => s.FirstName.ToUpper().Contains(searchString.ToUpper())).ToList();
+                customerList.Items.Add(new CustomerGridModel { Id= c.Id, FullName = $"{c.FirstName} {c.LastName}", Email = c.Email, PhoneNumber = c.PhoneNumber });
+            }          
+            if (!String.IsNullOrEmpty(customerList.Filter))
+            {
+                customerList.Items = customerList.Items.Where(s => s.FullName.ToUpper().Contains(customerList.Filter.ToUpper())).ToList();
             }
-            switch (sortOrder)
+            switch (customerList.Order.Column)
             {
-                case "firstName":
-                    customers = orderBy == "ASC" ? customers.OrderBy(s => s.FirstName).ToList() : customers.OrderByDescending(s => s.FirstName).ToList();
-                    break;
-                case "lastName":
-                    customers = orderBy == "ASC" ? customers.OrderBy(s => s.LastName).ToList() : customers.OrderByDescending(s => s.LastName).ToList();
+                case "fullName":
+                    customerList.Items = customerList.Order.Destination == "ASC" ? customerList.Items.OrderBy(s => s.Email).ToList() : customerList.Items.OrderByDescending(s => s.Email).ToList();
                     break;
                 case "email":
-                    customers = orderBy == "ASC" ? customers.OrderBy(s => s.Email).ToList() : customers.OrderByDescending(s => s.Email).ToList();
+                    customerList.Items = customerList.Order.Destination == "ASC" ? customerList.Items.OrderBy(s => s.Email).ToList() : customerList.Items.OrderByDescending(s => s.Email).ToList();
                     break;
                 case "phoneNumber":
-                    customers = orderBy == "ASC" ? customers.OrderBy(s => s.PhoneNumber).ToList() : customers.OrderByDescending(s => s.PhoneNumber).ToList();
+                    customerList.Items = customerList.Order.Destination == "ASC" ? customerList.Items.OrderBy(s => s.PhoneNumber).ToList() : customerList.Items.OrderByDescending(s => s.PhoneNumber).ToList();
                     break;
-
+                default:
+                    customerList.Items = customerList.Order.Destination == "ASC" ? customerList.Items.OrderBy(s => s.Email).ToList() : customerList.Items.OrderByDescending(s => s.Email).ToList();
+                    break;
             }
-            ViewData["OrderBy"] = orderBy == "ASC" ? "DESC" : "ASC";
-            
-            return View(await PaginatedList<Customer>.CreateAsync(customers, page ?? 1, pageSize));
+
+            customerList.Order.Destination = customerList.Order.Destination == "ASC" ? "DESC" : "ASC";
+            await customerList.CreateAsync(customerList.Items, customerList.Page, customerList.PageSize);
+
+            return View(customerList);
+         
         }
 
         [HttpGet]
@@ -67,7 +75,7 @@ namespace Crudtest.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("FirstName,LastName,Email,PhoneNumber")] Customer customer)
+        public async Task<IActionResult> Create([Bind("FirstName,LastName,Email,PhoneNumber")] CustomerCreateModel customer)
         {
             if (ModelState.IsValid)
             {
@@ -82,15 +90,15 @@ namespace Crudtest.Controllers
         {
             var customer = _customerRepository.GetCustomerById(id);
 
-            return View(customer);
+            return View(new CustomerEditModel { FirstName = customer.FirstName, LastName = customer.LastName, Email = customer.Email, PhoneNumber = customer.PhoneNumber });
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(Customer customer)
+        public async Task<IActionResult> Edit([Bind("FirstName,LastName,Email,PhoneNumber")] CustomerEditModel customer)
         {
 
             if (ModelState.IsValid)
             {
-                _customerRepository.EditCustomer(customer);
+                _customerRepository.EditCustomer(new Customer { FirstName = customer.FirstName, LastName = customer.LastName, Email = customer.Email, PhoneNumber = customer.PhoneNumber });
                 return RedirectToAction("Index");
             }
             return View(customer);
