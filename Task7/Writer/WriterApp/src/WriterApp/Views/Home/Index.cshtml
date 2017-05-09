@@ -20,10 +20,10 @@
     <thead>
         <tr>
             <th>
-                <a asp-action="Index" asp-route-currentFilter="@Model.Filter" asp-route-orderBy="@((Model.Order.Direction == "ASC" && Model.Order.Column == "fullname") ? "DESC" : "ASC")" asp-route-sortOrder="fullname">Fullname</a>
+                <a asp-action="Index" asp-route-currentFilter="@Model.Filter" asp-route-direction="@((Model.Order.Direction == "ASC" && Model.Order.Column == "fullname") ? "DESC" : "ASC")" asp-route-sortOrder="fullname">Fullname</a>
             </th>
             <th>
-                <a asp-action="Index" asp-route-currentFilter="@Model.Filter" asp-route-orderBy="@((Model.Order.Direction == "ASC" && Model.Order.Column == "date") ? "DESC" : "ASC")" asp-route-sortOrder="date">Date of birth</a>
+                <a asp-action="Index" asp-route-currentFilter="@Model.Filter" asp-route-direction="@((Model.Order.Direction == "ASC" && Model.Order.Column == "date") ? "DESC" : "ASC")" asp-route-sortOrder="date">Date of birth</a>
             </th>
             <th>
                 <span>Biography</span>

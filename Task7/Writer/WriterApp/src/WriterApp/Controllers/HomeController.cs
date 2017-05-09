@@ -30,7 +30,7 @@ namespace WriterApp.Controllers
             var writers = _writerRepository.GetWritersWithParametrs(writerList.PageSize, writerList.Filter, writerList.Order.Direction, writerList.Order.Column, writerList.Page); 
             foreach (var c in writers)
             {
-                writerList.Items.Add(new WriterGridModel { Id = c.Id, FullName = $"{c.FirstName} {c.LastName}", DateOfBirth = c.DateOfBirth, Biography = c.Biography });
+                writerList.Items.Add(new WriterGridModel { Id = c.Id, FullName = $"{c.LastName} {c.FirstName}", DateOfBirth = c.DateOfBirth, Biography = c.Biography });
             }
             writerList.TotalPages = (int)Math.Ceiling(writers.TotalCount / (double)writerList.PageSize);
             return View(writerList);    

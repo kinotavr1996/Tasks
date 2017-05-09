@@ -27,13 +27,13 @@ namespace WriterApp.Repository
             switch (sortBy)
             {
                 case "fullname":
-                    query = direction == "ASC" ? query.OrderBy(s => s.LastName) : query.OrderByDescending(s => s.LastName);
+                    query = direction == "ASC" ? query.OrderBy(s => s.LastName).ThenBy(s => s.FirstName) : query.OrderByDescending(s => s.LastName).ThenByDescending(s => s.FirstName);
                     break;
                 case "date":
                     query = direction == "ASC" ? query.OrderBy(s => s.DateOfBirth) : query.OrderByDescending(s => s.DateOfBirth);
                     break;              
                 default:
-                    query = direction == "ASC" ? query.OrderBy(s => s.LastName) : query.OrderByDescending(s => s.LastName);
+                    query = direction == "ASC" ? query.OrderBy(s => s.LastName).ThenBy(s => s.FirstName) : query.OrderByDescending(s => s.LastName).ThenByDescending(s => s.FirstName);
                     break;
             }
             return new PagedList<Writer>(query, page, pageSize);

@@ -16,7 +16,7 @@ namespace WriterApp.ViewModel
         public string LastName { get; set; }
 
         [Required]
-        public DateTime? DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
         [StringLength(int.MaxValue)]
         public string Biography { get; set; }

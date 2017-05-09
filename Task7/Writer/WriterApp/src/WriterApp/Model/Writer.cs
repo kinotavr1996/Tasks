@@ -6,19 +6,9 @@ namespace WriterApp.Model
     public class Writer
     {
         public int Id { get; set; }
-
-        [Required]
-        [StringLength(256)]
         public string FirstName { get; set; }
-
-        [Required]
-        [StringLength(256)]
         public string LastName { get; set; }
-
-        [Required]
-        public DateTime? DateOfBirth { get; set; }
-
-        [StringLength(int.MaxValue)]
+        public DateTime DateOfBirth { get; set; }
         public string Biography { get; set; }
 
     }
