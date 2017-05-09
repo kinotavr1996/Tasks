@@ -27,7 +27,8 @@ namespace Crudtest.Controllers
             customerList.Filter = searchString;
             customerList.Order.Column = sortOrder;
             customerList.Order.Destination = String.IsNullOrEmpty(orderBy) ? "ASC" : orderBy;
-            
+            customerList.TotalPages = (int)Math.Ceiling(_customerRepository.GetCustomers().Count() / (double)customerList.PageSize);
+            customerList.Page = page ?? 1;
             if (customerList.Filter != null)
             {
                 customerList.Page = 1;
@@ -36,8 +37,9 @@ namespace Crudtest.Controllers
             {
                 customerList.Filter = currentFilter;
             }
-            var customers = _customerRepository.GetCustomers(); 
-            foreach(var c in customers)
+            var customers = _customerRepository.GetCustomersWithParametrs(customerList.PageSize, customerList.Order.Destination, customerList.Order.Column, customerList.Page);
+
+            foreach (var c in customers)
             {
                 customerList.Items.Add(new CustomerGridModel { Id= c.Id, FullName = $"{c.FirstName} {c.LastName}", Email = c.Email, PhoneNumber = c.PhoneNumber });
             }          
@@ -45,24 +47,8 @@ namespace Crudtest.Controllers
             {
                 customerList.Items = customerList.Items.Where(s => s.FullName.ToUpper().Contains(customerList.Filter.ToUpper())).ToList();
             }
-            switch (customerList.Order.Column)
-            {
-                case "fullName":
-                    customerList.Items = customerList.Order.Destination == "ASC" ? customerList.Items.OrderBy(s => s.Email).ToList() : customerList.Items.OrderByDescending(s => s.Email).ToList();
-                    break;
-                case "email":
-                    customerList.Items = customerList.Order.Destination == "ASC" ? customerList.Items.OrderBy(s => s.Email).ToList() : customerList.Items.OrderByDescending(s => s.Email).ToList();
-                    break;
-                case "phoneNumber":
-                    customerList.Items = customerList.Order.Destination == "ASC" ? customerList.Items.OrderBy(s => s.PhoneNumber).ToList() : customerList.Items.OrderByDescending(s => s.PhoneNumber).ToList();
-                    break;
-                default:
-                    customerList.Items = customerList.Order.Destination == "ASC" ? customerList.Items.OrderBy(s => s.Email).ToList() : customerList.Items.OrderByDescending(s => s.Email).ToList();
-                    break;
-            }
-
-            customerList.Order.Destination = customerList.Order.Destination == "ASC" ? "DESC" : "ASC";
-            await customerList.CreateAsync(customerList.Items, customerList.Page, customerList.PageSize);
+          
+            customerList.Order.Destination = customerList.Order.Destination == "ASC" ? "DESC" : "ASC";          
 
             return View(customerList);
          

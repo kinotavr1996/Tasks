@@ -23,15 +23,7 @@ namespace CustomerApp.ViewModel
             Items = new List<T>();
             PageSize = 4;
             Page = 1;
-        }
-
-        public PagedListViewModel(List<T> items, int count, int pageIndex, int pageSize)
-        {
-            Page = pageIndex;
-            TotalPages = (int)Math.Ceiling(count / (double)pageSize);
-            items.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
-            this.AddRange(items);
-        }
+        }         
         public bool HasPreviousPage
         {
             get
@@ -47,11 +39,6 @@ namespace CustomerApp.ViewModel
                 return (Page < TotalPages);
             }
         }
-        public  async Task<PagedListViewModel<T>> CreateAsync(List<T> source, int pageIndex, int pageSize)
-        {
-            var count = source.Count();
-            var items = source.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
-            return new PagedListViewModel<T>(items, count, pageIndex, pageSize);
-        }
+       
     }
 }
