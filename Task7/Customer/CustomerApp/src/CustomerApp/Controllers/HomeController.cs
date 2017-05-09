@@ -15,7 +15,7 @@ namespace Crudtest.Controllers
 
         public HomeController(
            ICustomerRepository customerRepository
-       )
+        )
         {
             _customerRepository = customerRepository;
         }
@@ -26,7 +26,7 @@ namespace Crudtest.Controllers
 
             customerList.Filter = searchString;
             customerList.Order.Column = sortOrder;
-            customerList.Order.Destination = String.IsNullOrEmpty(orderBy) ? "ASC" : orderBy;
+            customerList.Order.Destination = orderBy ?? "ASC";
             customerList.Page = page ?? 1;
             if (customerList.Filter != null)
             {
