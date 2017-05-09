@@ -8,9 +8,10 @@ using WriterApp.Model;
 namespace WriterApp.Migrations
 {
     [DbContext(typeof(WriterContext))]
-    partial class WriterContextModelSnapshot : ModelSnapshot
+    [Migration("20170509162920_Changer")]
+    partial class Changer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1")
