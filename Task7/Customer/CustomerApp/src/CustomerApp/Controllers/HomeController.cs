@@ -21,12 +21,12 @@ namespace Crudtest.Controllers
         }
         public async Task<IActionResult> Index(string sortOrder, string orderBy, string searchString, string currentFilter, int? page)
         {
-         
+
             CustomerListViewModel customerList = new CustomerListViewModel();
-      
+
             customerList.Filter = searchString;
             customerList.Order.Column = sortOrder;
-            customerList.Order.Destination = String.IsNullOrEmpty(orderBy) ? "ASC" : orderBy;         
+            customerList.Order.Destination = String.IsNullOrEmpty(orderBy) ? "ASC" : orderBy;
             customerList.Page = page ?? 1;
             if (customerList.Filter != null)
             {
@@ -36,17 +36,17 @@ namespace Crudtest.Controllers
             {
                 customerList.Filter = currentFilter;
             }
-            var customers = _customerRepository.GetCustomersWithParametrs(customerList.PageSize, customerList.Filter, customerList.Order.Destination, customerList.Order.Column,customerList.Page);
+            var customers = _customerRepository.GetCustomersWithParametrs(customerList.PageSize, customerList.Filter, customerList.Order.Destination, customerList.Order.Column, customerList.Page);
 
             foreach (var c in customers)
             {
-                customerList.Items.Add(new CustomerGridModel { Id= c.Id, FullName = $"{c.FirstName} {c.LastName}", Email = c.Email, PhoneNumber = c.PhoneNumber });
+                customerList.Items.Add(new CustomerGridModel { Id = c.Id, FullName = $"{c.FirstName} {c.LastName}", Email = c.Email, PhoneNumber = c.PhoneNumber });
             }
             customerList.TotalPages = (int)Math.Ceiling(customers.TotalCount / (double)customerList.PageSize);
-            customerList.Order.Destination = customerList.Order.Destination == "ASC" ? "DESC" : "ASC";          
+            customerList.Order.Destination = customerList.Order.Destination == "ASC" ? "DESC" : "ASC";
 
             return View(customerList);
-         
+
         }
 
         [HttpGet]

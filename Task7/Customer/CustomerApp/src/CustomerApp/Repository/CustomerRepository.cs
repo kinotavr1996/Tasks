@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomerApp.Repository
 {
-    public class CustomerRepository: ICustomerRepository
+    public class CustomerRepository : ICustomerRepository
     {
         private CustomerContext dbContext;
         public CustomerRepository(CustomerContext context)
@@ -19,33 +19,34 @@ namespace CustomerApp.Repository
         {
             return dbContext.Customers.ToList();
         }
-        
-        public PagedList<Customer> GetCustomersWithParametrs(int pageSize,string filter, string orderBy,string sortBy = "ASC", int page = 1)
+
+        public PagedList<Customer> GetCustomersWithParametrs(int pageSize, string filter, string orderBy, string sortBy = "fullname", int page = 1)
         {
             page = page - 1;
 
             var query = dbContext.Customers.AsQueryable();
 
+            if (!String.IsNullOrEmpty(filter))
+            {
+                query = query.Where(s => s.FirstName.ToUpper().Contains(filter.ToUpper()) || s.LastName.ToUpper().Contains(filter.ToUpper()));
+            }
+
             switch (sortBy)
             {
                 case "fullName":
                     query = orderBy == "ASC" ? query.OrderBy(s => s.LastName) : query.OrderByDescending(s => s.LastName);
-                    break;                
+                    break;
                 case "email":
-                    query =   orderBy == "ASC" ? query.OrderBy(s => s.Email) : query.OrderByDescending(s => s.Email);
+                    query = orderBy == "ASC" ? query.OrderBy(s => s.Email) : query.OrderByDescending(s => s.Email);
                     break;
                 case "phoneNumber":
-                    query =  orderBy == "ASC" ? query.OrderBy(s => s.PhoneNumber) : query.OrderByDescending(s => s.PhoneNumber);
+                    query = orderBy == "ASC" ? query.OrderBy(s => s.PhoneNumber) : query.OrderByDescending(s => s.PhoneNumber);
                     break;
                 default:
                     query = orderBy == "ASC" ? query.OrderBy(s => s.Email) : query.OrderByDescending(s => s.Email);
                     break;
             }
-            if (!String.IsNullOrEmpty(filter))
-            {
-                query = query.Where(s => s.FirstName.ToUpper().Contains(filter.ToUpper()) || s.LastName.ToUpper().Contains(filter.ToUpper()));
-            }
-           
+
             return new PagedList<Customer>(query, page, pageSize);
         }
         public void AddCustomer(Customer customer)
@@ -59,7 +60,7 @@ namespace CustomerApp.Repository
         }
         public void Delete(int id)
         {
-            var customer = dbContext.Customers.SingleOrDefault(x => x.Id == id);              
+            var customer = dbContext.Customers.SingleOrDefault(x => x.Id == id);
             dbContext.Customers.Remove(customer);
             dbContext.SaveChanges();
         }
