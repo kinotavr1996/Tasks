@@ -8,7 +8,7 @@ namespace CustomerApp.ViewModel
     public class GridOrder
     {
         public string Column { get; set; }
-        public string Destination { get; set; } 
+        public string Direction { get; set; } 
 
         
          
