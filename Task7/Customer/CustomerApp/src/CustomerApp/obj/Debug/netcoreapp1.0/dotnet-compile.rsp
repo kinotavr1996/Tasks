@@ -209,6 +209,7 @@ D:\testing\examples\tableApp\Tasks\Task7\Customer\CustomerApp\src\CustomerApp\Co
 D:\testing\examples\tableApp\Tasks\Task7\Customer\CustomerApp\src\CustomerApp\Configuration\DbEntityConfiguration.cs
 D:\testing\examples\tableApp\Tasks\Task7\Customer\CustomerApp\src\CustomerApp\Configuration\ModelBuilderExtensions.cs
 D:\testing\examples\tableApp\Tasks\Task7\Customer\CustomerApp\src\CustomerApp\Controllers\HomeController.cs
+D:\testing\examples\tableApp\Tasks\Task7\Customer\CustomerApp\src\CustomerApp\Corre\PagedList.cs
 D:\testing\examples\tableApp\Tasks\Task7\Customer\CustomerApp\src\CustomerApp\Migrations\20170508143959_Init.cs
 D:\testing\examples\tableApp\Tasks\Task7\Customer\CustomerApp\src\CustomerApp\Migrations\20170508143959_Init.Designer.cs
 D:\testing\examples\tableApp\Tasks\Task7\Customer\CustomerApp\src\CustomerApp\Migrations\20170508165940_FieldLengthChanger.cs
@@ -225,4 +226,3 @@ D:\testing\examples\tableApp\Tasks\Task7\Customer\CustomerApp\src\CustomerApp\Vi
 D:\testing\examples\tableApp\Tasks\Task7\Customer\CustomerApp\src\CustomerApp\ViewModel\CustomerListViewModel.cs
 D:\testing\examples\tableApp\Tasks\Task7\Customer\CustomerApp\src\CustomerApp\ViewModel\GridOrder.cs
 D:\testing\examples\tableApp\Tasks\Task7\Customer\CustomerApp\src\CustomerApp\ViewModel\PagedListViewModel.cs
-D:\testing\examples\tableApp\Tasks\Task7\Customer\CustomerApp\src\CustomerApp\ViewModel\PaginatedList.cs

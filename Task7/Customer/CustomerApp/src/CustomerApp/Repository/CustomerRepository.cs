@@ -1,4 +1,5 @@
-﻿using CustomerApp.Model;
+﻿using CustomerApp.Corre;
+using CustomerApp.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,22 +19,34 @@ namespace CustomerApp.Repository
         {
             return dbContext.Customers.ToList();
         }
-        public List<Customer> GetCustomersWithParametrs(int pageSize, string orderBy, string sortBy = "ASC", int page = 1)
+        
+        public PagedList<Customer> GetCustomersWithParametrs(int pageSize,string filter, string orderBy,string sortBy = "ASC", int page = 1)
         {
             page = page - 1;
+
+            var query = dbContext.Customers.AsQueryable();
+
             switch (sortBy)
             {
                 case "fullName":
-                    return orderBy == "ASC" ? dbContext.Customers.OrderBy(s => s.Email).Skip(page * pageSize).Take(pageSize).ToList() : dbContext.Customers.OrderByDescending(s => s.Email).Skip(page * pageSize).Take(pageSize).ToList();                  
+                    query = orderBy == "ASC" ? query.OrderBy(s => s.LastName) : query.OrderByDescending(s => s.LastName);
+                    break;                
                 case "email":
-                    return orderBy == "ASC" ? dbContext.Customers.OrderBy(s => s.Email).Skip(page * pageSize).Take(pageSize).ToList() : dbContext.Customers.OrderByDescending(s => s.Email).Skip(page * pageSize).Take(pageSize).ToList();                    
+                    query =   orderBy == "ASC" ? query.OrderBy(s => s.Email) : query.OrderByDescending(s => s.Email);
+                    break;
                 case "phoneNumber":
-                    return  orderBy == "ASC" ? dbContext.Customers.OrderBy(s => s.PhoneNumber).Skip(page * pageSize).Take(pageSize).ToList() : dbContext.Customers.OrderByDescending(s => s.PhoneNumber).Skip(page * pageSize).Take(pageSize).ToList();                   
+                    query =  orderBy == "ASC" ? query.OrderBy(s => s.PhoneNumber) : query.OrderByDescending(s => s.PhoneNumber);
+                    break;
                 default:
-                    return orderBy == "ASC" ? dbContext.Customers.OrderBy(s => s.Email).Skip(page * pageSize).Take(pageSize).ToList() : dbContext.Customers.OrderByDescending(s => s.Email).Skip(page * pageSize).Take(pageSize).ToList();
-                   
+                    query = orderBy == "ASC" ? query.OrderBy(s => s.Email) : query.OrderByDescending(s => s.Email);
+                    break;
             }
-
+            if (!String.IsNullOrEmpty(filter))
+            {
+                query = query.Where(s => s.FirstName.ToUpper().Contains(filter.ToUpper()) || s.LastName.ToUpper().Contains(filter.ToUpper()));
+            }
+           
+            return new PagedList<Customer>(query, page, pageSize);
         }
         public void AddCustomer(Customer customer)
         {

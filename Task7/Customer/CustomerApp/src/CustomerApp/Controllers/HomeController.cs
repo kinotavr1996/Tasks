@@ -26,8 +26,7 @@ namespace Crudtest.Controllers
       
             customerList.Filter = searchString;
             customerList.Order.Column = sortOrder;
-            customerList.Order.Destination = String.IsNullOrEmpty(orderBy) ? "ASC" : orderBy;
-            customerList.TotalPages = (int)Math.Ceiling(_customerRepository.GetCustomers().Count() / (double)customerList.PageSize);
+            customerList.Order.Destination = String.IsNullOrEmpty(orderBy) ? "ASC" : orderBy;         
             customerList.Page = page ?? 1;
             if (customerList.Filter != null)
             {
@@ -37,17 +36,13 @@ namespace Crudtest.Controllers
             {
                 customerList.Filter = currentFilter;
             }
-            var customers = _customerRepository.GetCustomersWithParametrs(customerList.PageSize, customerList.Order.Destination, customerList.Order.Column, customerList.Page);
+            var customers = _customerRepository.GetCustomersWithParametrs(customerList.PageSize, customerList.Filter, customerList.Order.Destination, customerList.Order.Column,customerList.Page);
 
             foreach (var c in customers)
             {
                 customerList.Items.Add(new CustomerGridModel { Id= c.Id, FullName = $"{c.FirstName} {c.LastName}", Email = c.Email, PhoneNumber = c.PhoneNumber });
-            }          
-            if (!String.IsNullOrEmpty(customerList.Filter))
-            {
-                customerList.Items = customerList.Items.Where(s => s.FullName.ToUpper().Contains(customerList.Filter.ToUpper())).ToList();
             }
-          
+            customerList.TotalPages = (int)Math.Ceiling(customers.TotalCount / (double)customerList.PageSize);
             customerList.Order.Destination = customerList.Order.Destination == "ASC" ? "DESC" : "ASC";          
 
             return View(customerList);
