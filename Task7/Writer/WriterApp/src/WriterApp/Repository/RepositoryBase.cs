@@ -10,7 +10,7 @@ namespace WriterApp.Repository
 {
     public abstract class RepositoryBase<T> : IRepository<T> where T : class
     {
-        protected readonly WriterContext _dbContext;
+        private readonly WriterContext _dbContext;
         protected IQueryable<T> Find(Func<IQueryable<T>, IQueryable<T>> filter = null)
         {
             if (filter == null)
@@ -36,6 +36,11 @@ namespace WriterApp.Repository
         public virtual void Add(T entity)
         {
             _dbContext.Add(entity);
+            SaveChanges();
+        }
+        public virtual void Remove(T entity)
+        {
+            _dbContext.Remove(entity);
             SaveChanges();
         }
         public abstract void Edit(T entity);

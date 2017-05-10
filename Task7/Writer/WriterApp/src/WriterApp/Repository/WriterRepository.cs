@@ -13,12 +13,12 @@ namespace WriterApp.Repository
         }
         public Writer GetById(int id)
         {
-            return _dbContext.Writers.AsNoTracking().FirstOrDefault(x => x.Id == id);
+            return Find().AsNoTracking().FirstOrDefault(x => x.Id == id);
         }
         public PagedList<Writer> GetWritersWithParameters(int pageSize, string filter, string direction, string sortBy, int page)
         {
             page = page - 1;
-            var query = _dbContext.Writers.AsQueryable();
+            var query = Find();
             if(!String.IsNullOrEmpty(filter))
             {
                 query = query.Where(s => s.FirstName.ToUpper().Contains(filter.ToUpper()) || s.LastName.ToUpper().Contains(filter.ToUpper()));
@@ -39,18 +39,18 @@ namespace WriterApp.Repository
         }
         public override void Delete(int id)
         {
-            var Writer = _dbContext.Writers.SingleOrDefault(x => x.Id == id);
-            _dbContext.Writers.Remove(Writer);
-            _dbContext.SaveChanges();
+            var writer = Find().SingleOrDefault(x => x.Id == id);
+            Remove(writer);
+            SaveChanges();
         }
         public override void Edit(Writer writer)
         {
-            var _writer = _dbContext.Writers.SingleOrDefault(x => x.Id == writer.Id);
+            var _writer = Find().SingleOrDefault(x => x.Id == writer.Id);
             _writer.FirstName = writer.FirstName;
             _writer.LastName = writer.LastName;
             _writer.DateOfBirth = writer.DateOfBirth;
             _writer.Biography = writer.Biography;
-            _dbContext.SaveChanges();
+            SaveChanges();
         }
     }
 }

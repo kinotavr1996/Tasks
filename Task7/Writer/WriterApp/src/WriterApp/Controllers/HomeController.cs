@@ -27,7 +27,7 @@ namespace WriterApp.Controllers
                 writerList.Page = 1;            
             else           
                 writerList.Filter = currentFilter;             
-            var writers = _writerRepository.GetWritersWithParameters(writerList.PageSize, writerList.Filter, writerList.Order.Direction, writerList.Order.Column, writerList.Page); 
+            var writers = _writerRepository.GetPage(writerList.Page, writerList.PageSize); 
             foreach (var c in writers)
             {
                 writerList.Items.Add(new WriterGridModel { Id = c.Id, FullName = $"{c.LastName} {c.FirstName}", DateOfBirth = c.DateOfBirth, Biography = c.Biography });

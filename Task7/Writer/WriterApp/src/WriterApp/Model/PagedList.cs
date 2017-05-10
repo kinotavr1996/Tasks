@@ -11,6 +11,7 @@ namespace WriterApp.Model
         public int PageSize { get; private set; }
         public PagedList(IQueryable<T> set, int page, int size)
         {
+            page = page - 1;
             TotalCount = set.Count();
             PageSize = size;
             Page = page;
