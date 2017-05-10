@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace WriterApp.Data.Model
 {
@@ -9,6 +10,6 @@ namespace WriterApp.Data.Model
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Biography { get; set; }
-
+        public ICollection<WriterBook> WriterBooks { get; set; }
     }
 }

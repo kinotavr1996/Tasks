@@ -15,7 +15,7 @@ namespace WriterApp.Data.Context
             base.OnModelCreating(modelBuilder);  
             modelBuilder.AddConfiguration(new WriterConfiguration());
             modelBuilder.AddConfiguration(new BookConfiguration());
-
+            modelBuilder.AddConfiguration(new WriterBookConfiguration());
         }
         public DbSet<Writer> Writers { get; set; }
         public DbSet<Book> Books { get; set; }

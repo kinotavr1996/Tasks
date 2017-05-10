@@ -8,9 +8,10 @@ using WriterApp.Data.Context;
 namespace WriterApp.Data.Migrations
 {
     [DbContext(typeof(WriterContext))]
-    partial class WriterContextModelSnapshot : ModelSnapshot
+    [Migration("20170510160444_ManyToMany")]
+    partial class ManyToMany
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")
