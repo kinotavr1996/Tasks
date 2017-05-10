@@ -8,8 +8,8 @@
 -debug:full
 -nostdlib
 -nologo
-"C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Repository\obj\Debug\netstandard1.6\dotnet-compile.assemblyinfo.cs"
--out:"C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Repository\bin\Debug\netstandard1.6\WriterApp.Repository.dll"
+"D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository\obj\Debug\netstandard1.6\dotnet-compile.assemblyinfo.cs"
+-out:"D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository\bin\Debug\netstandard1.6\WriterApp.Repository.dll"
 -r:"C:\Users\Oleh\.nuget\packages\Microsoft.AspNetCore.Hosting.Abstractions\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Hosting.Abstractions.dll"
 -r:"C:\Users\Oleh\.nuget\packages\Microsoft.AspNetCore.Hosting.Server.Abstractions\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll"
 -r:"C:\Users\Oleh\.nuget\packages\Microsoft.AspNetCore.Http.Abstractions\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Http.Abstractions.dll"
@@ -92,8 +92,8 @@
 -r:"C:\Users\Oleh\.nuget\packages\System.Threading.Timer\4.3.0\ref\netstandard1.2\System.Threading.Timer.dll"
 -r:"C:\Users\Oleh\.nuget\packages\System.Xml.ReaderWriter\4.3.0\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\Oleh\.nuget\packages\System.Xml.XDocument\4.3.0\ref\netstandard1.3\System.Xml.XDocument.dll"
--r:"C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Data.Common\bin\Debug\netstandard1.6\WriterApp.Data.Common.dll"
--r:"C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Data.Model\bin\Debug\netstandard1.6\WriterApp.Data.Model.dll"
-"C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Repository\IRepository.cs"
-"C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Repository\IWriterRepository.cs"
-"C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Repository\Properties\AssemblyInfo.cs"
+-r:"D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data.Common\bin\Debug\netstandard1.6\WriterApp.Data.Common.dll"
+-r:"D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data.Model\bin\Debug\netstandard1.6\WriterApp.Data.Model.dll"
+"D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository\IRepository.cs"
+"D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository\IWriterRepository.cs"
+"D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository\Properties\AssemblyInfo.cs"

@@ -1,5 +1,5 @@
---temp-output:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Repository\obj\Debug\netstandard1.6\
---out:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Repository\bin\Debug\netstandard1.6\WriterApp.Repository.dll
+--temp-output:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository\obj\Debug\netstandard1.6\
+--out:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository\bin\Debug\netstandard1.6\WriterApp.Repository.dll
 --define:DEBUG
 --define:TRACE
 --define:NETSTANDARD1_6
@@ -94,8 +94,8 @@
 --reference:C:\Users\Oleh\.nuget\packages\System.Threading.Timer\4.3.0\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Oleh\.nuget\packages\System.Xml.ReaderWriter\4.3.0\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Oleh\.nuget\packages\System.Xml.XDocument\4.3.0\ref\netstandard1.3\System.Xml.XDocument.dll
---reference:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Data.Common\bin\Debug\netstandard1.6\WriterApp.Data.Common.dll
---reference:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Data.Model\bin\Debug\netstandard1.6\WriterApp.Data.Model.dll
-C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Repository\IRepository.cs
-C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Repository\IWriterRepository.cs
-C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Repository\Properties\AssemblyInfo.cs
+--reference:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data.Common\bin\Debug\netstandard1.6\WriterApp.Data.Common.dll
+--reference:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data.Model\bin\Debug\netstandard1.6\WriterApp.Data.Model.dll
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository\IRepository.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository\IWriterRepository.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository\Properties\AssemblyInfo.cs

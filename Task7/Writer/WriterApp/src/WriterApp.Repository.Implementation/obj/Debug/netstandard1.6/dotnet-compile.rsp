@@ -1,5 +1,5 @@
---temp-output:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Repository.Implementation\obj\Debug\netstandard1.6\
---out:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Repository.Implementation\bin\Debug\netstandard1.6\WriterApp.Repository.Implementation.dll
+--temp-output:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository.Implementation\obj\Debug\netstandard1.6\
+--out:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository.Implementation\bin\Debug\netstandard1.6\WriterApp.Repository.Implementation.dll
 --define:DEBUG
 --define:TRACE
 --define:NETSTANDARD1_6
@@ -94,10 +94,10 @@
 --reference:C:\Users\Oleh\.nuget\packages\System.Threading.Timer\4.3.0\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Oleh\.nuget\packages\System.Xml.ReaderWriter\4.3.0\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Oleh\.nuget\packages\System.Xml.XDocument\4.3.0\ref\netstandard1.3\System.Xml.XDocument.dll
---reference:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Data\bin\Debug\netstandard1.6\WriterApp.Data.dll
---reference:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Data.Common\bin\Debug\netstandard1.6\WriterApp.Data.Common.dll
---reference:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Data.Model\bin\Debug\netstandard1.6\WriterApp.Data.Model.dll
---reference:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Repository\bin\Debug\netstandard1.6\WriterApp.Repository.dll
-C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Repository.Implementation\RepositoryBase.cs
-C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Repository.Implementation\WriterRepository.cs
-C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Repository.Implementation\Properties\AssemblyInfo.cs
+--reference:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\bin\Debug\netstandard1.6\WriterApp.Data.dll
+--reference:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data.Common\bin\Debug\netstandard1.6\WriterApp.Data.Common.dll
+--reference:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data.Model\bin\Debug\netstandard1.6\WriterApp.Data.Model.dll
+--reference:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository\bin\Debug\netstandard1.6\WriterApp.Repository.dll
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository.Implementation\RepositoryBase.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository.Implementation\WriterRepository.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository.Implementation\Properties\AssemblyInfo.cs

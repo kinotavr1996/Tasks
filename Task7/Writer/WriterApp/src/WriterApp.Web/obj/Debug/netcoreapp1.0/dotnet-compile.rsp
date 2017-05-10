@@ -1,5 +1,5 @@
---temp-output:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Web\obj\Debug\netcoreapp1.0\
---out:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Web\bin\Debug\netcoreapp1.0\WriterApp.Web.dll
+--temp-output:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\obj\Debug\netcoreapp1.0\
+--out:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\bin\Debug\netcoreapp1.0\WriterApp.Web.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -204,18 +204,18 @@
 --reference:C:\Users\Oleh\.nuget\packages\System.Threading.Timer\4.3.0\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Oleh\.nuget\packages\System.Xml.ReaderWriter\4.3.0\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Oleh\.nuget\packages\System.Xml.XDocument\4.3.0\ref\netstandard1.3\System.Xml.XDocument.dll
---reference:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Data\bin\Debug\netstandard1.6\WriterApp.Data.dll
---reference:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Data.Common\bin\Debug\netstandard1.6\WriterApp.Data.Common.dll
---reference:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Data.Model\bin\Debug\netstandard1.6\WriterApp.Data.Model.dll
---reference:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Repository\bin\Debug\netstandard1.6\WriterApp.Repository.dll
---reference:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Repository.Implementation\bin\Debug\netstandard1.6\WriterApp.Repository.Implementation.dll
---resource:"C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Web\obj\Debug\netcoreapp1.0\WriterApp.Webdotnet-compile.deps.json",WriterApp.Web.deps.json
-C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Web\Program.cs
-C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Web\Startup.cs
-C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Web\Controllers\HomeController.cs
-C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Web\ViewModel\GridOrder.cs
-C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Web\ViewModel\PagedListViewModel.cs
-C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Web\ViewModel\WriterCreateModel.cs
-C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Web\ViewModel\WriterEditModel.cs
-C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Web\ViewModel\WriterGridModel.cs
-C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Web\ViewModel\WriterListViewModel.cs.cs
+--reference:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\bin\Debug\netstandard1.6\WriterApp.Data.dll
+--reference:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data.Common\bin\Debug\netstandard1.6\WriterApp.Data.Common.dll
+--reference:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data.Model\bin\Debug\netstandard1.6\WriterApp.Data.Model.dll
+--reference:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository\bin\Debug\netstandard1.6\WriterApp.Repository.dll
+--reference:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository.Implementation\bin\Debug\netstandard1.6\WriterApp.Repository.Implementation.dll
+--resource:"D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\obj\Debug\netcoreapp1.0\WriterApp.Webdotnet-compile.deps.json",WriterApp.Web.deps.json
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\Program.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\Startup.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\Controllers\HomeController.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\ViewModel\GridOrder.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\ViewModel\PagedListViewModel.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\ViewModel\WriterCreateModel.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\ViewModel\WriterEditModel.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\ViewModel\WriterGridModel.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\ViewModel\WriterListViewModel.cs.cs

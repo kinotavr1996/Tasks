@@ -1,5 +1,5 @@
---temp-output:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Data.Model\obj\Debug\netstandard1.6\
---out:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Data.Model\bin\Debug\netstandard1.6\WriterApp.Data.Model.dll
+--temp-output:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data.Model\obj\Debug\netstandard1.6\
+--out:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data.Model\bin\Debug\netstandard1.6\WriterApp.Data.Model.dll
 --define:DEBUG
 --define:TRACE
 --define:NETSTANDARD1_6
@@ -94,5 +94,5 @@
 --reference:C:\Users\Oleh\.nuget\packages\System.Threading.Timer\4.3.0\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Oleh\.nuget\packages\System.Xml.ReaderWriter\4.3.0\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Oleh\.nuget\packages\System.Xml.XDocument\4.3.0\ref\netstandard1.3\System.Xml.XDocument.dll
-C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Data.Model\Writer.cs
-C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Data.Model\Properties\AssemblyInfo.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data.Model\Writer.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data.Model\Properties\AssemblyInfo.cs

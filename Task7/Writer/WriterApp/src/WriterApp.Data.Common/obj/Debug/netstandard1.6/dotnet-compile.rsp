@@ -1,5 +1,5 @@
---temp-output:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Data.Common\obj\Debug\netstandard1.6\
---out:C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Data.Common\bin\Debug\netstandard1.6\WriterApp.Data.Common.dll
+--temp-output:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data.Common\obj\Debug\netstandard1.6\
+--out:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data.Common\bin\Debug\netstandard1.6\WriterApp.Data.Common.dll
 --define:DEBUG
 --define:TRACE
 --define:NETSTANDARD1_6
@@ -55,6 +55,6 @@
 --reference:C:\Users\Oleh\.nuget\packages\System.Threading.Timer\4.3.0\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Oleh\.nuget\packages\System.Xml.ReaderWriter\4.3.0\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Oleh\.nuget\packages\System.Xml.XDocument\4.3.0\ref\netstandard1.3\System.Xml.XDocument.dll
-C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Data.Common\Pagination\IPagedList.cs
-C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Data.Common\Pagination\PagedList.cs
-C:\Users\Oleh\Documents\Visual Studio 2015\Projects\WriterApp\src\WriterApp.Data.Common\Properties\AssemblyInfo.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data.Common\Pagination\IPagedList.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data.Common\Pagination\PagedList.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data.Common\Properties\AssemblyInfo.cs
