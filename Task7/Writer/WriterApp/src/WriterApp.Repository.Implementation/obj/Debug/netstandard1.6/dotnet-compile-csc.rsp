@@ -96,6 +96,7 @@
 -r:"D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data.Common\bin\Debug\netstandard1.6\WriterApp.Data.Common.dll"
 -r:"D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data.Model\bin\Debug\netstandard1.6\WriterApp.Data.Model.dll"
 -r:"D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository\bin\Debug\netstandard1.6\WriterApp.Repository.dll"
+"D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository.Implementation\BookRepository.cs"
 "D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository.Implementation\RepositoryBase.cs"
 "D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository.Implementation\WriterRepository.cs"
 "D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Repository.Implementation\Properties\AssemblyInfo.cs"

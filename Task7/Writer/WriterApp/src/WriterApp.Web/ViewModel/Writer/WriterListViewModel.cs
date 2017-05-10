@@ -1,4 +1,4 @@
-﻿namespace WriterApp.ViewModel
+﻿namespace WriterApp.Web.ViewModel
 {
     public class WriterListViewModel: PagedListViewModel<WriterGridModel>
     {

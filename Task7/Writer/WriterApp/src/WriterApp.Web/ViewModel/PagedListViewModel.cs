@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WriterApp.ViewModel
+namespace WriterApp.Web.ViewModel
 {
     public class PagedListViewModel<T> : List<T>
     {

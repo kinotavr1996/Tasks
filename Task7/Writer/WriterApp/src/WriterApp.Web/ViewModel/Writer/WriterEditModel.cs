@@ -1,10 +1,12 @@
-﻿using System; 
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace WriterApp.ViewModel
+namespace WriterApp.Web.ViewModel
 {
-    public class WriterCreateModel
+    public class WriterEditModel
     {
+        public int Id { get; set; }
+
         [Required]
         [StringLength(256)]
         public string FirstName { get; set; }

@@ -16,6 +16,22 @@ namespace WriterApp.Data.Migrations
                 .HasAnnotation("ProductVersion", "1.1.2")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("WriterApp.Data.Model.Book", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Caption")
+                        .IsRequired()
+                        .HasMaxLength(256);
+
+                    b.Property<DateTime>("PublishedDate");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Book");
+                });
+
             modelBuilder.Entity("WriterApp.Data.Model.Writer", b =>
                 {
                     b.Property<int>("Id")

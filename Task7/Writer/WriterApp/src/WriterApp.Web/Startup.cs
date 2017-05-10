@@ -35,6 +35,8 @@ namespace WriterApp
         {
             // Add framework services.
             services.AddSingleton<IWriterRepository, WriterRepository>();
+            services.AddSingleton<IBookRepository, BookRepository>();
+
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
             services.AddDbContext<WriterContext>(options => options.UseSqlServer(Configuration.GetConnectionString("WriterDb"), b => b.MigrationsAssembly("WriterApp.Data")));

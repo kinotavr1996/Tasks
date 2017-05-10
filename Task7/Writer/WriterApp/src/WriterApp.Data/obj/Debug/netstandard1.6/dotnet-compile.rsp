@@ -95,6 +95,7 @@
 --reference:C:\Users\Oleh\.nuget\packages\System.Xml.ReaderWriter\4.3.0\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Oleh\.nuget\packages\System.Xml.XDocument\4.3.0\ref\netstandard1.3\System.Xml.XDocument.dll
 --reference:D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data.Model\bin\Debug\netstandard1.6\WriterApp.Data.Model.dll
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\Configuration\BookConfiguration.cs
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\Configuration\DbEntityConfiguration.cs
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\Configuration\ModelBuilderExtension.cs
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\Configuration\WriterConfiguration.cs
@@ -102,5 +103,7 @@ D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\Con
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\Context\WriterContext.cs
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\Migrations\20170510132625_Init.cs
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\Migrations\20170510132625_Init.Designer.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\Migrations\20170510151747_InitialForBook.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\Migrations\20170510151747_InitialForBook.Designer.cs
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\Migrations\WriterContextModelSnapshot.cs
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\Properties\AssemblyInfo.cs

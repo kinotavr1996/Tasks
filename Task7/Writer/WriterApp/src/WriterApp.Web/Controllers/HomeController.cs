@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using WriterApp.ViewModel;
+using WriterApp.Web.ViewModel;
 using System.Linq;
 using WriterApp.Repository;
 using WriterApp.Data.Model;
