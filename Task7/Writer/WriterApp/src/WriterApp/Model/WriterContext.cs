@@ -12,7 +12,7 @@ namespace WriterApp.Model
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);  
-            modelBuilder.AddConfiguration(new WriterConfiguration());  
+            modelBuilder.AddConfiguration(new WriterConfiguration());
         }
         public DbSet<Writer> Writers { get; set; }
     }

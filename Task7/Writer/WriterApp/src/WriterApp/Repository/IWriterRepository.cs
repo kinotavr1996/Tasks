@@ -3,13 +3,9 @@ using WriterApp.Model;
 
 namespace WriterApp.Repository
 {
-    public interface IWriterRepository
+    public interface IWriterRepository : IRepository <Writer>
     {
-        List<Writer> GetWriters();
-        PagedList<Writer> GetWritersWithParametrs(int pageSize, string filter, string direction, string sortBy = "ASC", int page = 1);
-        Writer GetWriterById(int id);
-        void AddWriter(Writer writer);
-        void Delete(int id);
-        void EditWriter(Writer writer);
+        Writer GetById(int id);
+        PagedList<Writer> GetWritersWithParameters(int pageSize, string filter, string direction, string sortBy = "ASC", int page = 1);
     }
 }

@@ -27,7 +27,7 @@ namespace WriterApp.Controllers
                 writerList.Page = 1;            
             else           
                 writerList.Filter = currentFilter;             
-            var writers = _writerRepository.GetWritersWithParametrs(writerList.PageSize, writerList.Filter, writerList.Order.Direction, writerList.Order.Column, writerList.Page); 
+            var writers = _writerRepository.GetWritersWithParameters(writerList.PageSize, writerList.Filter, writerList.Order.Direction, writerList.Order.Column, writerList.Page); 
             foreach (var c in writers)
             {
                 writerList.Items.Add(new WriterGridModel { Id = c.Id, FullName = $"{c.LastName} {c.FirstName}", DateOfBirth = c.DateOfBirth, Biography = c.Biography });
@@ -47,7 +47,7 @@ namespace WriterApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                _writerRepository.AddWriter(new Writer {
+                _writerRepository.Add(new Writer {
                     FirstName = writer.FirstName,
                     LastName = writer.LastName,
                     DateOfBirth = writer.DateOfBirth,
@@ -61,7 +61,7 @@ namespace WriterApp.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            var writer = _writerRepository.GetWriterById(id);
+            var writer = _writerRepository.GetById(id);
             return View(new WriterEditModel {
                 FirstName = writer.FirstName,
                 LastName = writer.LastName,
@@ -76,7 +76,7 @@ namespace WriterApp.Controllers
         {  
             if (ModelState.IsValid)
             {
-                _writerRepository.EditWriter(new Writer {
+                _writerRepository.Edit(new Writer {
                     Id = writer.Id,
                     FirstName = writer.FirstName,
                     LastName = writer.LastName,

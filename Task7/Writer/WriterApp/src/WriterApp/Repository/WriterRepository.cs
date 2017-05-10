@@ -1,26 +1,25 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using WriterApp.Model;
 
 namespace WriterApp.Repository
 {
-    public class WriterRepository  : IWriterRepository
+    public class WriterRepository : RepositoryBase<Writer>, IWriterRepository
     {
-        private WriterContext dbContext;
-        public WriterRepository(WriterContext context)
+        public WriterRepository(WriterContext context):base(context)
         {
-            dbContext = context;
-        } 
-        public List<Writer> GetWriters()
+        }
+        public Writer GetById(int id)
         {
-            return dbContext.Writers.ToList();
-        } 
-        public PagedList<Writer> GetWritersWithParametrs(int pageSize, string filter, string direction, string sortBy, int page = 1)
+            return _dbContext.Writers.AsNoTracking().FirstOrDefault(x => x.Id == id);
+        }
+        public PagedList<Writer> GetWritersWithParameters(int pageSize, string filter, string direction, string sortBy, int page)
         {
             page = page - 1;
-            var query = dbContext.Writers.AsQueryable();
-            if (!String.IsNullOrEmpty(filter))
+            var query = _dbContext.Writers.AsQueryable();
+            if(!String.IsNullOrEmpty(filter))
             {
                 query = query.Where(s => s.FirstName.ToUpper().Contains(filter.ToUpper()) || s.LastName.ToUpper().Contains(filter.ToUpper()));
             } 
@@ -38,29 +37,20 @@ namespace WriterApp.Repository
             }
             return new PagedList<Writer>(query, page, pageSize);
         }
-        public void AddWriter(Writer writer)
+        public override void Delete(int id)
         {
-            dbContext.Writers.Add(writer);
-            dbContext.SaveChanges();
+            var Writer = _dbContext.Writers.SingleOrDefault(x => x.Id == id);
+            _dbContext.Writers.Remove(Writer);
+            _dbContext.SaveChanges();
         }
-        public Writer GetWriterById(int id)
+        public override void Edit(Writer writer)
         {
-            return dbContext.Writers.Where(x => x.Id == id).FirstOrDefault();
-        }
-        public void Delete(int id)
-        {
-            var Writer = dbContext.Writers.SingleOrDefault(x => x.Id == id);
-            dbContext.Writers.Remove(Writer);
-            dbContext.SaveChanges();
-        }
-        public void EditWriter(Writer writer)
-        {
-            var _writer = dbContext.Writers.SingleOrDefault(x => x.Id == writer.Id);
+            var _writer = _dbContext.Writers.SingleOrDefault(x => x.Id == writer.Id);
             _writer.FirstName = writer.FirstName;
             _writer.LastName = writer.LastName;
             _writer.DateOfBirth = writer.DateOfBirth;
-            _writer.Biography = writer.Biography;            
-            dbContext.SaveChanges();
+            _writer.Biography = writer.Biography;
+            _dbContext.SaveChanges();
         }
     }
 }
