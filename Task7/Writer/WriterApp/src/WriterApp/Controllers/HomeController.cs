@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using WriterApp.Repository;
 using WriterApp.ViewModel;
 using WriterApp.Model;
+using System.Linq;
 
 namespace WriterApp.Controllers
 {
@@ -16,6 +17,29 @@ namespace WriterApp.Controllers
         {
             _writerRepository = writerRepository;
         }
+        public IQueryable<Writer> ApplyFilter(IQueryable<Writer> query, string searchString)
+        {
+            if (!String.IsNullOrEmpty(searchString))
+                return query.Where(s => s.FirstName.ToUpper().Contains(searchString.ToUpper()) || s.LastName.ToUpper().Contains(searchString.ToUpper()));
+            else
+                return query;
+        }
+        public IQueryable<Writer> ApplySortOrder(IQueryable<Writer> query, string sortOrder,string direction)
+        {
+            switch (sortOrder)
+            {
+                case "fullname":
+                    query = direction == "ASC" ? query.OrderBy(s => s.LastName).ThenBy(s => s.FirstName) : query.OrderByDescending(s => s.LastName).ThenByDescending(s => s.FirstName);
+                    break;
+                case "date":
+                    query = direction == "ASC" ? query.OrderBy(s => s.DateOfBirth) : query.OrderByDescending(s => s.DateOfBirth);
+                    break;
+                default:
+                    query = direction == "ASC" ? query.OrderBy(s => s.LastName).ThenBy(s => s.FirstName) : query.OrderByDescending(s => s.LastName).ThenByDescending(s => s.FirstName);
+                    break;
+            }
+            return query;
+        }
         public async Task<IActionResult> Index(string sortOrder, string direction , string searchString, string currentFilter, int? page)
         {
             WriterListViewModel writerList = new WriterListViewModel();
@@ -27,7 +51,7 @@ namespace WriterApp.Controllers
                 writerList.Page = 1;            
             else           
                 writerList.Filter = currentFilter;             
-            var writers = _writerRepository.GetPage(writerList.Page, writerList.PageSize); 
+            var writers = _writerRepository.GetPage(writerList.Page, writerList.PageSize,(query) => ApplySortOrder(ApplyFilter(query,searchString), writerList.Order.Column, writerList.Order.Direction)); 
             foreach (var c in writers)
             {
                 writerList.Items.Add(new WriterGridModel { Id = c.Id, FullName = $"{c.LastName} {c.FirstName}", DateOfBirth = c.DateOfBirth, Biography = c.Biography });
