@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,14 +12,11 @@ namespace WriterApp.Web.Controllers
 {
     public class ReportController : Controller
     {
-        private readonly IBookRepository _bookRepository;
         private readonly IWriterRepository _writerRepository;
         public ReportController(
-           IBookRepository bookRepository,
            IWriterRepository writerRepository
         )
         {
-            _bookRepository = bookRepository;
             _writerRepository = writerRepository;
         }
         public IQueryable<Writer> ApplyFilter(IQueryable<Writer> query, string searchString)
@@ -36,7 +34,7 @@ namespace WriterApp.Web.Controllers
                     query = direction == "ASC" ? query.OrderBy(s => s.LastName).ThenBy(s => s.FirstName) : query.OrderByDescending(s => s.LastName).ThenByDescending(s => s.FirstName);
                     break;
                 case "numberOfBooks":
-                    query = direction == "ASC" ? query.OrderBy(s => s.WriterBooks.Select(x => x.Book).Count()) : query.OrderByDescending(s => s.WriterBooks.Select(x => x.Book).Count());
+                    query = direction == "ASC" ? query.OrderBy(s => s.WriterBooks.Count()) : query.OrderByDescending(s => s.WriterBooks.Count());
                     break;
                 default:
                     query = direction == "ASC" ? query.OrderBy(s => s.LastName).ThenBy(s => s.FirstName) : query.OrderByDescending(s => s.LastName).ThenByDescending(s => s.FirstName);
@@ -47,7 +45,7 @@ namespace WriterApp.Web.Controllers
         }
         public async Task<IActionResult> Index(string sortOrder, string direction, string searchString, string currentFilter, int? page)
         {
-            WriterReportList reportList = new WriterReportList();
+            ReportListViewModel reportList = new ReportListViewModel();
             reportList.Filter = searchString;
             reportList.Order.Column = sortOrder;
             reportList.Order.Direction = direction ?? "ASC";
@@ -56,15 +54,14 @@ namespace WriterApp.Web.Controllers
                 reportList.Page = 1;
             else
                 reportList.Filter = currentFilter;
-
-            var writers = _writerRepository.GetPage(reportList.Page, reportList.PageSize, (query) => ApplySortOrder(ApplyFilter(query, searchString), reportList.Order.Column, reportList.Order.Direction));
-            reportList.Items = writers.Select(x => new WriterGridModel
+            var writers = _writerRepository.GetPage(reportList.Page, reportList.PageSize, (query) => ApplySortOrder(ApplyFilter(query, searchString), reportList.Order.Column, reportList.Order.Direction).Include("WriterBooks.Book"));
+            reportList.Items = writers.Select(x => new ReportGridModel
             {
-                Id = x.Id,
-                FullName = $"{x.LastName} {x.LastName}",
-                Books = x.WriterBooks.Select(w => new BookGridModel { Id = w.Book.Id, Caption = w.Book.Caption, PublishedDate = w.Book.PublishedDate }).ToList()
-            }).ToList(); 
-          
+                FullName = $"{x.LastName} {x.FirstName}",
+                NumberOfBooks = x.WriterBooks == null ? 0 : x.WriterBooks.Count(),
+                FirstBook = x.WriterBooks != null ? (x.WriterBooks.Count() > 0 ? x.WriterBooks.OrderBy(b => b.Book.PublishedDate).FirstOrDefault().Book : null) : null,
+                LastBook = x.WriterBooks != null ? (x.WriterBooks.Count() > 0 ? x.WriterBooks.OrderByDescending(b => b.Book.PublishedDate).FirstOrDefault().Book : null) : null
+            }).ToList();
             reportList.TotalPages = (int)Math.Ceiling(writers.TotalCount / (double)reportList.PageSize);
             return View(reportList);
         }

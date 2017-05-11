@@ -225,4 +225,5 @@ D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\View
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\ViewModel\Writer\WriterEditModel.cs
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\ViewModel\Writer\WriterGridModel.cs
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\ViewModel\Writer\WriterListViewModel.cs
-D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\ViewModel\WriterReport\WriterReportList.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\ViewModel\WriterReport\ReportGridModel.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\ViewModel\WriterReport\ReportListViewModel.cs

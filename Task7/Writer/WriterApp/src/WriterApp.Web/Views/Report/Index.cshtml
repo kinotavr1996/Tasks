@@ -1,4 +1,4 @@
-﻿@model WriterApp.Web.ViewModel.WriterReportList
+﻿@model WriterApp.Web.ViewModel.ReportListViewModel
 @{
     ViewData["Title"] = "Report Page";
 }
@@ -39,13 +39,13 @@
                     @Html.DisplayFor(modelItem => item.FullName)
                 </td>
                 <td>
-                    @item.Books.Count()
+                    @item.NumberOfBooks
                 </td>
                 <td>
-                    @item.Books.OrderBy(x => x.PublishedDate).First().PublishedDate.Year
+                    @item.FirstBook?.PublishedDate.Year
                 </td>
                 <td>
-                    @item.Books.OrderByDescending(x => x.PublishedDate).First().PublishedDate.Year
+                    @item.LastBook?.PublishedDate.Year
                 </td>
             </tr>
         }
