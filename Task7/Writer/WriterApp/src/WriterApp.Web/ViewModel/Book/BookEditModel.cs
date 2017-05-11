@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace WriterApp.Web.ViewModel
@@ -11,5 +13,8 @@ namespace WriterApp.Web.ViewModel
         public string Caption { get; set; }
         [Required]
         public DateTime PublishedDate { get; set; }
+        [Required]
+        public List<int> WriterIds { get; set; }
+        public List<SelectListItem> Writers { get; set; }
     }
 }

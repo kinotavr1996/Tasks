@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WriterApp.Data.Model;
@@ -11,11 +13,15 @@ namespace BookApp.Web.Controllers
     public class BookController : Controller
     {
         private readonly IBookRepository _bookRepository;
+        private readonly IWriterRepository _writerRepository;
+
         public BookController(
-           IBookRepository bookRepository
+           IBookRepository bookRepository,
+           IWriterRepository writerRepository
         )
         {
             _bookRepository = bookRepository;
+            _writerRepository = writerRepository;
         }
         public IQueryable<Book> ApplyFilter(IQueryable<Book> query, string searchString)
         {
@@ -52,33 +58,48 @@ namespace BookApp.Web.Controllers
             else
                 bookList.Filter = currentFilter;
             var books = _bookRepository.GetPage(bookList.Page, bookList.PageSize, (query) => ApplySortOrder(ApplyFilter(query, searchString), bookList.Order.Column, bookList.Order.Direction));
-            foreach (var c in books)
+            bookList.Items = books.Select(x => new BookGridModel
             {
-                bookList.Items.Add(new BookGridModel { Id = c.Id, Caption = c.Caption, PublishedDate = c.PublishedDate });
-            }
+                Id = x.Id,
+                Caption = x.Caption,
+                PublishedDate = x.PublishedDate,
+                Writers = x.WriterBooks.Select(w => new WriterGridModel { FullName = $"{w.Writer.LastName} {w.Writer.FirstName}", Id = w.Writer.Id }).ToList()
+            }).ToList();
             bookList.TotalPages = (int)Math.Ceiling(books.TotalCount / (double)bookList.PageSize);
             return View(bookList);
         }
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            return View();
+            BookCreateModel book = new BookCreateModel();
+            var writers = _writerRepository.Get();
+            foreach (var w in writers)
+            {
+                book.Writers.Add(new SelectListItem { Value = w.Id.ToString(), Text = $"{w.LastName} {w.FirstName}" });
+            }
+            return View(book);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Caption,PublishedDate")] BookCreateModel book)
+        public async Task<IActionResult> Create(BookCreateModel book)
         {
             if (ModelState.IsValid)
             {
-                _bookRepository.Add(new Book
+                Book _book = new Book
                 {
                     Caption = book.Caption,
-                    PublishedDate = book.PublishedDate
-                });
+                    PublishedDate = book.PublishedDate,
+                    WriterBooks = new List<WriterBook>()
+                };
+                foreach (var id in book.WriterIds)
+                {
+                    _book.WriterBooks.Add(new WriterBook { WriterId = id });
+                }
+                _bookRepository.Add(_book);
                 return RedirectToAction("Index");
             }
             return View(book);
-        } 
+        }
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
@@ -86,21 +107,29 @@ namespace BookApp.Web.Controllers
             return View(new BookEditModel
             {
                 Caption = book.Caption,
-                PublishedDate = book.PublishedDate
+                PublishedDate = book.PublishedDate,
+                WriterIds = book.WriterBooks.Select(x => x.WriterId).ToList(),
+                Writers = _writerRepository.Get().Select(x => new SelectListItem { Value = x.Id.ToString(), Text = $"{x.LastName} {x.FirstName}" }).ToList()
             });
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(BookEditModel book)
+        public async Task<IActionResult> Edit(int id, BookEditModel book)
         {
             if (ModelState.IsValid)
             {
-                _bookRepository.Edit(new Book
+                Book _book = new Book
                 {
-                    Id = book.Id,
+                    Id = id,
                     Caption = book.Caption,
-                    PublishedDate = book.PublishedDate
-                });
+                    PublishedDate = book.PublishedDate,
+                    WriterBooks = new List<WriterBook>()
+                };
+                foreach (var wid in book.WriterIds)
+                {
+                    _book.WriterBooks.Add(new WriterBook { WriterId = wid, BookId = id });
+                }
+                _bookRepository.Edit(_book);
                 return RedirectToAction("Index");
             }
             return View(book);

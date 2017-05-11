@@ -25,6 +25,9 @@
             <th>
                 <a asp-action="Index" asp-route-currentFilter="@Model.Filter" asp-route-direction="@((Model.Order.Direction == "ASC" && Model.Order.Column == "date") ? "DESC" : "ASC")" asp-route-sortOrder="date">PublishedDate</a>
             </th>
+            <th>
+                <span>Authors</span>
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -34,9 +37,12 @@
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Caption)
-                </td>                
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.PublishedDate)
+                </td>
+                <td>
+                    <span>@string.Join(", ", item.Writers.Select(x => x.FullName))</span>
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

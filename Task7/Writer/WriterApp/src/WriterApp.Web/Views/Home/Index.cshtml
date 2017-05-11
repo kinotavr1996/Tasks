@@ -25,6 +25,7 @@
             <th>
                 <a asp-action="Index" asp-route-currentFilter="@Model.Filter" asp-route-direction="@((Model.Order.Direction == "ASC" && Model.Order.Column == "date") ? "DESC" : "ASC")" asp-route-sortOrder="date">Date of birth</a>
             </th>
+
             <th>
                 <span>Biography</span>
             </th>

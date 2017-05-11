@@ -13,5 +13,25 @@
         <input asp-for="PublishedDate" type="date" placeholder="Published date" class="form-control" />
         <span asp-validation-for="PublishedDate" class="text-danger"></span>
     </div>
-    <input type="submit" value="Submit" class="btn btn-default" />
+    <div class="form-group">
+        <select style="width:270px!important" data-placeholder="Choose a witers..." multiple class="chosen-select" asp-for="WriterIds"
+                asp-items="@Model.Writers"></select>
+        <span asp-validation-for="WriterIds" class="text-danger"></span>
+    </div>
+    <input type="submit" value="Submit" disabled class="btn btn-default" />
 </form>
+@section scripts{
+    <script>
+        $(function () {
+            $(".chosen-select").chosen({ disable_search_threshold: 10 });
+           
+            $('.chosen-search-input').blur(function () {
+                console.log('oleg');
+                if ($('.search-choice').length)
+                    $('input[type="submit"]').prop('disabled', false)
+                else
+                    $('input[type="submit"]').prop('disabled', true)
+            })
+        });
+    </script>
+}
