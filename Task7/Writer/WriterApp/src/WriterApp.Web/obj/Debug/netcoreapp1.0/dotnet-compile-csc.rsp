@@ -210,6 +210,7 @@
 "D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\Startup.cs"
 "D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\Controllers\BookController.cs"
 "D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\Controllers\HomeController.cs"
+"D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\Controllers\ReportController.cs"
 "D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\ViewModel\GridOrder.cs"
 "D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\ViewModel\PagedListViewModel.cs"
 "D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\ViewModel\Book\BookCreateModel.cs"
@@ -220,3 +221,4 @@
 "D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\ViewModel\Writer\WriterEditModel.cs"
 "D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\ViewModel\Writer\WriterGridModel.cs"
 "D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\ViewModel\Writer\WriterListViewModel.cs"
+"D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Web\ViewModel\WriterReport\WriterReportList.cs"

@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
+using WriterApp.Data.Common.Pagination;
 using WriterApp.Data.Context;
 using WriterApp.Data.Model;
 
@@ -12,7 +14,11 @@ namespace WriterApp.Repository.Implementation
         }
         public Writer GetById(int id)
         {
-            return Find().AsNoTracking().FirstOrDefault(x => x.Id == id);
+            return Find().Include("WriterBooks.Book").AsNoTracking().FirstOrDefault(x => x.Id == id);
+        }
+        public override IPagedList<Writer> GetPage(int page = 1, int pageSize = 20, Func<IQueryable<Writer>, IQueryable<Writer>> filter = null)
+        {
+            return base.GetPage(page, pageSize, (query) => (filter != null ? filter(query) : query).Include("WriterBooks.Book"));
         }
         public override void Delete(int id)
         {
