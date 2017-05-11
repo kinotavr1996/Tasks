@@ -14,7 +14,6 @@ namespace BookApp.Web.Controllers
     {
         private readonly IBookRepository _bookRepository;
         private readonly IWriterRepository _writerRepository;
-
         public BookController(
            IBookRepository bookRepository,
            IWriterRepository writerRepository
@@ -72,38 +71,37 @@ namespace BookApp.Web.Controllers
         public async Task<IActionResult> Create()
         {
             BookCreateModel book = new BookCreateModel();
-            var writers = _writerRepository.Get();
-            foreach (var w in writers)
+            foreach (var w in _writerRepository.Get())
             {
                 book.Writers.Add(new SelectListItem { Value = w.Id.ToString(), Text = $"{w.LastName} {w.FirstName}" });
             }
             return View(book);
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(BookCreateModel book)
+        [ValidateAntiForgeryToken]                                       
+        public async Task<IActionResult> Create(BookCreateModel model)
         {
             if (ModelState.IsValid)
             {
-                Book _book = new Book
+                Book book = new Book
                 {
-                    Caption = book.Caption,
-                    PublishedDate = book.PublishedDate,
+                    Caption = model.Caption,
+                    PublishedDate = model.PublishedDate,
                     WriterBooks = new List<WriterBook>()
                 };
-                foreach (var id in book.WriterIds)
+                foreach (var id in model.WriterIds)
                 {
-                    _book.WriterBooks.Add(new WriterBook { WriterId = id });
+                    book.WriterBooks.Add(new WriterBook { WriterId = id });
                 }
-                _bookRepository.Add(_book);
+                _bookRepository.Add(book);
                 return RedirectToAction("Index");
             }
-            return View(book);
+            return View(model);
         }
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            var book = _bookRepository.GetById(id);
+            Book book = _bookRepository.GetById(id);
             return View(new BookEditModel
             {
                 Caption = book.Caption,
@@ -114,25 +112,25 @@ namespace BookApp.Web.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, BookEditModel book)
+        public async Task<IActionResult> Edit(int id, BookEditModel model)
         {
             if (ModelState.IsValid)
             {
-                Book _book = new Book
+                Book book = new Book
                 {
                     Id = id,
-                    Caption = book.Caption,
-                    PublishedDate = book.PublishedDate,
+                    Caption = model.Caption,
+                    PublishedDate = model.PublishedDate,
                     WriterBooks = new List<WriterBook>()
                 };
-                foreach (var wid in book.WriterIds)
+                foreach (var wid in model.WriterIds)
                 {
-                    _book.WriterBooks.Add(new WriterBook { WriterId = wid, BookId = id });
+                    book.WriterBooks.Add(new WriterBook { WriterId = wid, BookId = id });
                 }
-                _bookRepository.Edit(_book);
+                _bookRepository.Edit(book);
                 return RedirectToAction("Index");
             }
-            return View(book);
+            return View(model);
         }
 
         public async Task<IActionResult> Delete(int id)

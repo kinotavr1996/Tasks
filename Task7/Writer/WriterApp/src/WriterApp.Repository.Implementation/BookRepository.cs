@@ -25,16 +25,16 @@ namespace WriterApp.Repository.Implementation
         {
             return new PagedList<Book>(Find(filter).Include("WriterBooks.Writer").AsNoTracking(), page, pageSize);
         }
-        public override void Edit(Book book)
+        public override void Edit(Book model)
         {
-            var _book = Find().Include("WriterBooks.Writer").SingleOrDefault(x => x.Id == book.Id);
-            _book.Caption = book.Caption;
-            _book.PublishedDate = book.PublishedDate;
-            _book.WriterBooks.Clear();
+            var book = Find().Include("WriterBooks.Writer").SingleOrDefault(x => x.Id == model.Id);
+            book.WriterBooks.Clear();
+            book.Caption = model.Caption;
+            book.PublishedDate = model.PublishedDate;
             SaveChanges();
-            foreach (var wb in book.WriterBooks)
+            foreach (var wb in model.WriterBooks)
             {
-                _book.WriterBooks.Add(new WriterBook { BookId = book.Id, WriterId = wb.WriterId });
+                book.WriterBooks.Add(new WriterBook { BookId = model.Id, WriterId = wb.WriterId });
             }
             SaveChanges();
         }

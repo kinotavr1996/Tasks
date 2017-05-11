@@ -23,12 +23,13 @@
     <script>
         $(function () {
             $(".chosen-select").chosen({ disable_search_threshold: 10 });
-            $('.chosen-search-input').blur(function () {
+            $("input[type=submit]").click(function (e) {
+                e.preventDefault();
                 if ($('.search-choice').length)
-                    $('input[type="submit"]').prop('disabled', false)
+                    $(this).closest('form').submit()
                 else
-                    $('input[type="submit"]').prop('disabled', true)
-            })
+                    $('.chosen-container').css('border', '1px solid red');
+            });
         });
     </script>
 }
