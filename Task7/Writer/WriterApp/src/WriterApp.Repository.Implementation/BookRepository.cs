@@ -23,18 +23,24 @@ namespace WriterApp.Repository.Implementation
         }
         public override IPagedList<Book> GetPage(int page = 1, int pageSize = 20, Func<IQueryable<Book>, IQueryable<Book>> filter = null)
         {
-            return new PagedList<Book>(Find(filter).Include("WriterBooks.Writer").AsNoTracking(), page, pageSize);
+            return base.GetPage(page, pageSize, (query) => (filter != null ? filter(query) : query).Include("WriterBooks.Writer"));
         }
         public override void Edit(Book model)
         {
-            var book = Find().Include("WriterBooks.Writer").SingleOrDefault(x => x.Id == model.Id);
-            book.WriterBooks.Clear();
+            var book = Find().Include("WriterBooks").SingleOrDefault(x => x.Id == model.Id);
             book.Caption = model.Caption;
             book.PublishedDate = model.PublishedDate;
-            SaveChanges();
-            foreach (var wb in model.WriterBooks)
+            var ids = book.WriterBooks.Select(x => x.WriterId).ToList();
+            foreach (var wb in model.WriterBooks.ToList())
             {
-                book.WriterBooks.Add(new WriterBook { BookId = model.Id, WriterId = wb.WriterId });
+                if (!ids.Contains(wb.WriterId))
+                    book.WriterBooks.Add(new WriterBook { WriterId = wb.WriterId });
+            }
+            ids = model.WriterBooks.Select(x => x.WriterId).ToList();
+            foreach (var wb in book.WriterBooks.ToList())
+            {
+                if (!ids.Contains(wb.WriterId))
+                    book.WriterBooks.Remove(book.WriterBooks.Where(y => y.WriterId == wb.WriterId).SingleOrDefault());
             }
             SaveChanges();
         }

@@ -108,5 +108,7 @@ D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\Mig
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\Migrations\20170510151747_InitialForBook.Designer.cs
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\Migrations\20170510160444_ManyToMany.cs
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\Migrations\20170510160444_ManyToMany.Designer.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\Migrations\20170511142023_Navigation.cs
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\Migrations\20170511142023_Navigation.Designer.cs
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\Migrations\WriterContextModelSnapshot.cs
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\src\WriterApp.Data\Properties\AssemblyInfo.cs

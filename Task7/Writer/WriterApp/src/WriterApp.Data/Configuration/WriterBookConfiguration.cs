@@ -20,7 +20,6 @@ namespace WriterApp.Data.Configuration
             entity.HasOne(wb => wb.Writer)
                   .WithMany(b => b.WriterBooks)
                   .HasForeignKey(wb => wb.WriterId);
-
         }
     }
 }

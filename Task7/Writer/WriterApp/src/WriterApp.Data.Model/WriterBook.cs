@@ -3,8 +3,8 @@
     public class WriterBook
     {
         public int BookId { get; set; }
-        public Book Book { get; set; }
+        public virtual Book Book { get; set; }
         public int WriterId { get; set; }
-        public Writer Writer { get; set; }
+        public virtual Writer Writer { get; set; }
     }
 }

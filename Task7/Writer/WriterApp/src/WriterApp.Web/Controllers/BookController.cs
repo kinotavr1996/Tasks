@@ -96,6 +96,10 @@ namespace BookApp.Web.Controllers
                 _bookRepository.Add(book);
                 return RedirectToAction("Index");
             }
+            foreach (var w in _writerRepository.Get())
+            {
+                model.Writers.Add(new SelectListItem { Value = w.Id.ToString(), Text = $"{w.LastName} {w.FirstName}" });
+            }
             return View(model);
         }
         [HttpGet]
@@ -129,6 +133,10 @@ namespace BookApp.Web.Controllers
                 }
                 _bookRepository.Edit(book);
                 return RedirectToAction("Index");
+            }
+            foreach (var w in _writerRepository.Get())
+            {
+                model.Writers.Add(new SelectListItem { Value = w.Id.ToString(), Text = $"{w.LastName} {w.FirstName}" });
             }
             return View(model);
         }

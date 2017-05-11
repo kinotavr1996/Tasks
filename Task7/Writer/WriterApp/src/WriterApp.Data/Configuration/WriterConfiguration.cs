@@ -14,6 +14,7 @@ namespace WriterApp.Data.Configuration
             entity.Property(c => c.LastName).HasMaxLength(256).IsRequired();
             entity.Property(c => c.DateOfBirth).IsRequired();
             entity.Property(c => c.Biography).HasMaxLength(int.MaxValue).IsRequired(false);
+            entity.HasMany(c => c.WriterBooks);
         }
     }
 }

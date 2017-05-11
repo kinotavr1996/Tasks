@@ -10,6 +10,6 @@ namespace WriterApp.Data.Model
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Biography { get; set; }
-        public ICollection<WriterBook> WriterBooks { get; set; }
+        public virtual ICollection<WriterBook> WriterBooks { get; set; }
     }
 }

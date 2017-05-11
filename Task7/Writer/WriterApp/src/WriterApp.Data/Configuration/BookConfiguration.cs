@@ -12,6 +12,7 @@ namespace WriterApp.Data.Configuration
             entity.HasKey(c => c.Id);
             entity.Property(c => c.Caption).HasMaxLength(256).IsRequired();
             entity.Property(c => c.PublishedDate).IsRequired();
+            entity.HasMany(c => c.WriterBooks);
         }
 
     }

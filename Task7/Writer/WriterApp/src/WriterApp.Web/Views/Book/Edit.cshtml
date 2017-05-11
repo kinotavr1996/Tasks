@@ -26,7 +26,7 @@
             $("input[type=submit]").click(function (e) {
                 e.preventDefault();
                 if ($('.search-choice').length)
-                    $(this).closest('form').submit()
+                    $(this).closest('form').submit();
                 else
                     $('.chosen-container').css('border', '1px solid red');
             });

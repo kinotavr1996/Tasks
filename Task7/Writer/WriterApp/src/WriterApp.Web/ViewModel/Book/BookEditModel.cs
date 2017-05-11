@@ -7,6 +7,10 @@ namespace WriterApp.Web.ViewModel
 {
     public class BookEditModel
     {
+        public BookEditModel()
+        {
+            Writers = new List<SelectListItem>();
+        }
         public int Id { get; set; }
         [Required]
         [StringLength(256)]
