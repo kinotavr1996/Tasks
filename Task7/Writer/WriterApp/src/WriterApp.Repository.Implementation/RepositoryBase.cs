@@ -10,6 +10,11 @@ namespace WriterApp.Repository.Implementation
     public abstract class RepositoryBase<T> : IRepository<T> where T : class
     {
         private readonly WriterContext _dbContext;
+
+        public WriterContext GetContext()
+        {
+            return _dbContext;
+        }
         protected IQueryable<T> Find(Func<IQueryable<T>, IQueryable<T>> filter = null)
         {
             if (filter == null)
@@ -32,6 +37,7 @@ namespace WriterApp.Repository.Implementation
         {
             return new PagedList<T>(Find(filter).AsNoTracking(), page, pageSize);
         }
+
         public virtual void Add(T entity)
         {
             _dbContext.Add(entity);

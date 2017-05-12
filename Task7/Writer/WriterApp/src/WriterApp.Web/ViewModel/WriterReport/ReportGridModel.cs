@@ -11,7 +11,7 @@ namespace WriterApp.Web.ViewModel
         }
         public string FullName { get; set; }
         public int NumberOfBooks { get; set; }
-        public Book FirstBook { get; set; }
-        public Book LastBook { get; set; }
+        public int? FirstBook { get; set; }
+        public int? LastBook { get; set; }
     }
 }

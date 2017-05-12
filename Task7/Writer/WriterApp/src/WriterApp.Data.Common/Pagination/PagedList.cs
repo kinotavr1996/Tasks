@@ -15,9 +15,9 @@ namespace WriterApp.Data.Common.Pagination
             PageSize = size;
             Page = page;
             if (page == 0)
-                AddRange(set.Take(size).ToList());
+                AddRange(set.Take(size));
             else
-                AddRange(set.Skip(page * size).Take(size).ToList());
+                AddRange(set.Skip(page * size).Take(size));
         }
     }
 }

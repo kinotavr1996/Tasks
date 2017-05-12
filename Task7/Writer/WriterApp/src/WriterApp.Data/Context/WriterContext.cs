@@ -19,6 +19,8 @@ namespace WriterApp.Data.Context
         }
         public DbSet<Writer> Writers { get; set; }
         public DbSet<Book> Books { get; set; }
+        public DbSet<WriterBook> WriterBooks { get; set; }
+
 
     }
 }
