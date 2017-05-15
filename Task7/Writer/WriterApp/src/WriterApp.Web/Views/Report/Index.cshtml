@@ -18,10 +18,10 @@
     <thead>
         <tr>
             <th>
-                <a asp-action="Index" asp-route-currentFilter="@Model.Filter" asp-route-direction="@((Model.Order.Direction == "ASC" && Model.Order.Column == "FullName") ? "DESC" : "ASC")" asp-route-sortOrder="FullName">Fullname</a>
+                <a asp-action="Index" asp-route-currentFilter="@Model.Filter" asp-route-direction="@((Model.Order.Direction == "ASC" && Model.Order.Column == "fullName") ? "DESC" : "ASC")" asp-route-sortOrder="fullName">Fullname</a>
             </th>
             <th>
-                <a asp-action="Index" asp-route-currentFilter="@Model.Filter" asp-route-direction="@((Model.Order.Direction == "ASC" && Model.Order.Column == "NumberOfBooks") ? "DESC" : "ASC")" asp-route-sortOrder="NumberOfBooks">Number of books</a>
+                <a asp-action="Index" asp-route-currentFilter="@Model.Filter" asp-route-direction="@((Model.Order.Direction == "ASC" && Model.Order.Column == "numberOfBooks") ? "DESC" : "ASC")" asp-route-sortOrder="numberOfBooks">Number of books</a>
             </th>
             <th>
                 <span>First book</span>

@@ -9,6 +9,6 @@ namespace WriterApp.Repository
     public interface IWriterRepository : IRepository<Writer>
     {
         Writer GetById(int id);
-        IPagedList<WriterReport> GetReportsPage(string sortOrder, string direction, string searchString, int page = 1, int pageSize = 20);
+        IPagedList<WriterReport> GetReportsPage(int page = 1, int pageSize = 20, Func<IQueryable<WriterReport>, IQueryable<WriterReport>> filter = null);
     }
 }
