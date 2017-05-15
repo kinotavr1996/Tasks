@@ -71,9 +71,9 @@ namespace WriterApp.Repository.Implementation
 
             if (direction == "ASC")
             {
-                writerBookQuery = (from w in writerBookQuery
+                writerBookQuery = from w in writerBookQuery
                                    orderby SortBy(sortOrder, w) ascending
-                                   select w);
+                                   select w;
             }
             else
             {
@@ -85,7 +85,7 @@ namespace WriterApp.Repository.Implementation
             writerBookQuery = writerBookQuery.Skip(_page * pageSize).Take(pageSize);
             foreach (var item in writerBookQuery.ToList())
             {
-                writerReposts.Add(new WriterReport { FirstBook = item.FirstBook, LastBook = item.LastBook, NumberOfBooks = item.NumberOfBooks, FullName = item.FullName });
+                writerReposts.Add(new WriterReport { Id = item.Id, FirstBook = item.FirstBook, LastBook = item.LastBook, NumberOfBooks = item.NumberOfBooks, FullName = item.FullName });
             }
             return writerReposts;
         }
