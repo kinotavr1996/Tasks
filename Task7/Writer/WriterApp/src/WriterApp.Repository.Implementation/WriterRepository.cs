@@ -22,35 +22,72 @@ namespace WriterApp.Repository.Implementation
         {
             return base.GetPage(page, pageSize, (query) => (filter != null ? filter(query) : query));
         }
-        public IPagedList<WriterReport> GetReportsPage(int page = 1, int pageSize = 20, Func<IQueryable<WriterReport>, IQueryable<WriterReport>> filter = null)
+
+        private object SortBy(string sortOrder, WriterReport writer)
+        {
+            switch (sortOrder)
+            {
+                case "FullName":
+                    return writer.FullName;
+                case "NumberOfBooks":
+                    return writer.NumberOfBooks;
+                default:
+                    return writer.FullName;
+            }
+        }
+        public IPagedList<WriterReport> GetReportsPage(string sortOrder, string direction, string searchString, int page = 1, int pageSize = 20)
         {
             var context = GetContext();
-            List<WriterReport> writerReposts = new List<WriterReport>();
-            var bookQuery = context.WriterBooks.Join(context.Books, wb => wb.BookId, b => b.Id, (wb, b) => new { wb, b })
-                                                  .Where(wwb => wwb.wb.BookId == wwb.b.Id)
-                                                  .GroupBy(g => g.wb.WriterId)
-                                                  .Select(wwb => 
-                                                            new {
-                                                                WriterId = wwb.Key,
-                                                                MaxDate = wwb.Max(b => b.b.PublishedDate).Year,
-                                                                MinDate = wwb.Min(b => b.b.PublishedDate).Year,
-                                                                Count = wwb.Count()
-                                                            });
-            var writerBookQuery = context.Writers.GroupJoin(bookQuery, wb => wb.Id, w => w.WriterId, (wb, w) => new { wb, w })
-                                              .SelectMany(x => x.w.DefaultIfEmpty(),
-                                               (wb, w) => new
-                                               {
-                                                   Id = wb.wb.Id,
-                                                   FullName = wb.wb.LastName + " " + wb.wb.FirstName,
-                                                   Qty = w == null ? 0 : w.Count,
-                                                   MinDate = w == null ? (int?)null : w.MinDate,
-                                                   MaxDate = w == null ? (int?)null : w.MaxDate
-                                               }).OrderBy(x => x.Qty);
-            foreach(var item in writerBookQuery)
+            int _page = page - 1;
+            var bookQuery = from wb in context.WriterBooks
+                            join b in context.Books on wb.BookId equals b.Id
+                            group b by wb.WriterId into g
+                            select new
+                            {
+                                WriterId = g.Key,
+                                MaxDate = g.Max(x => x.PublishedDate).Year,
+                                MinDate = g.Min(x => x.PublishedDate).Year,
+                                Count = g.Count()
+                            };
+
+            var writerBookQuery = from w in context.Writers
+                                  join b in bookQuery on w.Id equals b.WriterId into pb
+                                  from p in pb.DefaultIfEmpty()
+                                  select new WriterReport
+                                  {
+                                      Id = w.Id,
+                                      FullName = w.LastName + " " + w.FirstName,
+                                      NumberOfBooks = p == null ? 0 : p.Count,
+                                      FirstBook = p == null ? (int?)null : p.MinDate,
+                                      LastBook = p == null ? (int?)null : p.MaxDate
+                                  };
+
+            if (!string.IsNullOrEmpty(searchString))
             {
-                writerReposts.Add(new WriterReport { FirstBook = item.MinDate, LastBook = item.MaxDate, NumberOfBooks = item.Qty, FullName = item.FullName });
+                writerBookQuery = from w in writerBookQuery
+                                  where w.FullName.ToUpper().Contains(searchString.ToUpper())
+                                  select w;
             }
-            return new PagedList<WriterReport>(filter(writerReposts.AsQueryable()), page, pageSize);
+
+            if (direction == "ASC")
+            {
+                writerBookQuery = (from w in writerBookQuery
+                                   orderby SortBy(sortOrder, w) ascending
+                                   select w);
+            }
+            else
+            {
+                writerBookQuery = from w in writerBookQuery
+                                  orderby SortBy(sortOrder, w) descending
+                                  select w;
+            }
+            PagedList<WriterReport> writerReposts = new PagedList<WriterReport>(writerBookQuery.Count(), _page, pageSize);
+            writerBookQuery = writerBookQuery.Skip(_page * pageSize).Take(pageSize);
+            foreach (var item in writerBookQuery.ToList())
+            {
+                writerReposts.Add(new WriterReport { FirstBook = item.FirstBook, LastBook = item.LastBook, NumberOfBooks = item.NumberOfBooks, FullName = item.FullName });
+            }
+            return writerReposts;
         }
         public override void Delete(int id)
         {

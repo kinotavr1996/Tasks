@@ -8,6 +8,12 @@ namespace WriterApp.Data.Common.Pagination
         public int TotalCount { get; private set; }
         public int Page { get; private set; }
         public int PageSize { get; private set; }
+        public PagedList(int totalCount = 0,int page = 0, int size = 4)
+        {
+            TotalCount = totalCount;
+            Page = page;
+            PageSize = size;
+        }
         public PagedList(IQueryable<T> set, int page, int size)
         {
             page = page - 1;
