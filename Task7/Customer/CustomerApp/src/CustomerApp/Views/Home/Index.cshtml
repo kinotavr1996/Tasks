@@ -20,13 +20,13 @@
     <thead>
         <tr>            
             <th>
-                <a asp-action="Index" asp-route-currentFilter="@Model.Filter" asp-route-orderBy="@(Model.Order.Direction == "ASC" && Model.Order.Column == "fullname" ? "DESC" : "ASC") " asp-route-sortOrder="fullname">Fullname</a>
+                <a asp-action="Index" asp-route-currentFilter="@Model.Filter" asp-route-orderBy="@((Model.Order.Direction == "ASC" && Model.Order.Column == "fullname") ? "DESC" : "ASC")" asp-route-sortOrder="fullname">Fullname</a>
             </th>
             <th>
-                <a asp-action="Index" asp-route-currentFilter="@Model.Filter" asp-route-orderBy="@(Model.Order.Direction == "ASC" && Model.Order.Column == "email" ? "DESC" : "ASC")" asp-route-sortOrder="email">E-mail</a>
+                <a asp-action="Index" asp-route-currentFilter="@Model.Filter" asp-route-orderBy="@((Model.Order.Direction == "ASC" && Model.Order.Column == "email") ? "DESC" : "ASC")" asp-route-sortOrder="email">E-mail</a>
             </th>        
             <th>
-                <a asp-action="Index" asp-route-currentFilter="@Model.Filter" asp-route-orderBy="@(Model.Order.Direction == "ASC" && Model.Order.Column == "phone" ? "DESC" : "ASC")" asp-route-sortOrder="phoneNumber">Phone</a>
+                <a asp-action="Index" asp-route-currentFilter="@Model.Filter" asp-route-orderBy="@((Model.Order.Direction == "ASC" && Model.Order.Column == "phone") ? "DESC" : "ASC")" asp-route-sortOrder="phoneNumber">Phone</a>
             </th>
 
             <th></th>

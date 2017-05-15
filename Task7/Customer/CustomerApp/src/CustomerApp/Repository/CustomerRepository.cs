@@ -33,7 +33,7 @@ namespace CustomerApp.Repository
 
             switch (sortBy)
             {
-                case "fullName":
+                case "fullname":
                     query = orderBy == "ASC" ? query.OrderBy(s => s.LastName) : query.OrderByDescending(s => s.LastName);
                     break;
                 case "email":
