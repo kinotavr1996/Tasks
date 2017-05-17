@@ -1,0 +1,52 @@
+<div class="customer-list">
+    <div class="customer-list-container container">
+        <div class="customer-list-table ">
+            <div class="table">
+                <div class="table-header">
+                    <div class="table-cell table-icon"></div>
+                    <div class="table-cell table-name" (click)="Sort('fullName');">Full Name</div>
+                    <div class="table-cell table-date" (click)="Sort('date');">Birthdate</div>
+                    <div class="table-cell table-status">Biography</div>
+                </div>
+                <div class="table-row" *ngFor="let customer of customers" [routerLink]="['../', customer.id, 'edit']">
+                    <div class="table-cell table-icon">
+                        <span class="avatar"></span>
+                    </div>
+                    <div class="table-cell table-name">
+                        <span>{{customer?.fullName}}</span>
+                    </div>
+                    <div class="table-cell table-date">
+                        <span>{{customer?.dateOfBirth}}</span>
+                    </div>
+                    <div class="table-cell table-date">
+                        <span>{{customer?.biography}}</span>
+                    </div>
+                    <div class="table-cell table-status">
+                        <span class="active"></span>
+                        <button (click)="Edit(customer.Id)">Edit</button>
+                        <button (click)="Delete(customer.Id)">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display:inline-block;">
+        <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <a (click)="_setPage(1)">First</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <a (click)="_setPage(pager.currentPage - 1)">Previous</a>
+            </li>
+            <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                <a (click)="_setPage(page)">{{page}}</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <a (click)="_setPage(pager.currentPage + 1)">Next</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <a (click)="_setPage(pager.totalPages)">Last</a>
+            </li>
+        </ul>
+    </div>
+</div>

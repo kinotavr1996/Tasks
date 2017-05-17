@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection; 
+using Microsoft.Extensions.DependencyInjection;
 using WriterApp.Repository;
 using WriterApp.Repository.Implementation;
 using WriterApp.Data.Context;
@@ -36,7 +36,7 @@ namespace WriterApp
             // Add framework services.
             services.AddSingleton<IWriterRepository, WriterRepository>();
             services.AddSingleton<IBookRepository, BookRepository>();
-
+            services.AddCors();
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
             services.AddDbContext<WriterContext>(options => options.UseSqlServer(Configuration.GetConnectionString("WriterDb"), b => b.MigrationsAssembly("WriterApp.Data")));
@@ -45,7 +45,7 @@ namespace WriterApp
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, WriterContext context)
-        {                
+        {
             app.UseApplicationInsightsRequestTelemetry();
 
             if (env.IsDevelopment())
@@ -60,14 +60,16 @@ namespace WriterApp
 
             app.UseApplicationInsightsExceptionTelemetry();
 
-            app.UseStaticFiles();
-
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}");
             });
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+
+            app.UseMvc();
             DbInitializer.Initialize(context);
         }
     }

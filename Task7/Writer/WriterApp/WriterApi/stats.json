@@ -1,0 +1,1709 @@
+{
+  "errors": [
+    "(undefined) ./ClientApp/app/app.component.ts\nModule not found: Error: Cannot resolve 'file' or 'directory' ./app.component.css in D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\nresolve file\n  D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css doesn't exist\n  D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css.js doesn't exist\n  D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css.ts doesn't exist\nresolve directory\n  D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css doesn't exist (directory default file)\n  D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css\\package.json doesn't exist (directory description file)\n[D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css]\n[D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css.js]\n[D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css.ts]\n @ ./ClientApp/app/app.component.ts 19:17-47",
+    "(undefined) ./ClientApp/app/app.component.ts\nModule not found: Error: Cannot resolve 'file' or 'directory' ./app.component.css in D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\nresolve file\n  D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css doesn't exist\n  D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css.js doesn't exist\n  D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css.ts doesn't exist\nresolve directory\n  D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css doesn't exist (directory default file)\n  D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css\\package.json doesn't exist (directory description file)\n[D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css]\n[D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css.js]\n[D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css.ts]\n @ ./ClientApp/app/app.component.ts 19:17-47"
+  ],
+  "warnings": [],
+  "version": "1.15.0",
+  "hash": "3cad1bfb47554d8eef1ddd07b3c6442a553a75e4",
+  "children": [
+    {
+      "errors": [
+        "./ClientApp/app/app.component.ts\nModule not found: Error: Cannot resolve 'file' or 'directory' ./app.component.css in D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\nresolve file\n  D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css doesn't exist\n  D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css.js doesn't exist\n  D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css.ts doesn't exist\nresolve directory\n  D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css doesn't exist (directory default file)\n  D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css\\package.json doesn't exist (directory description file)\n[D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css]\n[D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css.js]\n[D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css.ts]\n @ ./ClientApp/app/app.component.ts 19:17-47"
+      ],
+      "warnings": [],
+      "version": "1.15.0",
+      "hash": "3cad1bfb47554d8eef1d",
+      "time": 3857,
+      "publicPath": "/dist/",
+      "assetsByChunkName": {
+        "main-client": [
+          "main-client.js",
+          "main-client.js.map"
+        ]
+      },
+      "assets": [
+        {
+          "name": "main-client.js",
+          "size": 9442,
+          "chunks": [
+            0
+          ],
+          "chunkNames": [
+            "main-client"
+          ],
+          "emitted": true
+        },
+        {
+          "name": "main-client.js.map",
+          "size": 7285,
+          "chunks": [
+            0
+          ],
+          "chunkNames": [
+            "main-client"
+          ],
+          "emitted": true
+        }
+      ],
+      "chunks": [
+        {
+          "id": 0,
+          "rendered": true,
+          "initial": true,
+          "entry": true,
+          "extraAsync": false,
+          "size": 3713,
+          "names": [
+            "main-client"
+          ],
+          "files": [
+            "main-client.js",
+            "main-client.js.map"
+          ],
+          "hash": "998a765aa512c8d51865",
+          "parents": [],
+          "modules": [
+            {
+              "id": 0,
+              "identifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+              "name": "./ClientApp/boot-client.ts",
+              "index": 0,
+              "index2": 10,
+              "size": 894,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "assets": [],
+              "issuer": null,
+              "profile": {
+                "factory": 30,
+                "building": 1726
+              },
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "reasons": [],
+              "source": "\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nrequire(\"angular2-universal-polyfills/browser\");\r\nvar core_1 = require(\"@angular/core\");\r\nvar angular2_universal_1 = require(\"angular2-universal\");\r\nvar app_module_1 = require(\"./app/app.module\");\r\nrequire(\"bootstrap\");\r\n// Enable either Hot Module Reloading or production mode\r\nif (module['hot']) {\r\n    module['hot'].accept();\r\n    module['hot'].dispose(function () { platform.destroy(); });\r\n}\r\nelse {\r\n    core_1.enableProdMode();\r\n}\r\n// Boot the application, either now or when the DOM content is loaded\r\nvar platform = angular2_universal_1.platformUniversalDynamic();\r\nvar bootApplication = function () { platform.bootstrapModule(app_module_1.AppModule); };\r\nif (document.readyState === 'complete') {\r\n    bootApplication();\r\n}\r\nelse {\r\n    document.addEventListener('DOMContentLoaded', bootApplication);\r\n}\r\n"
+            },
+            {
+              "id": 1,
+              "identifier": "delegated 125 from dll-reference vendor_2b867295628df849f98a",
+              "name": "delegated ./node_modules/webpack/buildin/module.js from dll-reference vendor_2b867295628df849f98a",
+              "index": 1,
+              "index2": 1,
+              "size": 42,
+              "cacheable": false,
+              "built": false,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "assets": [],
+              "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+              "profile": {
+                "factory": 1111,
+                "building": 0,
+                "dependencies": 0
+              },
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "reasons": [
+                {
+                  "moduleId": 0,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+                  "module": "./ClientApp/boot-client.ts",
+                  "moduleName": "./ClientApp/boot-client.ts",
+                  "type": "cjs require",
+                  "userRequest": "module",
+                  "loc": "1:0-54"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "identifier": "external \"vendor_2b867295628df849f98a\"",
+              "name": "external \"vendor_2b867295628df849f98a\"",
+              "index": 2,
+              "index2": 0,
+              "size": 42,
+              "cacheable": false,
+              "built": false,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "assets": [],
+              "issuer": "delegated 45 from dll-reference vendor_2b867295628df849f98a",
+              "profile": {
+                "factory": 0,
+                "building": 0
+              },
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "reasons": [
+                {
+                  "moduleId": 1,
+                  "moduleIdentifier": "delegated 125 from dll-reference vendor_2b867295628df849f98a",
+                  "module": "delegated ./node_modules/webpack/buildin/module.js from dll-reference vendor_2b867295628df849f98a",
+                  "moduleName": "delegated ./node_modules/webpack/buildin/module.js from dll-reference vendor_2b867295628df849f98a",
+                  "type": "delegated source",
+                  "userRequest": "dll-reference vendor_2b867295628df849f98a"
+                },
+                {
+                  "moduleId": 3,
+                  "moduleIdentifier": "delegated 45 from dll-reference vendor_2b867295628df849f98a",
+                  "module": "delegated ./node_modules/angular2-universal-polyfills/browser.js from dll-reference vendor_2b867295628df849f98a",
+                  "moduleName": "delegated ./node_modules/angular2-universal-polyfills/browser.js from dll-reference vendor_2b867295628df849f98a",
+                  "type": "delegated source",
+                  "userRequest": "dll-reference vendor_2b867295628df849f98a"
+                },
+                {
+                  "moduleId": 4,
+                  "moduleIdentifier": "delegated 4 from dll-reference vendor_2b867295628df849f98a",
+                  "module": "delegated ./node_modules/@angular/core/bundles/core.umd.js from dll-reference vendor_2b867295628df849f98a",
+                  "moduleName": "delegated ./node_modules/@angular/core/bundles/core.umd.js from dll-reference vendor_2b867295628df849f98a",
+                  "type": "delegated source",
+                  "userRequest": "dll-reference vendor_2b867295628df849f98a"
+                },
+                {
+                  "moduleId": 5,
+                  "moduleIdentifier": "delegated 48 from dll-reference vendor_2b867295628df849f98a",
+                  "module": "delegated ./node_modules/angular2-universal/browser/index.js from dll-reference vendor_2b867295628df849f98a",
+                  "moduleName": "delegated ./node_modules/angular2-universal/browser/index.js from dll-reference vendor_2b867295628df849f98a",
+                  "type": "delegated source",
+                  "userRequest": "dll-reference vendor_2b867295628df849f98a"
+                },
+                {
+                  "moduleId": 7,
+                  "moduleIdentifier": "delegated 7 from dll-reference vendor_2b867295628df849f98a",
+                  "module": "delegated ./node_modules/@angular/platform-browser/bundles/platform-browser.umd.js from dll-reference vendor_2b867295628df849f98a",
+                  "moduleName": "delegated ./node_modules/@angular/platform-browser/bundles/platform-browser.umd.js from dll-reference vendor_2b867295628df849f98a",
+                  "type": "delegated source",
+                  "userRequest": "dll-reference vendor_2b867295628df849f98a"
+                },
+                {
+                  "moduleId": 10,
+                  "moduleIdentifier": "delegated 52 from dll-reference vendor_2b867295628df849f98a",
+                  "module": "delegated ./node_modules/bootstrap/dist/js/npm.js from dll-reference vendor_2b867295628df849f98a",
+                  "moduleName": "delegated ./node_modules/bootstrap/dist/js/npm.js from dll-reference vendor_2b867295628df849f98a",
+                  "type": "delegated source",
+                  "userRequest": "dll-reference vendor_2b867295628df849f98a"
+                }
+              ]
+            },
+            {
+              "id": 3,
+              "identifier": "delegated 45 from dll-reference vendor_2b867295628df849f98a",
+              "name": "delegated ./node_modules/angular2-universal-polyfills/browser.js from dll-reference vendor_2b867295628df849f98a",
+              "index": 3,
+              "index2": 2,
+              "size": 42,
+              "cacheable": false,
+              "built": false,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "assets": [],
+              "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+              "profile": {
+                "factory": 1111,
+                "building": 0
+              },
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "reasons": [
+                {
+                  "moduleId": 0,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+                  "module": "./ClientApp/boot-client.ts",
+                  "moduleName": "./ClientApp/boot-client.ts",
+                  "type": "cjs require",
+                  "userRequest": "angular2-universal-polyfills/browser",
+                  "loc": "3:0-47"
+                }
+              ]
+            },
+            {
+              "id": 4,
+              "identifier": "delegated 4 from dll-reference vendor_2b867295628df849f98a",
+              "name": "delegated ./node_modules/@angular/core/bundles/core.umd.js from dll-reference vendor_2b867295628df849f98a",
+              "index": 4,
+              "index2": 3,
+              "size": 42,
+              "cacheable": false,
+              "built": false,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "assets": [],
+              "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+              "profile": {
+                "factory": 1111,
+                "building": 0,
+                "dependencies": 0
+              },
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "reasons": [
+                {
+                  "moduleId": 0,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+                  "module": "./ClientApp/boot-client.ts",
+                  "moduleName": "./ClientApp/boot-client.ts",
+                  "type": "cjs require",
+                  "userRequest": "@angular/core",
+                  "loc": "4:13-37"
+                },
+                {
+                  "moduleId": 6,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+                  "module": "./ClientApp/app/app.module.ts",
+                  "moduleName": "./ClientApp/app/app.module.ts",
+                  "type": "cjs require",
+                  "userRequest": "@angular/core",
+                  "loc": "9:13-37"
+                },
+                {
+                  "moduleId": 8,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.ts",
+                  "module": "./ClientApp/app/app.component.ts",
+                  "moduleName": "./ClientApp/app/app.component.ts",
+                  "type": "cjs require",
+                  "userRequest": "@angular/core",
+                  "loc": "9:13-37"
+                }
+              ]
+            },
+            {
+              "id": 5,
+              "identifier": "delegated 48 from dll-reference vendor_2b867295628df849f98a",
+              "name": "delegated ./node_modules/angular2-universal/browser/index.js from dll-reference vendor_2b867295628df849f98a",
+              "index": 5,
+              "index2": 4,
+              "size": 42,
+              "cacheable": false,
+              "built": false,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "assets": [],
+              "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+              "profile": {
+                "factory": 1111,
+                "building": 0,
+                "dependencies": 0
+              },
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "reasons": [
+                {
+                  "moduleId": 0,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+                  "module": "./ClientApp/boot-client.ts",
+                  "moduleName": "./ClientApp/boot-client.ts",
+                  "type": "cjs require",
+                  "userRequest": "angular2-universal",
+                  "loc": "5:27-56"
+                }
+              ]
+            },
+            {
+              "id": 6,
+              "identifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+              "name": "./ClientApp/app/app.module.ts",
+              "index": 6,
+              "index2": 8,
+              "size": 1174,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "assets": [],
+              "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+              "profile": {
+                "factory": 1111,
+                "building": 31,
+                "dependencies": 16
+              },
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "reasons": [
+                {
+                  "moduleId": 0,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+                  "module": "./ClientApp/boot-client.ts",
+                  "moduleName": "./ClientApp/boot-client.ts",
+                  "type": "cjs require",
+                  "userRequest": "./app/app.module",
+                  "loc": "6:19-46"
+                }
+              ],
+              "source": "\"use strict\";\r\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar core_1 = require(\"@angular/core\");\r\nvar platform_browser_1 = require(\"@angular/platform-browser\");\r\nvar app_component_1 = require(\"./app.component\");\r\nvar AppModule = (function () {\r\n    function AppModule() {\r\n    }\r\n    return AppModule;\r\n}());\r\nAppModule = __decorate([\r\n    core_1.NgModule({\r\n        imports: [platform_browser_1.BrowserModule],\r\n        declarations: [app_component_1.AppComponent],\r\n        bootstrap: [app_component_1.AppComponent]\r\n    })\r\n], AppModule);\r\nexports.AppModule = AppModule;\r\n"
+            },
+            {
+              "id": 7,
+              "identifier": "delegated 7 from dll-reference vendor_2b867295628df849f98a",
+              "name": "delegated ./node_modules/@angular/platform-browser/bundles/platform-browser.umd.js from dll-reference vendor_2b867295628df849f98a",
+              "index": 7,
+              "index2": 5,
+              "size": 42,
+              "cacheable": false,
+              "built": false,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "assets": [],
+              "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+              "profile": {
+                "factory": 31,
+                "building": 0,
+                "dependencies": 0
+              },
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "reasons": [
+                {
+                  "moduleId": 6,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+                  "module": "./ClientApp/app/app.module.ts",
+                  "moduleName": "./ClientApp/app/app.module.ts",
+                  "type": "cjs require",
+                  "userRequest": "@angular/platform-browser",
+                  "loc": "10:25-61"
+                }
+              ]
+            },
+            {
+              "id": 8,
+              "identifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.ts",
+              "name": "./ClientApp/app/app.component.ts",
+              "index": 8,
+              "index2": 7,
+              "size": 1049,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "assets": [],
+              "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+              "profile": {
+                "factory": 31,
+                "building": 24,
+                "dependencies": 0
+              },
+              "failed": false,
+              "errors": 1,
+              "warnings": 0,
+              "reasons": [
+                {
+                  "moduleId": 6,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+                  "module": "./ClientApp/app/app.module.ts",
+                  "moduleName": "./ClientApp/app/app.module.ts",
+                  "type": "cjs require",
+                  "userRequest": "./app.component",
+                  "loc": "11:22-48"
+                }
+              ],
+              "source": "\"use strict\";\r\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar core_1 = require(\"@angular/core\");\r\nvar AppComponent = (function () {\r\n    function AppComponent() {\r\n    }\r\n    return AppComponent;\r\n}());\r\nAppComponent = __decorate([\r\n    core_1.Component({\r\n        selector: 'app',\r\n        template: require('./app.component.html'),\r\n        styles: [require('./app.component.css')]\r\n    })\r\n], AppComponent);\r\nexports.AppComponent = AppComponent;\r\n"
+            },
+            {
+              "id": 9,
+              "identifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\raw-loader\\index.js!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.html",
+              "name": "./ClientApp/app/app.component.html",
+              "index": 9,
+              "index2": 6,
+              "size": 302,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "assets": [],
+              "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.ts",
+              "profile": {
+                "factory": 22,
+                "building": 1
+              },
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "reasons": [
+                {
+                  "moduleId": 8,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.ts",
+                  "module": "./ClientApp/app/app.component.ts",
+                  "moduleName": "./ClientApp/app/app.component.ts",
+                  "type": "cjs require",
+                  "userRequest": "./app.component.html",
+                  "loc": "18:18-49"
+                }
+              ],
+              "source": "module.exports = \"<div class='container-fluid'>\\r\\n    <div class='row'>\\r\\n        <div class='col-sm-3'>\\r\\n            <nav-menu></nav-menu>\\r\\n        </div>\\r\\n        <div class='col-sm-9 body-content'>\\r\\n            <router-outlet></router-outlet>\\r\\n        </div>\\r\\n    </div>\\r\\n</div>\\r\\n\""
+            },
+            {
+              "id": 10,
+              "identifier": "delegated 52 from dll-reference vendor_2b867295628df849f98a",
+              "name": "delegated ./node_modules/bootstrap/dist/js/npm.js from dll-reference vendor_2b867295628df849f98a",
+              "index": 10,
+              "index2": 9,
+              "size": 42,
+              "cacheable": false,
+              "built": false,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "assets": [],
+              "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+              "profile": {
+                "factory": 1158,
+                "building": 0,
+                "dependencies": 0
+              },
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "reasons": [
+                {
+                  "moduleId": 0,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+                  "module": "./ClientApp/boot-client.ts",
+                  "moduleName": "./ClientApp/boot-client.ts",
+                  "type": "cjs require",
+                  "userRequest": "bootstrap",
+                  "loc": "7:0-20"
+                }
+              ]
+            }
+          ],
+          "filteredModules": 0,
+          "origins": [
+            {
+              "moduleId": 0,
+              "module": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+              "moduleName": "./ClientApp/boot-client.ts",
+              "loc": "",
+              "name": "main-client",
+              "reasons": []
+            }
+          ]
+        }
+      ],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+          "name": "./ClientApp/boot-client.ts",
+          "index": 0,
+          "index2": 10,
+          "size": 894,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": null,
+          "profile": {
+            "factory": 30,
+            "building": 1726
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "source": "\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nrequire(\"angular2-universal-polyfills/browser\");\r\nvar core_1 = require(\"@angular/core\");\r\nvar angular2_universal_1 = require(\"angular2-universal\");\r\nvar app_module_1 = require(\"./app/app.module\");\r\nrequire(\"bootstrap\");\r\n// Enable either Hot Module Reloading or production mode\r\nif (module['hot']) {\r\n    module['hot'].accept();\r\n    module['hot'].dispose(function () { platform.destroy(); });\r\n}\r\nelse {\r\n    core_1.enableProdMode();\r\n}\r\n// Boot the application, either now or when the DOM content is loaded\r\nvar platform = angular2_universal_1.platformUniversalDynamic();\r\nvar bootApplication = function () { platform.bootstrapModule(app_module_1.AppModule); };\r\nif (document.readyState === 'complete') {\r\n    bootApplication();\r\n}\r\nelse {\r\n    document.addEventListener('DOMContentLoaded', bootApplication);\r\n}\r\n"
+        },
+        {
+          "id": 1,
+          "identifier": "delegated 125 from dll-reference vendor_2b867295628df849f98a",
+          "name": "delegated ./node_modules/webpack/buildin/module.js from dll-reference vendor_2b867295628df849f98a",
+          "index": 1,
+          "index2": 1,
+          "size": 42,
+          "cacheable": false,
+          "built": false,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+          "profile": {
+            "factory": 1111,
+            "building": 0,
+            "dependencies": 0
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+              "module": "./ClientApp/boot-client.ts",
+              "moduleName": "./ClientApp/boot-client.ts",
+              "type": "cjs require",
+              "userRequest": "module",
+              "loc": "1:0-54"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "identifier": "external \"vendor_2b867295628df849f98a\"",
+          "name": "external \"vendor_2b867295628df849f98a\"",
+          "index": 2,
+          "index2": 0,
+          "size": 42,
+          "cacheable": false,
+          "built": false,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "delegated 45 from dll-reference vendor_2b867295628df849f98a",
+          "profile": {
+            "factory": 0,
+            "building": 0
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 1,
+              "moduleIdentifier": "delegated 125 from dll-reference vendor_2b867295628df849f98a",
+              "module": "delegated ./node_modules/webpack/buildin/module.js from dll-reference vendor_2b867295628df849f98a",
+              "moduleName": "delegated ./node_modules/webpack/buildin/module.js from dll-reference vendor_2b867295628df849f98a",
+              "type": "delegated source",
+              "userRequest": "dll-reference vendor_2b867295628df849f98a"
+            },
+            {
+              "moduleId": 3,
+              "moduleIdentifier": "delegated 45 from dll-reference vendor_2b867295628df849f98a",
+              "module": "delegated ./node_modules/angular2-universal-polyfills/browser.js from dll-reference vendor_2b867295628df849f98a",
+              "moduleName": "delegated ./node_modules/angular2-universal-polyfills/browser.js from dll-reference vendor_2b867295628df849f98a",
+              "type": "delegated source",
+              "userRequest": "dll-reference vendor_2b867295628df849f98a"
+            },
+            {
+              "moduleId": 4,
+              "moduleIdentifier": "delegated 4 from dll-reference vendor_2b867295628df849f98a",
+              "module": "delegated ./node_modules/@angular/core/bundles/core.umd.js from dll-reference vendor_2b867295628df849f98a",
+              "moduleName": "delegated ./node_modules/@angular/core/bundles/core.umd.js from dll-reference vendor_2b867295628df849f98a",
+              "type": "delegated source",
+              "userRequest": "dll-reference vendor_2b867295628df849f98a"
+            },
+            {
+              "moduleId": 5,
+              "moduleIdentifier": "delegated 48 from dll-reference vendor_2b867295628df849f98a",
+              "module": "delegated ./node_modules/angular2-universal/browser/index.js from dll-reference vendor_2b867295628df849f98a",
+              "moduleName": "delegated ./node_modules/angular2-universal/browser/index.js from dll-reference vendor_2b867295628df849f98a",
+              "type": "delegated source",
+              "userRequest": "dll-reference vendor_2b867295628df849f98a"
+            },
+            {
+              "moduleId": 7,
+              "moduleIdentifier": "delegated 7 from dll-reference vendor_2b867295628df849f98a",
+              "module": "delegated ./node_modules/@angular/platform-browser/bundles/platform-browser.umd.js from dll-reference vendor_2b867295628df849f98a",
+              "moduleName": "delegated ./node_modules/@angular/platform-browser/bundles/platform-browser.umd.js from dll-reference vendor_2b867295628df849f98a",
+              "type": "delegated source",
+              "userRequest": "dll-reference vendor_2b867295628df849f98a"
+            },
+            {
+              "moduleId": 10,
+              "moduleIdentifier": "delegated 52 from dll-reference vendor_2b867295628df849f98a",
+              "module": "delegated ./node_modules/bootstrap/dist/js/npm.js from dll-reference vendor_2b867295628df849f98a",
+              "moduleName": "delegated ./node_modules/bootstrap/dist/js/npm.js from dll-reference vendor_2b867295628df849f98a",
+              "type": "delegated source",
+              "userRequest": "dll-reference vendor_2b867295628df849f98a"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "identifier": "delegated 45 from dll-reference vendor_2b867295628df849f98a",
+          "name": "delegated ./node_modules/angular2-universal-polyfills/browser.js from dll-reference vendor_2b867295628df849f98a",
+          "index": 3,
+          "index2": 2,
+          "size": 42,
+          "cacheable": false,
+          "built": false,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+          "profile": {
+            "factory": 1111,
+            "building": 0
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+              "module": "./ClientApp/boot-client.ts",
+              "moduleName": "./ClientApp/boot-client.ts",
+              "type": "cjs require",
+              "userRequest": "angular2-universal-polyfills/browser",
+              "loc": "3:0-47"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "identifier": "delegated 4 from dll-reference vendor_2b867295628df849f98a",
+          "name": "delegated ./node_modules/@angular/core/bundles/core.umd.js from dll-reference vendor_2b867295628df849f98a",
+          "index": 4,
+          "index2": 3,
+          "size": 42,
+          "cacheable": false,
+          "built": false,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+          "profile": {
+            "factory": 1111,
+            "building": 0,
+            "dependencies": 0
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+              "module": "./ClientApp/boot-client.ts",
+              "moduleName": "./ClientApp/boot-client.ts",
+              "type": "cjs require",
+              "userRequest": "@angular/core",
+              "loc": "4:13-37"
+            },
+            {
+              "moduleId": 6,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+              "module": "./ClientApp/app/app.module.ts",
+              "moduleName": "./ClientApp/app/app.module.ts",
+              "type": "cjs require",
+              "userRequest": "@angular/core",
+              "loc": "9:13-37"
+            },
+            {
+              "moduleId": 8,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.ts",
+              "module": "./ClientApp/app/app.component.ts",
+              "moduleName": "./ClientApp/app/app.component.ts",
+              "type": "cjs require",
+              "userRequest": "@angular/core",
+              "loc": "9:13-37"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "identifier": "delegated 48 from dll-reference vendor_2b867295628df849f98a",
+          "name": "delegated ./node_modules/angular2-universal/browser/index.js from dll-reference vendor_2b867295628df849f98a",
+          "index": 5,
+          "index2": 4,
+          "size": 42,
+          "cacheable": false,
+          "built": false,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+          "profile": {
+            "factory": 1111,
+            "building": 0,
+            "dependencies": 0
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+              "module": "./ClientApp/boot-client.ts",
+              "moduleName": "./ClientApp/boot-client.ts",
+              "type": "cjs require",
+              "userRequest": "angular2-universal",
+              "loc": "5:27-56"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "identifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+          "name": "./ClientApp/app/app.module.ts",
+          "index": 6,
+          "index2": 8,
+          "size": 1174,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+          "profile": {
+            "factory": 1111,
+            "building": 31,
+            "dependencies": 16
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+              "module": "./ClientApp/boot-client.ts",
+              "moduleName": "./ClientApp/boot-client.ts",
+              "type": "cjs require",
+              "userRequest": "./app/app.module",
+              "loc": "6:19-46"
+            }
+          ],
+          "source": "\"use strict\";\r\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar core_1 = require(\"@angular/core\");\r\nvar platform_browser_1 = require(\"@angular/platform-browser\");\r\nvar app_component_1 = require(\"./app.component\");\r\nvar AppModule = (function () {\r\n    function AppModule() {\r\n    }\r\n    return AppModule;\r\n}());\r\nAppModule = __decorate([\r\n    core_1.NgModule({\r\n        imports: [platform_browser_1.BrowserModule],\r\n        declarations: [app_component_1.AppComponent],\r\n        bootstrap: [app_component_1.AppComponent]\r\n    })\r\n], AppModule);\r\nexports.AppModule = AppModule;\r\n"
+        },
+        {
+          "id": 7,
+          "identifier": "delegated 7 from dll-reference vendor_2b867295628df849f98a",
+          "name": "delegated ./node_modules/@angular/platform-browser/bundles/platform-browser.umd.js from dll-reference vendor_2b867295628df849f98a",
+          "index": 7,
+          "index2": 5,
+          "size": 42,
+          "cacheable": false,
+          "built": false,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+          "profile": {
+            "factory": 31,
+            "building": 0,
+            "dependencies": 0
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 6,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+              "module": "./ClientApp/app/app.module.ts",
+              "moduleName": "./ClientApp/app/app.module.ts",
+              "type": "cjs require",
+              "userRequest": "@angular/platform-browser",
+              "loc": "10:25-61"
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "identifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.ts",
+          "name": "./ClientApp/app/app.component.ts",
+          "index": 8,
+          "index2": 7,
+          "size": 1049,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+          "profile": {
+            "factory": 31,
+            "building": 24,
+            "dependencies": 0
+          },
+          "failed": false,
+          "errors": 1,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 6,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+              "module": "./ClientApp/app/app.module.ts",
+              "moduleName": "./ClientApp/app/app.module.ts",
+              "type": "cjs require",
+              "userRequest": "./app.component",
+              "loc": "11:22-48"
+            }
+          ],
+          "source": "\"use strict\";\r\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar core_1 = require(\"@angular/core\");\r\nvar AppComponent = (function () {\r\n    function AppComponent() {\r\n    }\r\n    return AppComponent;\r\n}());\r\nAppComponent = __decorate([\r\n    core_1.Component({\r\n        selector: 'app',\r\n        template: require('./app.component.html'),\r\n        styles: [require('./app.component.css')]\r\n    })\r\n], AppComponent);\r\nexports.AppComponent = AppComponent;\r\n"
+        },
+        {
+          "id": 9,
+          "identifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\raw-loader\\index.js!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.html",
+          "name": "./ClientApp/app/app.component.html",
+          "index": 9,
+          "index2": 6,
+          "size": 302,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.ts",
+          "profile": {
+            "factory": 22,
+            "building": 1
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 8,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.ts",
+              "module": "./ClientApp/app/app.component.ts",
+              "moduleName": "./ClientApp/app/app.component.ts",
+              "type": "cjs require",
+              "userRequest": "./app.component.html",
+              "loc": "18:18-49"
+            }
+          ],
+          "source": "module.exports = \"<div class='container-fluid'>\\r\\n    <div class='row'>\\r\\n        <div class='col-sm-3'>\\r\\n            <nav-menu></nav-menu>\\r\\n        </div>\\r\\n        <div class='col-sm-9 body-content'>\\r\\n            <router-outlet></router-outlet>\\r\\n        </div>\\r\\n    </div>\\r\\n</div>\\r\\n\""
+        },
+        {
+          "id": 10,
+          "identifier": "delegated 52 from dll-reference vendor_2b867295628df849f98a",
+          "name": "delegated ./node_modules/bootstrap/dist/js/npm.js from dll-reference vendor_2b867295628df849f98a",
+          "index": 10,
+          "index2": 9,
+          "size": 42,
+          "cacheable": false,
+          "built": false,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+          "profile": {
+            "factory": 1158,
+            "building": 0,
+            "dependencies": 0
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-client.ts",
+              "module": "./ClientApp/boot-client.ts",
+              "moduleName": "./ClientApp/boot-client.ts",
+              "type": "cjs require",
+              "userRequest": "bootstrap",
+              "loc": "7:0-20"
+            }
+          ]
+        }
+      ],
+      "filteredModules": 0,
+      "children": []
+    },
+    {
+      "errors": [
+        "./ClientApp/app/app.component.ts\nModule not found: Error: Cannot resolve 'file' or 'directory' ./app.component.css in D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\nresolve file\n  D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css doesn't exist\n  D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css.js doesn't exist\n  D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css.ts doesn't exist\nresolve directory\n  D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css doesn't exist (directory default file)\n  D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css\\package.json doesn't exist (directory description file)\n[D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css]\n[D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css.js]\n[D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.css.ts]\n @ ./ClientApp/app/app.component.ts 19:17-47"
+      ],
+      "warnings": [],
+      "version": "1.15.0",
+      "hash": "dd07b3c6442a553a75e4",
+      "time": 3846,
+      "publicPath": "/dist/",
+      "assetsByChunkName": {
+        "main-server": [
+          "main-server.js",
+          "main-server.js.map"
+        ]
+      },
+      "assets": [
+        {
+          "name": "main-server.js",
+          "size": 7964,
+          "chunks": [
+            0
+          ],
+          "chunkNames": [
+            "main-server"
+          ],
+          "emitted": true
+        },
+        {
+          "name": "main-server.js.map",
+          "size": 6753,
+          "chunks": [
+            0
+          ],
+          "chunkNames": [
+            "main-server"
+          ],
+          "emitted": true
+        }
+      ],
+      "chunks": [
+        {
+          "id": 0,
+          "rendered": true,
+          "initial": true,
+          "entry": true,
+          "extraAsync": false,
+          "size": 4264,
+          "names": [
+            "main-server"
+          ],
+          "files": [
+            "main-server.js",
+            "main-server.js.map"
+          ],
+          "hash": "52456bccf4c8d7a35391",
+          "parents": [],
+          "modules": [
+            {
+              "id": 0,
+              "identifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+              "name": "./ClientApp/boot-server.ts",
+              "index": 0,
+              "index2": 8,
+              "size": 1529,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "assets": [],
+              "issuer": null,
+              "profile": {
+                "factory": 78,
+                "building": 2760
+              },
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "reasons": [],
+              "source": "\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nrequire(\"angular2-universal-polyfills\");\r\nrequire(\"zone.js\");\r\nvar core_1 = require(\"@angular/core\");\r\nvar angular2_universal_1 = require(\"angular2-universal\");\r\nvar app_module_1 = require(\"./app/app.module\");\r\ncore_1.enableProdMode();\r\nvar platform = angular2_universal_1.platformNodeDynamic();\r\nfunction default_1(params) {\r\n    return new Promise(function (resolve, reject) {\r\n        var requestZone = Zone.current.fork({\r\n            name: 'angular-universal request',\r\n            properties: {\r\n                baseUrl: '/',\r\n                requestUrl: params.url,\r\n                originUrl: params.origin,\r\n                preboot: false,\r\n                // TODO: Render just the <app> component instead of wrapping it inside an extra HTML document\r\n                // Waiting on https://github.com/angular/universal/issues/347\r\n                document: '<!DOCTYPE html><html><head></head><body><app></app></body></html>'\r\n            },\r\n            onHandleError: function (parentZone, currentZone, targetZone, error) {\r\n                // If any error occurs while rendering the module, reject the whole operation\r\n                reject(error);\r\n                return true;\r\n            }\r\n        });\r\n        return requestZone.run(function () { return platform.serializeModule(app_module_1.AppModule); }).then(function (html) {\r\n            resolve({ html: html });\r\n        }, reject);\r\n    });\r\n}\r\nexports.default = default_1;\r\n"
+            },
+            {
+              "id": 1,
+              "identifier": "external \"angular2-universal-polyfills\"",
+              "name": "external \"angular2-universal-polyfills\"",
+              "index": 1,
+              "index2": 0,
+              "size": 42,
+              "cacheable": false,
+              "built": false,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "assets": [],
+              "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+              "profile": {
+                "factory": 1,
+                "building": 0
+              },
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "reasons": [
+                {
+                  "moduleId": 0,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+                  "module": "./ClientApp/boot-server.ts",
+                  "moduleName": "./ClientApp/boot-server.ts",
+                  "type": "cjs require",
+                  "userRequest": "angular2-universal-polyfills",
+                  "loc": "3:0-39"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "identifier": "external \"zone.js\"",
+              "name": "external \"zone.js\"",
+              "index": 2,
+              "index2": 1,
+              "size": 42,
+              "cacheable": false,
+              "built": false,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "assets": [],
+              "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+              "profile": {
+                "factory": 1,
+                "building": 1
+              },
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "reasons": [
+                {
+                  "moduleId": 0,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+                  "module": "./ClientApp/boot-server.ts",
+                  "moduleName": "./ClientApp/boot-server.ts",
+                  "type": "cjs require",
+                  "userRequest": "zone.js",
+                  "loc": "4:0-18"
+                }
+              ]
+            },
+            {
+              "id": 3,
+              "identifier": "external \"@angular/core\"",
+              "name": "external \"@angular/core\"",
+              "index": 3,
+              "index2": 2,
+              "size": 42,
+              "cacheable": false,
+              "built": false,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "assets": [],
+              "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+              "profile": {
+                "factory": 2,
+                "building": 1
+              },
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "reasons": [
+                {
+                  "moduleId": 0,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+                  "module": "./ClientApp/boot-server.ts",
+                  "moduleName": "./ClientApp/boot-server.ts",
+                  "type": "cjs require",
+                  "userRequest": "@angular/core",
+                  "loc": "5:13-37"
+                },
+                {
+                  "moduleId": 5,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+                  "module": "./ClientApp/app/app.module.ts",
+                  "moduleName": "./ClientApp/app/app.module.ts",
+                  "type": "cjs require",
+                  "userRequest": "@angular/core",
+                  "loc": "9:13-37"
+                },
+                {
+                  "moduleId": 7,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.ts",
+                  "module": "./ClientApp/app/app.component.ts",
+                  "moduleName": "./ClientApp/app/app.component.ts",
+                  "type": "cjs require",
+                  "userRequest": "@angular/core",
+                  "loc": "9:13-37"
+                }
+              ]
+            },
+            {
+              "id": 4,
+              "identifier": "external \"angular2-universal\"",
+              "name": "external \"angular2-universal\"",
+              "index": 4,
+              "index2": 3,
+              "size": 42,
+              "cacheable": false,
+              "built": false,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "assets": [],
+              "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+              "profile": {
+                "factory": 3,
+                "building": 0
+              },
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "reasons": [
+                {
+                  "moduleId": 0,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+                  "module": "./ClientApp/boot-server.ts",
+                  "moduleName": "./ClientApp/boot-server.ts",
+                  "type": "cjs require",
+                  "userRequest": "angular2-universal",
+                  "loc": "6:27-56"
+                }
+              ]
+            },
+            {
+              "id": 5,
+              "identifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+              "name": "./ClientApp/app/app.module.ts",
+              "index": 5,
+              "index2": 7,
+              "size": 1174,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "assets": [],
+              "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+              "profile": {
+                "factory": 15,
+                "building": 47,
+                "dependencies": 0
+              },
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "reasons": [
+                {
+                  "moduleId": 0,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+                  "module": "./ClientApp/boot-server.ts",
+                  "moduleName": "./ClientApp/boot-server.ts",
+                  "type": "cjs require",
+                  "userRequest": "./app/app.module",
+                  "loc": "7:19-46"
+                }
+              ],
+              "source": "\"use strict\";\r\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar core_1 = require(\"@angular/core\");\r\nvar platform_browser_1 = require(\"@angular/platform-browser\");\r\nvar app_component_1 = require(\"./app.component\");\r\nvar AppModule = (function () {\r\n    function AppModule() {\r\n    }\r\n    return AppModule;\r\n}());\r\nAppModule = __decorate([\r\n    core_1.NgModule({\r\n        imports: [platform_browser_1.BrowserModule],\r\n        declarations: [app_component_1.AppComponent],\r\n        bootstrap: [app_component_1.AppComponent]\r\n    })\r\n], AppModule);\r\nexports.AppModule = AppModule;\r\n"
+            },
+            {
+              "id": 6,
+              "identifier": "external \"@angular/platform-browser\"",
+              "name": "external \"@angular/platform-browser\"",
+              "index": 6,
+              "index2": 4,
+              "size": 42,
+              "cacheable": false,
+              "built": false,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "assets": [],
+              "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+              "profile": {
+                "factory": 0,
+                "building": 0
+              },
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "reasons": [
+                {
+                  "moduleId": 5,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+                  "module": "./ClientApp/app/app.module.ts",
+                  "moduleName": "./ClientApp/app/app.module.ts",
+                  "type": "cjs require",
+                  "userRequest": "@angular/platform-browser",
+                  "loc": "10:25-61"
+                }
+              ]
+            },
+            {
+              "id": 7,
+              "identifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.ts",
+              "name": "./ClientApp/app/app.component.ts",
+              "index": 7,
+              "index2": 6,
+              "size": 1049,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "assets": [],
+              "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+              "profile": {
+                "factory": 15,
+                "building": 39,
+                "dependencies": 0
+              },
+              "failed": false,
+              "errors": 1,
+              "warnings": 0,
+              "reasons": [
+                {
+                  "moduleId": 5,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+                  "module": "./ClientApp/app/app.module.ts",
+                  "moduleName": "./ClientApp/app/app.module.ts",
+                  "type": "cjs require",
+                  "userRequest": "./app.component",
+                  "loc": "11:22-48"
+                }
+              ],
+              "source": "\"use strict\";\r\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar core_1 = require(\"@angular/core\");\r\nvar AppComponent = (function () {\r\n    function AppComponent() {\r\n    }\r\n    return AppComponent;\r\n}());\r\nAppComponent = __decorate([\r\n    core_1.Component({\r\n        selector: 'app',\r\n        template: require('./app.component.html'),\r\n        styles: [require('./app.component.css')]\r\n    })\r\n], AppComponent);\r\nexports.AppComponent = AppComponent;\r\n"
+            },
+            {
+              "id": 8,
+              "identifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\raw-loader\\index.js!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.html",
+              "name": "./ClientApp/app/app.component.html",
+              "index": 8,
+              "index2": 5,
+              "size": 302,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "assets": [],
+              "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.ts",
+              "profile": {
+                "factory": 8,
+                "building": 512
+              },
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "reasons": [
+                {
+                  "moduleId": 7,
+                  "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.ts",
+                  "module": "./ClientApp/app/app.component.ts",
+                  "moduleName": "./ClientApp/app/app.component.ts",
+                  "type": "cjs require",
+                  "userRequest": "./app.component.html",
+                  "loc": "18:18-49"
+                }
+              ],
+              "source": "module.exports = \"<div class='container-fluid'>\\r\\n    <div class='row'>\\r\\n        <div class='col-sm-3'>\\r\\n            <nav-menu></nav-menu>\\r\\n        </div>\\r\\n        <div class='col-sm-9 body-content'>\\r\\n            <router-outlet></router-outlet>\\r\\n        </div>\\r\\n    </div>\\r\\n</div>\\r\\n\""
+            }
+          ],
+          "filteredModules": 0,
+          "origins": [
+            {
+              "moduleId": 0,
+              "module": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+              "moduleName": "./ClientApp/boot-server.ts",
+              "loc": "",
+              "name": "main-server",
+              "reasons": []
+            }
+          ]
+        }
+      ],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+          "name": "./ClientApp/boot-server.ts",
+          "index": 0,
+          "index2": 8,
+          "size": 1529,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": null,
+          "profile": {
+            "factory": 78,
+            "building": 2760
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "source": "\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nrequire(\"angular2-universal-polyfills\");\r\nrequire(\"zone.js\");\r\nvar core_1 = require(\"@angular/core\");\r\nvar angular2_universal_1 = require(\"angular2-universal\");\r\nvar app_module_1 = require(\"./app/app.module\");\r\ncore_1.enableProdMode();\r\nvar platform = angular2_universal_1.platformNodeDynamic();\r\nfunction default_1(params) {\r\n    return new Promise(function (resolve, reject) {\r\n        var requestZone = Zone.current.fork({\r\n            name: 'angular-universal request',\r\n            properties: {\r\n                baseUrl: '/',\r\n                requestUrl: params.url,\r\n                originUrl: params.origin,\r\n                preboot: false,\r\n                // TODO: Render just the <app> component instead of wrapping it inside an extra HTML document\r\n                // Waiting on https://github.com/angular/universal/issues/347\r\n                document: '<!DOCTYPE html><html><head></head><body><app></app></body></html>'\r\n            },\r\n            onHandleError: function (parentZone, currentZone, targetZone, error) {\r\n                // If any error occurs while rendering the module, reject the whole operation\r\n                reject(error);\r\n                return true;\r\n            }\r\n        });\r\n        return requestZone.run(function () { return platform.serializeModule(app_module_1.AppModule); }).then(function (html) {\r\n            resolve({ html: html });\r\n        }, reject);\r\n    });\r\n}\r\nexports.default = default_1;\r\n"
+        },
+        {
+          "id": 1,
+          "identifier": "external \"angular2-universal-polyfills\"",
+          "name": "external \"angular2-universal-polyfills\"",
+          "index": 1,
+          "index2": 0,
+          "size": 42,
+          "cacheable": false,
+          "built": false,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+          "profile": {
+            "factory": 1,
+            "building": 0
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+              "module": "./ClientApp/boot-server.ts",
+              "moduleName": "./ClientApp/boot-server.ts",
+              "type": "cjs require",
+              "userRequest": "angular2-universal-polyfills",
+              "loc": "3:0-39"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "identifier": "external \"zone.js\"",
+          "name": "external \"zone.js\"",
+          "index": 2,
+          "index2": 1,
+          "size": 42,
+          "cacheable": false,
+          "built": false,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+          "profile": {
+            "factory": 1,
+            "building": 1
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+              "module": "./ClientApp/boot-server.ts",
+              "moduleName": "./ClientApp/boot-server.ts",
+              "type": "cjs require",
+              "userRequest": "zone.js",
+              "loc": "4:0-18"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "identifier": "external \"@angular/core\"",
+          "name": "external \"@angular/core\"",
+          "index": 3,
+          "index2": 2,
+          "size": 42,
+          "cacheable": false,
+          "built": false,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+          "profile": {
+            "factory": 2,
+            "building": 1
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+              "module": "./ClientApp/boot-server.ts",
+              "moduleName": "./ClientApp/boot-server.ts",
+              "type": "cjs require",
+              "userRequest": "@angular/core",
+              "loc": "5:13-37"
+            },
+            {
+              "moduleId": 5,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+              "module": "./ClientApp/app/app.module.ts",
+              "moduleName": "./ClientApp/app/app.module.ts",
+              "type": "cjs require",
+              "userRequest": "@angular/core",
+              "loc": "9:13-37"
+            },
+            {
+              "moduleId": 7,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.ts",
+              "module": "./ClientApp/app/app.component.ts",
+              "moduleName": "./ClientApp/app/app.component.ts",
+              "type": "cjs require",
+              "userRequest": "@angular/core",
+              "loc": "9:13-37"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "identifier": "external \"angular2-universal\"",
+          "name": "external \"angular2-universal\"",
+          "index": 4,
+          "index2": 3,
+          "size": 42,
+          "cacheable": false,
+          "built": false,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+          "profile": {
+            "factory": 3,
+            "building": 0
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+              "module": "./ClientApp/boot-server.ts",
+              "moduleName": "./ClientApp/boot-server.ts",
+              "type": "cjs require",
+              "userRequest": "angular2-universal",
+              "loc": "6:27-56"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "identifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+          "name": "./ClientApp/app/app.module.ts",
+          "index": 5,
+          "index2": 7,
+          "size": 1174,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+          "profile": {
+            "factory": 15,
+            "building": 47,
+            "dependencies": 0
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\boot-server.ts",
+              "module": "./ClientApp/boot-server.ts",
+              "moduleName": "./ClientApp/boot-server.ts",
+              "type": "cjs require",
+              "userRequest": "./app/app.module",
+              "loc": "7:19-46"
+            }
+          ],
+          "source": "\"use strict\";\r\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar core_1 = require(\"@angular/core\");\r\nvar platform_browser_1 = require(\"@angular/platform-browser\");\r\nvar app_component_1 = require(\"./app.component\");\r\nvar AppModule = (function () {\r\n    function AppModule() {\r\n    }\r\n    return AppModule;\r\n}());\r\nAppModule = __decorate([\r\n    core_1.NgModule({\r\n        imports: [platform_browser_1.BrowserModule],\r\n        declarations: [app_component_1.AppComponent],\r\n        bootstrap: [app_component_1.AppComponent]\r\n    })\r\n], AppModule);\r\nexports.AppModule = AppModule;\r\n"
+        },
+        {
+          "id": 6,
+          "identifier": "external \"@angular/platform-browser\"",
+          "name": "external \"@angular/platform-browser\"",
+          "index": 6,
+          "index2": 4,
+          "size": 42,
+          "cacheable": false,
+          "built": false,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+          "profile": {
+            "factory": 0,
+            "building": 0
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 5,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+              "module": "./ClientApp/app/app.module.ts",
+              "moduleName": "./ClientApp/app/app.module.ts",
+              "type": "cjs require",
+              "userRequest": "@angular/platform-browser",
+              "loc": "10:25-61"
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "identifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.ts",
+          "name": "./ClientApp/app/app.component.ts",
+          "index": 7,
+          "index2": 6,
+          "size": 1049,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+          "profile": {
+            "factory": 15,
+            "building": 39,
+            "dependencies": 0
+          },
+          "failed": false,
+          "errors": 1,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 5,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.module.ts",
+              "module": "./ClientApp/app/app.module.ts",
+              "moduleName": "./ClientApp/app/app.module.ts",
+              "type": "cjs require",
+              "userRequest": "./app.component",
+              "loc": "11:22-48"
+            }
+          ],
+          "source": "\"use strict\";\r\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar core_1 = require(\"@angular/core\");\r\nvar AppComponent = (function () {\r\n    function AppComponent() {\r\n    }\r\n    return AppComponent;\r\n}());\r\nAppComponent = __decorate([\r\n    core_1.Component({\r\n        selector: 'app',\r\n        template: require('./app.component.html'),\r\n        styles: [require('./app.component.css')]\r\n    })\r\n], AppComponent);\r\nexports.AppComponent = AppComponent;\r\n"
+        },
+        {
+          "id": 8,
+          "identifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\raw-loader\\index.js!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.html",
+          "name": "./ClientApp/app/app.component.html",
+          "index": 8,
+          "index2": 5,
+          "size": 302,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.ts",
+          "profile": {
+            "factory": 8,
+            "building": 512
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 7,
+              "moduleIdentifier": "D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\node_modules\\ts-loader\\index.js?{\"silent\":true}!D:\\testing\\examples\\tableApp\\Tasks\\Task7\\Writer\\WriterApp\\Angular2Application1\\ClientApp\\app\\app.component.ts",
+              "module": "./ClientApp/app/app.component.ts",
+              "moduleName": "./ClientApp/app/app.component.ts",
+              "type": "cjs require",
+              "userRequest": "./app.component.html",
+              "loc": "18:18-49"
+            }
+          ],
+          "source": "module.exports = \"<div class='container-fluid'>\\r\\n    <div class='row'>\\r\\n        <div class='col-sm-3'>\\r\\n            <nav-menu></nav-menu>\\r\\n        </div>\\r\\n        <div class='col-sm-9 body-content'>\\r\\n            <router-outlet></router-outlet>\\r\\n        </div>\\r\\n    </div>\\r\\n</div>\\r\\n\""
+        }
+      ],
+      "filteredModules": 0,
+      "children": []
+    }
+  ]
+}
