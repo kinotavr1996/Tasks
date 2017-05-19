@@ -40,25 +40,34 @@ namespace WriterApp.Web.Controllers
             }
             return query;
         }
-        public async Task<IActionResult> Index(string sortOrder, string direction, string searchString, string currentFilter, int? page)
+        public IActionResult Index()
         {
-            WriterListViewModel writerList = new WriterListViewModel();
-            writerList.Filter = searchString;
-            writerList.Order.Column = sortOrder;
-            writerList.Order.Direction = direction ?? "ASC";
-            writerList.Page = page ?? 1;
-            if (writerList.Filter != null)
-                writerList.Page = 1;
-            else
-                writerList.Filter = currentFilter;
-            var writers = _writerRepository.GetPage(writerList.Page, writerList.PageSize, (query) => ApplySortOrder(ApplyFilter(query, searchString), writerList.Order.Column, writerList.Order.Direction));
-            foreach (var c in writers)
-            {
-                writerList.Items.Add(new WriterGridModel { Id = c.Id, FullName = $"{c.LastName} {c.FirstName}", DateOfBirth = c.DateOfBirth, Biography = c.Biography });
-            }
-            writerList.TotalPages = (int)Math.Ceiling(writers.TotalCount / (double)writerList.PageSize);
-            return View(writerList);
+            return View();
         }
+
+        public IActionResult Error()
+        {
+            return View();
+        }
+        //public async Task<IActionResult> Index(string sortOrder, string direction, string searchString, string currentFilter, int? page)
+        //{
+        //    WriterListViewModel writerList = new WriterListViewModel();
+        //    writerList.Filter = searchString;
+        //    writerList.Order.Column = sortOrder;
+        //    writerList.Order.Direction = direction ?? "ASC";
+        //    writerList.Page = page ?? 1;
+        //    if (writerList.Filter != null)
+        //        writerList.Page = 1;
+        //    else
+        //        writerList.Filter = currentFilter;
+        //    var writers = _writerRepository.GetPage(writerList.Page, writerList.PageSize, (query) => ApplySortOrder(ApplyFilter(query, searchString), writerList.Order.Column, writerList.Order.Direction));
+        //    foreach (var c in writers)
+        //    {
+        //        writerList.Items.Add(new WriterGridModel { Id = c.Id, FullName = $"{c.LastName} {c.FirstName}", DateOfBirth = c.DateOfBirth, Biography = c.Biography });
+        //    }
+        //    writerList.TotalPages = (int)Math.Ceiling(writers.TotalCount / (double)writerList.PageSize);
+        //    return View(writerList);
+        //}
 
         [HttpGet]
         public async Task<IActionResult> Create()

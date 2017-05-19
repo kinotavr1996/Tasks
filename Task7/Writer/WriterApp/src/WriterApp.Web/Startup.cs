@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using WriterApp.Repository;
 using WriterApp.Repository.Implementation;
 using WriterApp.Data.Context;
+using Microsoft.AspNetCore.SpaServices.Webpack;  
 using WriterApp.Data;
 
 namespace WriterApp
@@ -46,30 +47,31 @@ namespace WriterApp
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, WriterContext context)
         {
-            app.UseApplicationInsightsRequestTelemetry();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseBrowserLink();
+                app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
+                {
+                    HotModuleReplacement = true
+                });
             }
             else
             {
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            app.UseApplicationInsightsExceptionTelemetry();
+            app.UseStaticFiles();
 
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}");
-            });
-            app.UseDefaultFiles();
-            app.UseStaticFiles();
+                    template: "{controller=Home}/{action=Index}/{id?}");
 
-            app.UseMvc();
+                routes.MapSpaFallbackRoute(
+                    name: "spa-fallback",
+                    defaults: new { controller = "Home", action = "Index" });
+            });
             DbInitializer.Initialize(context);
         }
     }
