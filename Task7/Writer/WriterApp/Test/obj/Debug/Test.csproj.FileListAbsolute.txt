@@ -1,10 +1,10 @@
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\Test\bin\Debug\Test.exe.config
-D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\Test\bin\Debug\Test.exe
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\Test\bin\Debug\Test.pdb
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\Test\bin\Debug\EntityFramework.dll
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\Test\bin\Debug\EntityFramework.SqlServer.dll
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\Test\bin\Debug\EntityFramework.xml
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\Test\bin\Debug\EntityFramework.SqlServer.xml
+D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\Test\obj\Debug\Test.exe
 D:\testing\examples\tableApp\Tasks\Task7\Writer\WriterApp\Test\obj\Debug\Test.pdb
