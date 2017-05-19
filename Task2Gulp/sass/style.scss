@@ -1,0 +1,181 @@
+@mixin respond-to($media) {
+  @if $media == laptop {
+    @media only screen and (max-width: 1224px) { @content; }
+  }  
+  @else if $media == tablets {
+    @media only screen and (max-width: 768px) { @content; }
+  }
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font: 16px Sans-Serif;
+    font-family: "Times New Roman ";
+}
+
+h1 {
+    margin: 0 0 20px 0;
+}
+p {
+    margin: 20px 0 0 0;
+}
+footer,
+header {
+    background: #666666;
+    color: white;
+    line-height: 50px;
+    border: 2px solid black;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 2;
+}
+header {
+    top: 0;
+}
+footer {
+    bottom: 0;
+}
+.footer,
+.push,
+.header {
+    height: 50px;
+}
+.select {
+    font-size: 14px;
+}
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -50px;
+    background-color: #c0c0c0;
+    position: relative;
+    padding: 50px 0;
+    box-sizing: border-box;
+}
+.content {
+    display: inline-block;
+    position: relative;
+    border: 2px solid #969696;
+    width: 66.666%;
+    box-sizing: border-box;
+    float: left;
+    z-index: 1;
+}
+.left-panel {
+    min-width: 150px;    
+    text-align: left;
+    float: left;
+}
+.right-panel {
+    min-width: 200px;
+    border: 2px solid #c0c0c0;
+    text-align: right;
+    float: right;
+}
+.left-panel,
+.right-panel {
+    width: 16%;
+    display: inline-block;
+    border-top: none;
+    box-sizing: border-box;
+	@include respond-to(laptop) { display:none; };
+}
+.input-group {
+    padding: 5px 0;
+	&.checkbox{
+		@include respond-to(laptop) {
+			width: 50%;
+			margin: 0 auto; 
+			};			
+		@include respond-to(tablets) {
+			width: 100%;
+			margin: 0 auto;
+		};
+		.info-text{
+			@include respond-to(tablets) {
+			 width: 85%;			
+		};
+		}
+	}
+}
+
+.info-block {
+    display: block;
+    position: relative;
+    float: left;
+    width: 33.333%;
+	@include respond-to(laptop) { width: 100%; };	
+	@include respond-to(tablets) { width: 100%; };
+}
+.info-text,
+.info-input {
+    display: inline-block;
+	@include respond-to(tablets) { width: 100%; };
+}
+.info-input {
+    min-width: 65%;
+    padding: 2px;
+}
+.main-select {
+    min-width: 60%;
+    padding: 2px;
+    background-image: linear-gradient(45deg, transparent 50%, #eae7df 50%), linear-gradient(135deg, #eae7df 50%, transparent 50%), linear-gradient(to top, #eae7df, #fff);
+    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0;
+    background-size: 0px 0px, 5px 5px, 1.5em 2.5em;
+    background-repeat: no-repeat;
+	@include respond-to(tablets) { width: 100%; };
+}
+.form-content {
+    display: block;
+    overflow: hidden;
+}
+.info-text {
+    min-width: 25%;
+}
+input,
+select {
+    border: 1px solid #969696;
+    border-radius: 5px;
+}
+.rotated {
+    width: 1.5%;
+    min-width: 0;
+
+.btn {
+    transform: rotate(90deg);
+    margin: 40px -40px;
+}
+}
+.content{
+	@include respond-to(laptop) { width: 100%!important; };
+	&.rotate-right.rotate-left {
+        width: 97%;
+	}
+
+&.rotate-left {
+    width: 82.5%;
+}
+&.rotate-right {
+    width: 82.5%;
+}
+}
+.btn {
+    min-width: 95px;
+    text-align: center;
+    border-radius: 3px;
+    background-color: #f4f4f3;
+    border: 1px solid #f4f4f3;
+}
+.form-button {
+    float: right;
+    margin: 20px 5px;
+}
+.content-inside {
+    padding: 15px 30px 15px 15px;
+}
+.expand {
+    z-index: 3;
+}
