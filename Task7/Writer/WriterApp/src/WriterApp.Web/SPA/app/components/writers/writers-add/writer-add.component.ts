@@ -12,31 +12,15 @@ import { WriterAddModel } from "../../../model/writer-add.model";
 })
 export class WriterAddComponent implements OnInit {
     model: WriterAddModel;
-    id: number;
-    public validator: WriterValidatior;
-    private sub: any;
-    constructor(private _httpService: WriterHttpService,
-        private route: ActivatedRoute,
-        private router: Router,
-        private window: Window
-    ) {
-
-    }
+    constructor(private _httpService: WriterHttpService, private router: Router
+    ) { }
     ngOnInit() {
-        //window.alert();
         this.model = new WriterAddModel(null, null, null, null);
     }
-
-    test() {
-        console.log(123);
-    }
-
-    onSubmitForm(event) {
-        event.preventDefault();
-        console.log(this.model);
-        //this._httpService.postCustomer(this.model)
-        //    .subscribe(res => {
-        //        this.model = WriterAddModel.fromJSON(res);
-        //    });
+    onSubmitForm() {
+        this._httpService.postCustomer(this.model)
+            .subscribe(res => {
+                this.router.navigateByUrl("/spa/writers/list");
+            });
     }
 }

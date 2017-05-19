@@ -23,8 +23,7 @@ import { HomeComponent } from './components/home/home.component';
     ],
     providers: [
         HttpService,
-        StorageService,
-        { provide: 'Window', useValue: window }
+        StorageService
     ],
     imports: [
         UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.

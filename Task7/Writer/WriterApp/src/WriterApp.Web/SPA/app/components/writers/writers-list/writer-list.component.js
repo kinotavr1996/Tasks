@@ -8,9 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var writer_list_model_1 = require("./../../../model/writer-list.model");
-var core_1 = require("@angular/core");
+var writer_list_model_1 = require('./../../../model/writer-list.model');
+var core_1 = require('@angular/core');
 var writer_http_service_1 = require("../writers-shared/writer-http.service");
 var paginator_component_1 = require("../../../shared-component/paginator/paginator.component");
 var WriterListComponent = (function () {
@@ -23,8 +22,11 @@ var WriterListComponent = (function () {
     }
     WriterListComponent.prototype.ngOnInit = function () {
         var _this = this;
+        console.log(1);
         this._httpService.getWriters()
             .subscribe(function (res) {
+            console.log(1);
+            console.log(res);
             _this.model = writer_list_model_1.WriterListModel.fromJSON(res);
             _this._setPage(1);
         });
@@ -32,6 +34,7 @@ var WriterListComponent = (function () {
     WriterListComponent.prototype.delete = function (id) {
         this._httpService.deleteCustomer(id)
             .subscribe(function (res) {
+            console.log("dasdasd");
             alert("Writer with id: " + id + "deleted");
         });
     };
@@ -65,14 +68,14 @@ var WriterListComponent = (function () {
             _this.model = writer_list_model_1.WriterListModel.fromJSON(res);
         });
     };
+    WriterListComponent = __decorate([
+        core_1.Component({
+            template: require('./writer-list.component.html'),
+            styles: [require('./writer-list.component.css')]
+        }), 
+        __metadata('design:paramtypes', [writer_http_service_1.WriterHttpService, paginator_component_1.PagerService])
+    ], WriterListComponent);
     return WriterListComponent;
 }());
-WriterListComponent = __decorate([
-    core_1.Component({
-        template: require('./writer-list.component.html'),
-        styles: [require('./writer-list.component.css')]
-    }),
-    __metadata("design:paramtypes", [writer_http_service_1.WriterHttpService, paginator_component_1.PagerService])
-], WriterListComponent);
 exports.WriterListComponent = WriterListComponent;
 //# sourceMappingURL=writer-list.component.js.map

@@ -19,8 +19,11 @@ export class WriterListComponent implements OnInit {
     constructor(private _httpService: WriterHttpService, private pagerService: PagerService) { }
 
     ngOnInit() {
+        console.log(1);
         this._httpService.getWriters()
             .subscribe(res => {
+                console.log(1);
+                console.log(res);
                 this.model = WriterListModel.fromJSON(res);
                 this._setPage(1);
             });
@@ -28,6 +31,7 @@ export class WriterListComponent implements OnInit {
     delete(id: number) {
         this._httpService.deleteCustomer(id)
             .subscribe(res => {
+                console.log("dasdasd");
                 alert("Writer with id: " + id + "deleted");
             });
     }

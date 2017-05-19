@@ -1,10 +1,9 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-require("angular2-universal-polyfills");
-require("zone.js");
-var core_1 = require("@angular/core");
-var angular2_universal_1 = require("angular2-universal");
-var app_module_1 = require("./app/app.module");
+require('angular2-universal-polyfills');
+require('zone.js');
+var core_1 = require('@angular/core');
+var angular2_universal_1 = require('angular2-universal');
+var app_module_1 = require('./app/app.module');
 core_1.enableProdMode();
 var platform = angular2_universal_1.platformNodeDynamic();
 function default_1(params) {
@@ -31,5 +30,6 @@ function default_1(params) {
         }, reject);
     });
 }
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = default_1;
 //# sourceMappingURL=boot-server.js.map

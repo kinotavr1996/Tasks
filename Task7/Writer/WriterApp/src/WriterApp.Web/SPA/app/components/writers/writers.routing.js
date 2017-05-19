@@ -1,8 +1,7 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var writer_add_component_1 = require("./writers-add/writer-add.component");
-var writer_edit_component_1 = require("./writerrs-edit/writer-edit.component");
-var router_1 = require("@angular/router");
+var writer_add_component_1 = require('./writers-add/writer-add.component');
+var writer_edit_component_1 = require('./writerrs-edit/writer-edit.component');
+var router_1 = require('@angular/router');
 var writer_list_component_1 = require("./writers-list/writer-list.component");
 var writers_component_1 = require("./writers.component");
 exports.writersRoutes = [{

@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var WriterModel = (function () {
     function WriterModel(id, fullName, dateOfBirth, biography) {
         this.id = id;
