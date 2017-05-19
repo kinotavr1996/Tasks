@@ -14,21 +14,26 @@ var core_1 = require("@angular/core");
 var writer_http_service_1 = require("../writers-shared/writer-http.service");
 var writer_add_model_1 = require("../../../model/writer-add.model");
 var WriterAddComponent = (function () {
-    function WriterAddComponent(_httpService, route, router) {
+    function WriterAddComponent(_httpService, route, router, window) {
         this._httpService = _httpService;
         this.route = route;
         this.router = router;
+        this.window = window;
     }
     WriterAddComponent.prototype.ngOnInit = function () {
+        //window.alert();
         this.model = new writer_add_model_1.WriterAddModel(null, null, null, null);
     };
-    WriterAddComponent.prototype.onSubmitForm = function () {
-        var _this = this;
+    WriterAddComponent.prototype.test = function () {
+        console.log(123);
+    };
+    WriterAddComponent.prototype.onSubmitForm = function (event) {
+        event.preventDefault();
         console.log(this.model);
-        this._httpService.postCustomer(this.model)
-            .subscribe(function (res) {
-            _this.model = writer_add_model_1.WriterAddModel.fromJSON(res);
-        });
+        //this._httpService.postCustomer(this.model)
+        //    .subscribe(res => {
+        //        this.model = WriterAddModel.fromJSON(res);
+        //    });
     };
     return WriterAddComponent;
 }());
@@ -39,7 +44,8 @@ WriterAddComponent = __decorate([
     }),
     __metadata("design:paramtypes", [writer_http_service_1.WriterHttpService,
         router_1.ActivatedRoute,
-        router_1.Router])
+        router_1.Router,
+        Window])
 ], WriterAddComponent);
 exports.WriterAddComponent = WriterAddComponent;
 //# sourceMappingURL=writer-add.component.js.map

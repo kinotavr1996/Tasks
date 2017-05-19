@@ -23,7 +23,9 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        bootstrap: [app_component_1.AppComponent],
+        bootstrap: [
+            app_component_1.AppComponent
+        ],
         declarations: [
             app_component_1.AppComponent,
             navmenu_component_1.NavMenuComponent,
@@ -31,16 +33,17 @@ AppModule = __decorate([
         ],
         providers: [
             http_service_1.HttpService,
-            storage_service_1.StorageService
+            storage_service_1.StorageService,
+            { provide: 'Window', useValue: window }
         ],
         imports: [
-            writers_module_1.WritersModule,
             angular2_universal_1.UniversalModule,
+            writers_module_1.WritersModule,
             router_1.RouterModule.forRoot([
-                { path: '', redirectTo: 'home', pathMatch: 'full' },
-                { path: 'home', component: home_component_1.HomeComponent }
+                { path: '', redirectTo: 'spa', pathMatch: 'full' },
+                { path: 'spa', component: home_component_1.HomeComponent }
             ].concat(writers_routing_1.writersRoutes, [
-                { path: '**', redirectTo: 'home' }
+                { path: '**', redirectTo: 'spa' }
             ]))
         ]
     })

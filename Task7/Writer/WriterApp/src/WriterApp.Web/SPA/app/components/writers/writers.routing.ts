@@ -6,7 +6,7 @@ import { WriterListComponent } from "./writers-list/writer-list.component";
 import { WritersComponent } from "./writers.component";
 
 export const writersRoutes: Routes = [{
-    path: 'writers',
+    path: 'spa/writers',
     component: WritersComponent,
     children: [
         { path: '', redirectTo: 'list', pathMatch: 'full' },

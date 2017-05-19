@@ -6,7 +6,7 @@ var router_1 = require("@angular/router");
 var writer_list_component_1 = require("./writers-list/writer-list.component");
 var writers_component_1 = require("./writers.component");
 exports.writersRoutes = [{
-        path: 'writers',
+        path: 'spa/writers',
         component: writers_component_1.WritersComponent,
         children: [
             { path: '', redirectTo: 'list', pathMatch: 'full' },

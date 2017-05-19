@@ -13,7 +13,9 @@ import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
-    bootstrap: [AppComponent],
+    bootstrap: [
+        AppComponent
+    ],
     declarations: [
         AppComponent,
         NavMenuComponent,
@@ -21,16 +23,17 @@ import { HomeComponent } from './components/home/home.component';
     ],
     providers: [
         HttpService,
-        StorageService
+        StorageService,
+        { provide: 'Window', useValue: window }
     ],
     imports: [
-        WritersModule,
         UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
+        WritersModule,
         RouterModule.forRoot([
-            { path: '', redirectTo: 'home', pathMatch: 'full' },
-            { path: 'home', component: HomeComponent },
+            { path: '', redirectTo: 'spa', pathMatch: 'full' },
+            { path: 'spa', component: HomeComponent },
             ...writersRoutes,
-            { path: '**', redirectTo: 'home' }
+            { path: '**', redirectTo: 'spa' }
         ])
     ]
 })

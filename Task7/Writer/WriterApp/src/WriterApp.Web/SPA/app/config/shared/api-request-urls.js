@@ -6,7 +6,7 @@ var ApiRequestUrls = (function () {
     return ApiRequestUrls;
 }());
 ApiRequestUrls.urls = {
-    'spa': 'spa'
+    'writer': 'writer'
 };
 exports.ApiRequestUrls = ApiRequestUrls;
 //# sourceMappingURL=api-request-urls.js.map

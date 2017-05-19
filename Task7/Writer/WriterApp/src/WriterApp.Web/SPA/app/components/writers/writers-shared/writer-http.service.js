@@ -18,28 +18,28 @@ var WriterHttpService = (function () {
         this._httpService = _httpService;
     }
     WriterHttpService.prototype.getWriterById = function (id) {
-        return this._httpService.get(config_1.AppConfig.urls.spa + "/" + id)
+        return this._httpService.get(config_1.AppConfig.urls.writer + "/" + id)
             .map(function (res) { return res.json(); });
     };
     WriterHttpService.prototype.getSortingCustomers = function (sortBy, orderBy, pageNumber) {
-        return this._httpService.get(config_1.AppConfig.urls.spa
+        return this._httpService.get(config_1.AppConfig.urls.writer
             + "?sortOrder=" + sortBy + "&direction=" + orderBy + "&page=" + pageNumber)
             .map(function (res) { return res.json(); });
     };
     WriterHttpService.prototype.getWriters = function () {
-        return this._httpService.get(config_1.AppConfig.urls.spa)
+        return this._httpService.get(config_1.AppConfig.urls.writer)
             .map(function (res) { return res.json(); });
     };
     WriterHttpService.prototype.postCustomer = function (data) {
-        return this._httpService.post(config_1.AppConfig.urls.spa, data)
+        return this._httpService.post(config_1.AppConfig.urls.writer, data)
             .map(function (res) { return res.json(); });
     };
     WriterHttpService.prototype.putCustomer = function (id, data) {
-        return this._httpService.put(config_1.AppConfig.urls.spa + "/" + id, data)
+        return this._httpService.put(config_1.AppConfig.urls.writer + "/" + id, data)
             .map(function (res) { return res.json(); });
     };
     WriterHttpService.prototype.deleteCustomer = function (id) {
-        return this._httpService.delete(config_1.AppConfig.urls.spa + "/" + id)
+        return this._httpService.delete(config_1.AppConfig.urls.writer + "/" + id)
             .map(function (res) { return res.json(); });
     };
     return WriterHttpService;
