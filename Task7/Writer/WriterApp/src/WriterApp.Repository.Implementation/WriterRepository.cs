@@ -55,7 +55,8 @@ namespace WriterApp.Repository.Implementation
         public override void Delete(int id)
         {
             var writer = Find().SingleOrDefault(x => x.Id == id);
-            Remove(writer);
+            if(writer != null)
+                Remove(writer) ;
         }
         public override void Edit(Writer writer)
         {

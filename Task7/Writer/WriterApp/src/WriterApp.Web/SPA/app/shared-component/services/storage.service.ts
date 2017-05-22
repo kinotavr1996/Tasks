@@ -27,10 +27,9 @@ export class StorageService {
         localStorage.setItem(this._getKey(key), value);
     }
 
-    public getItem(key: string): string {
-        return localStorage.getItem(this._getKey(key));
+    public getItem(key: string): any {
+        return '';
     }
-
     public removeItem(key: string): void {
         localStorage.removeItem(this._getKey(key));
     }

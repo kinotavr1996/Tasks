@@ -68,7 +68,6 @@ namespace WriterApp.Web.Controllers
         [ProducesResponseType(typeof(WriterCreateModel), 400)]
         public ActionResult Create([FromBody]WriterCreateModel writer)
         {
-
             _writerRepository.Add(new Writer
             {
                 FirstName = writer.FirstName,
@@ -85,6 +84,10 @@ namespace WriterApp.Web.Controllers
         public ActionResult Edit(int id)
         {
             var writer = _writerRepository.GetById(id);
+            if (writer == null)
+            {
+                return NotFound();
+            }
             return Ok(new WriterEditModel
             {
                 FirstName = writer.FirstName,
@@ -99,6 +102,10 @@ namespace WriterApp.Web.Controllers
         [ProducesResponseType(typeof(WriterEditModel), 400)]
         public ActionResult Edit([FromRoute]int id, [FromBody]WriterEditModel writer)
         {
+            if (writer == null)
+            {
+                return NotFound();
+            }
             _writerRepository.Edit(new Writer
             {
                 Id = id,

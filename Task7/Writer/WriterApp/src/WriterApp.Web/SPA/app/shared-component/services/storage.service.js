@@ -32,7 +32,7 @@ var StorageService = (function () {
         localStorage.setItem(this._getKey(key), value);
     };
     StorageService.prototype.getItem = function (key) {
-        return localStorage.getItem(this._getKey(key));
+        return '';
     };
     StorageService.prototype.removeItem = function (key) {
         localStorage.removeItem(this._getKey(key));

@@ -1,9 +1,18 @@
-a{
-    cursor:pointer;
+a {
+    cursor: pointer;
 }
-th{
-    cursor:pointer;
+
+th {
+    cursor: pointer;
 }
-.table-status{
-    cursor:default;
+
+td {
+    max-width: 200px;
+    min-width: 100px;
+    word-break: break-word;
+}
+
+
+.table-status {
+    cursor: default;
 }
