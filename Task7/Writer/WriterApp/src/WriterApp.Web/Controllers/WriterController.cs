@@ -110,12 +110,10 @@ namespace WriterApp.Web.Controllers
             return Ok(writer);
         }
         [HttpDelete("{id}")]
-        [ProducesResponseType(typeof(Writer), 200)]
-        [ProducesResponseType(typeof(Writer), 404)]
         public ActionResult Delete(int id)
         {
             _writerRepository.Delete(id);
-            return Ok($"Writer {id} Deleted");
+            return Ok();
         }
     }
 }

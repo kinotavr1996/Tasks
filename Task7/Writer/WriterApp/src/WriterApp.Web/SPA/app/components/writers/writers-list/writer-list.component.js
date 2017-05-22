@@ -22,7 +22,6 @@ var WriterListComponent = (function () {
     }
     WriterListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        console.log(1);
         this._httpService.getWriters()
             .subscribe(function (res) {
             console.log(1);
@@ -33,12 +32,10 @@ var WriterListComponent = (function () {
     };
     WriterListComponent.prototype.delete = function (id) {
         this._httpService.deleteCustomer(id)
-            .subscribe(function (res) {
-            console.log("dasdasd");
-            alert("Writer with id: " + id + "deleted");
-        });
+            .subscribe(function (res) { });
+        this.ngOnInit();
     };
-    WriterListComponent.prototype.Sort = function (columnName) {
+    WriterListComponent.prototype.sort = function (columnName) {
         var _this = this;
         if (this.model.direction == 'ASC') {
             this.model.direction = "DESC";

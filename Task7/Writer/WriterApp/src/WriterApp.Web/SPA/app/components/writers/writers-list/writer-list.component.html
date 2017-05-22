@@ -1,12 +1,12 @@
-<a [routerLink]="['../', 'add']">Add writer</a>
+<button [routerLink]="['../', 'add']">Add writer</button>
 
 <div class="customer-list">
     <div class="customer-list-container container">
         <div class="customer-list-table ">
             <table class="table table-striped">
                 <thead class="table-header">
-                    <th class="table-cell table-name" (click)="Sort('fullName');">Full Name</th>
-                    <th class="table-cell table-date" (click)="Sort('date');">Birthdate</th>
+                    <th class="table-cell table-name" (click)="sort('fullName');">Full Name</th>
+                    <th class="table-cell table-date" (click)="sort('date');">Birthdate</th>
                     <th class="table-cell table-status">Biography</th>
                 </thead>
                 <tbody class="table-row" *ngFor="let customer of model?.writerModel">
