@@ -18,20 +18,17 @@ export class WriterListComponent implements OnInit {
 
     constructor(private _httpService: WriterHttpService, private pagerService: PagerService) { }
 
-    ngOnInit() {        
+    ngOnInit() {
         this._httpService.getWriters()
             .subscribe(res => {
-                console.log(1);
-                console.log(res);
                 this.model = WriterListModel.fromJSON(res);
                 this._setPage(1);
             });
     }
+
     delete(id: number) {
         this._httpService.deleteCustomer(id)
-            .subscribe(res => { });
-        this.ngOnInit();
-
+            .subscribe(res => { this.ngOnInit(); });
     }
     sort(columnName: string) {
         if (this.model.direction == 'ASC') {
@@ -49,7 +46,6 @@ export class WriterListComponent implements OnInit {
                     this.model = WriterListModel.fromJSON(res);
                 });
         }
-
     }
 
     private _setPage(page: number) {

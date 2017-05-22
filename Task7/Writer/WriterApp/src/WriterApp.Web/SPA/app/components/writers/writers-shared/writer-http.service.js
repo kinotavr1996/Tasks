@@ -39,7 +39,7 @@ var WriterHttpService = (function () {
     };
     WriterHttpService.prototype.deleteCustomer = function (id) {
         return this._httpService.delete(config_1.AppConfig.urls.writer + "/" + id)
-            .map(function (res) { return res.json(); });
+            .map(function (res) { return res; });
     };
     WriterHttpService = __decorate([
         core_1.Injectable(), 

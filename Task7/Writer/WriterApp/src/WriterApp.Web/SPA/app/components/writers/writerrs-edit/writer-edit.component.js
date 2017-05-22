@@ -31,11 +31,10 @@ var WriterEditComponent = (function () {
     };
     WriterEditComponent.prototype.onSubmitForm = function () {
         var _this = this;
-        console.log(this.model);
         this._httpService.putCustomer(this.id, this.model)
             .subscribe(function (res) {
-            console.log(_this.model);
             _this.model = writer_edit_model_1.WriterEditModel.fromJSON(res);
+            _this.router.navigateByUrl("/spa/writers/list");
         });
     };
     WriterEditComponent = __decorate([

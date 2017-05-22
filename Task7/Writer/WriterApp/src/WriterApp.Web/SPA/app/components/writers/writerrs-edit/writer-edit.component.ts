@@ -18,9 +18,7 @@ export class WriterEditComponent {
     constructor(private _httpService: WriterHttpService,
         private route: ActivatedRoute,
         private router: Router
-    ) {
-
-    }
+    ) { }
 
     ngOnInit() {
         this.sub = this.route.params.subscribe(params => {
@@ -33,11 +31,10 @@ export class WriterEditComponent {
     }
 
     onSubmitForm() {
-        console.log(this.model);
         this._httpService.putCustomer(this.id, this.model)
             .subscribe(res => {
-                console.log(this.model);
                 this.model = WriterEditModel.fromJSON(res);
+                this.router.navigateByUrl("/spa/writers/list");
             });
     }
 }

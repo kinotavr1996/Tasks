@@ -24,16 +24,14 @@ var WriterListComponent = (function () {
         var _this = this;
         this._httpService.getWriters()
             .subscribe(function (res) {
-            console.log(1);
-            console.log(res);
             _this.model = writer_list_model_1.WriterListModel.fromJSON(res);
             _this._setPage(1);
         });
     };
     WriterListComponent.prototype.delete = function (id) {
+        var _this = this;
         this._httpService.deleteCustomer(id)
-            .subscribe(function (res) { });
-        this.ngOnInit();
+            .subscribe(function (res) { _this.ngOnInit(); });
     };
     WriterListComponent.prototype.sort = function (columnName) {
         var _this = this;

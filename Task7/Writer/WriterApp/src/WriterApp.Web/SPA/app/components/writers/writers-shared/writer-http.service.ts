@@ -29,6 +29,6 @@ export class WriterHttpService {
     }
     deleteCustomer(id) {
         return this._httpService.delete(AppConfig.urls.writer + "/" + id)
-            .map(res => res.json());
+            .map(res => res);
     }
 }

@@ -7,16 +7,11 @@
                 <span class='icon-bar'></span>
                 <span class='icon-bar'></span>
             </button>
-            <a class='navbar-brand' [routerLink]="['/home']">WriterApp.API</a>
+            <a class='navbar-brand' [routerLink]="['/spa']">Writers Info List</a>
         </div>
         <div class='clearfix'></div>
         <div class='navbar-collapse collapse'>
             <ul class='nav navbar-nav'>
-                <li>
-                    <a [routerLink]="['/spa']">
-                        <span class='glyphicon glyphicon-home'></span> Home
-                    </a>
-                </li>
                 <li [routerLinkActive]="['link-active']">
                     <a [routerLink]="['/spa/writers']">
                         <span class='glyphicon glyphicon-th-list'></span> Writers

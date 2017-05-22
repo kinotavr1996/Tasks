@@ -1,29 +1,26 @@
-<button [routerLink]="['../', 'add']">Add writer</button>
-
-<div class="customer-list">
-    <div class="customer-list-container container">
-        <div class="customer-list-table ">
-            <table class="table table-striped">
-                <thead class="table-header">
-                    <th class="table-cell table-name" (click)="sort('fullName');">Full Name</th>
-                    <th class="table-cell table-date" (click)="sort('date');">Birthdate</th>
-                    <th class="table-cell table-status">Biography</th>
-                </thead>
-                <tbody class="table-row" *ngFor="let customer of model?.writerModel">
-                    <tr>
-
-                        <td>{{customer?.fullName}}</td>
-                        <td>{{customer?.dateOfBirth}}</td>
-                        <td>{{customer?.biography}}</td>
-                        <a [routerLink]="['../', customer.id, 'edit']">Edit</a>|
-                        <a (click)="delete(customer.id)">Delete</a>
-                    </tr>
-
-                </tbody>
-            </table>
-        </div>
-    </div>
-
+<br>
+<p>
+    <button class="btn btn-primary" [routerLink]="['../', 'add']">Add writer</button>
+</p>
+<div class="customer-list-container">
+    <table class="table">
+        <thead class="table-header">
+        <th class="table-cell table-name" (click)="sort('fullName');">Full Name</th>
+        <th class="table-cell table-date" (click)="sort('date');">Birthdate</th>
+        <th class="table-cell table-status">Biography</th>
+        </thead>
+        <tbody class="table-row" *ngFor="let customer of model?.writerModel">
+            <tr>
+                <td>{{customer?.fullName}}</td>
+                <td>{{customer?.dateOfBirth | date: 'dd/MM/yyyy'}}</td>
+                <td>{{customer?.biography}}</td>
+                <td>
+                    <a [routerLink]="['../', customer.id, 'edit']">Edit</a>|
+                    <a (click)="delete(customer.id)">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>    
     <div style="display:inline-block;">
         <ul *ngIf="pager?.pages && pager?.pages?.length" class="pagination">
             <li [ngClass]="{disabled:pager?.currentPage === 1}">

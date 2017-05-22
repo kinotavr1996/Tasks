@@ -4,3 +4,6 @@ a{
 th{
     cursor:pointer;
 }
+.table-status{
+    cursor:default;
+}
