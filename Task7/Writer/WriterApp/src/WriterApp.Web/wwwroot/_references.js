@@ -34,6 +34,7 @@
 /// <reference path="../webpack.config.vendor.js" />
 /// <reference path="dist/main-client.js" />
 /// <reference path="dist/vendor.js" />
+/// <reference path="dist/vendor123.js" />
 /// <reference path="js/site.js" />
 /// <reference path="lib/bootstrap/dist/js/bootstrap.js" />
 /// <reference path="lib/jquery/dist/jquery.js" />

@@ -6,7 +6,7 @@ var ApiBaseUrl = (function () {
     ApiBaseUrl.get = function (env) {
         switch (env) {
             case api_servers_enum_1.ApiServers.dev: {
-                return 'http://localhost:49611/api/';
+                return '/api/';
             }
         }
     };
