@@ -106,11 +106,15 @@ var HttpService = (function () {
         if (error.status === 400) {
             return;
         }
+        if (error.status === 404) {
+            console.log(error);
+            this._router.navigate(['/spa']);
+        }
         if (error.status === 401) {
             this._storage.removeItem(this._storage.keys.user);
             this._storage.removeItem(this._storage.keys.accessToken);
             this._storage.removeItem(this._storage.keys.expiresIn);
-            this._router.navigate(['/login']);
+            this._router.navigate(['/spa']);
             return;
         }
     };
