@@ -40,7 +40,7 @@ namespace WriterApp.Web.Controllers
             }
             return query;
         }
-        [HttpGet("", Name = "GetWithSortParametrs")]
+        [HttpGet("", Name = "GetWritersWithSortParametrs")]
         [ProducesResponseType(typeof(WriterListViewModel), 200)]
         [ProducesResponseType(typeof(WriterListViewModel), 404)]
         public ActionResult Get([FromQuery]string sortOrder, [FromQuery]string direction, [FromQuery]string searchString, [FromQuery]string currentFilter, [FromQuery]int? page)

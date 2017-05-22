@@ -1,0 +1,17 @@
+<form (submit)="onSubmitForm()">
+    <div class="form-group">
+        <label for="firstName">Caption:</label>
+        <input [(ngModel)]="model.caption" name="caption" type="text" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Publish date:</label>
+        <input [(ngModel)]="model.publishDate" name="publishDate" type="date" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="biography">Writers:</label>
+        <select (ngModelChange)="model.writerIds" type="text" class="form-control chosen-select" multiple name="writerModel" required>
+            <option *ngFor="let customer of model?.writers" [value]="customer?.value">{{customer?.text}}</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

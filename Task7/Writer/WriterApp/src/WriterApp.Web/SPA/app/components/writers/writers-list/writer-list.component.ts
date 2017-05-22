@@ -27,8 +27,10 @@ export class WriterListComponent implements OnInit {
     }
 
     delete(id: number) {
-        this._httpService.deleteCustomer(id)
-            .subscribe(res => { this.ngOnInit(); });
+        if (confirm("Are you shure ?")) {
+            this._httpService.deleteCustomer(id)
+                .subscribe(res => { this.ngOnInit(); });
+        }
     }
     sort(columnName: string) {
         if (this.model.direction == 'ASC') {

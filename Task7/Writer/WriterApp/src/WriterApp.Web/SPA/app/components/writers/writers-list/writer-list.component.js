@@ -30,8 +30,10 @@ var WriterListComponent = (function () {
     };
     WriterListComponent.prototype.delete = function (id) {
         var _this = this;
-        this._httpService.deleteCustomer(id)
-            .subscribe(function (res) { _this.ngOnInit(); });
+        if (confirm("Are you shure ?")) {
+            this._httpService.deleteCustomer(id)
+                .subscribe(function (res) { _this.ngOnInit(); });
+        }
     };
     WriterListComponent.prototype.sort = function (columnName) {
         var _this = this;

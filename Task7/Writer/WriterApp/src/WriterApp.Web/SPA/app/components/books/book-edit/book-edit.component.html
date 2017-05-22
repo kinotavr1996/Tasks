@@ -1,0 +1,18 @@
+
+<form (submit)="onSubmitForm()" *ngIf="model">
+    <div class="form-group">
+        <label for="firstName">Caption:</label>
+        <input [(ngModel)]="model.caption" name="caption" type="text" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="publishDate">Publish date:</label>
+        <input [ngModel]="model.publishDate| date:'yyyy-MM-dd'" (ngModelChange)="model.publishDate = $event" name="publishDate" type="date" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="writers">Writers:</label>
+        <select (ngModelChange)="model.writerIds" type="text" class="form-control chosen-select" multiple name="writerModel" required>
+            <option *ngFor="let customer of model?.writerModel" [value]="customer?.value">{{customer?.text}}</option>
+            </select>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

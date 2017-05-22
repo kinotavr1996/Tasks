@@ -1,3 +1,5 @@
+import { BooksModule } from './components/books/books.module';
+import { booksRoutes } from './components/books/books.routing';
 import { StorageService } from './shared-component/services/storage.service';
 import { HttpService } from './shared-component/services/http.service';
 import { WritersModule } from './components/writers/writers.module';
@@ -28,10 +30,12 @@ import { HomeComponent } from './components/home/home.component';
     imports: [
         UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
         WritersModule,
+        BooksModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'spa', pathMatch: 'full' },
             { path: 'spa', component: HomeComponent },
             ...writersRoutes,
+            ...booksRoutes,
             { path: '**', redirectTo: 'spa' }
         ])
     ]

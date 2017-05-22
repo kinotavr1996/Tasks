@@ -1,0 +1,43 @@
+<br>
+<p>
+    <button class="btn btn-primary" [routerLink]="['../', 'add']">Add book</button>
+</p>
+<div class="customer-list-container">
+    <table class="table table-responsive">
+        <thead class="table-header">
+        <th class="table-cell table-name" (click)="sort('caption');">Caption</th>
+        <th class="table-cell table-date" (click)="sort('date');">Publish Date</th>
+        <th class="table-cell table-status">Authors</th>
+        </thead>
+        <tbody class="table-row" *ngFor="let customer of model?.bookModel">
+            <tr>
+                <td>{{customer?.caption}}</td>
+                <td>{{customer?.publishDate | date: 'dd/MM/yyyy'}}</td>
+                <td><span *ngFor="let author of customer?.writerModel">{{author.fullName}}</span></td>
+                <td>
+                    <a [routerLink]="['../', customer.id, 'edit']">Edit</a>|
+                    <a (click)="delete(customer.id)">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>    
+    <div style="display:inline-block;">
+        <ul *ngIf="pager?.pages && pager?.pages?.length" class="pagination">
+            <li [ngClass]="{disabled:pager?.currentPage === 1}">
+                <a (click)="_setPage(1)">First</a>
+            </li>
+            <li [ngClass]="{disabled:pager?.currentPage === 1}">
+                <a (click)="_setPage(pager?.currentPage - 1)">Previous</a>
+            </li>
+            <li *ngFor="let page of pager.pages" [ngClass]="{active:pager?.currentPage === page}">
+                <a (click)="_setPage(page)">{{page}}</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === model?.totalPage}">
+                <a (click)="_setPage(pager.currentPage + 1)">Next</a>
+            </li>
+            <li [ngClass]="{disabled:pager?.currentPage === model?.totalPage}">
+                <a (click)="_setPage(model?.totalPage)">Last</a>
+            </li>
+        </ul>
+    </div>
+</div>

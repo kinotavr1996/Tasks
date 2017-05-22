@@ -1,1 +1,1 @@
-{"version":3,"file":"api-request-urls.js","sourceRoot":"","sources":["api-request-urls.ts"],"names":[],"mappings":";AAAA;IAAA;IAIA,CAAC;IAHU,mBAAI,GAAG;QACV,QAAQ,EAAE,QAAQ;KACrB,CAAC;IACN,qBAAC;AAAD,CAAC,AAJD,IAIC;AAJY,sBAAc,iBAI1B,CAAA"}
+{"version":3,"file":"api-request-urls.js","sourceRoot":"","sources":["api-request-urls.ts"],"names":[],"mappings":";AAAA;IAAA;IAQA,CAAC;IAPU,mBAAI,GAAG;QACV,QAAQ,EAAE,QAAQ;QAClB,OAAO,EAAC,OAAO;QACf,YAAY,EAAE,cAAc;QAC5B,YAAY,EAAE,WAAW;KAE5B,CAAC;IACN,qBAAC;AAAD,CAAC,AARD,IAQC;AARY,sBAAc,iBAQ1B,CAAA"}

@@ -8,6 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var books_module_1 = require('./components/books/books.module');
+var books_routing_1 = require('./components/books/books.routing');
 var storage_service_1 = require('./shared-component/services/storage.service');
 var http_service_1 = require('./shared-component/services/http.service');
 var writers_module_1 = require('./components/writers/writers.module');
@@ -38,10 +40,11 @@ var AppModule = (function () {
             imports: [
                 angular2_universal_1.UniversalModule,
                 writers_module_1.WritersModule,
+                books_module_1.BooksModule,
                 router_1.RouterModule.forRoot([
                     { path: '', redirectTo: 'spa', pathMatch: 'full' },
                     { path: 'spa', component: home_component_1.HomeComponent }
-                ].concat(writers_routing_1.writersRoutes, [
+                ].concat(writers_routing_1.writersRoutes, books_routing_1.booksRoutes, [
                     { path: '**', redirectTo: 'spa' }
                 ]))
             ]
