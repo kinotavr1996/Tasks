@@ -3,7 +3,7 @@ import { SelectListItem } from './select-list-item.model';
 export class BookAddModel {
     constructor(
         public caption: string,
-        public publishDate: Date,
+        public publishedDate: Date,
         public writers: SelectListItem[]
     ) { }
 

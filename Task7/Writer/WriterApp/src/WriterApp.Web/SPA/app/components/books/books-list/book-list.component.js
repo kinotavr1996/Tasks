@@ -22,11 +22,9 @@ var BookListComponent = (function () {
     }
     BookListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this._httpService.getSortingCustomers()
+        this._httpService.getSortingBooks('caption', 'ASC', 1)
             .subscribe(function (res) {
-            console.log(res);
             _this.model = book_list_model_1.BookListModel.fromJSON(res);
-            console.log(_this.model);
             _this._setPage(1);
         });
     };
@@ -42,14 +40,14 @@ var BookListComponent = (function () {
         if (this.model.direction == 'ASC') {
             this.model.direction = "DESC";
             this.model.column = columnName;
-            this._httpService.getSortingCustomers(this.model.column, this.model.direction, this.model.page)
+            this._httpService.getSortingBooks(this.model.column, this.model.direction, this.model.page)
                 .subscribe(function (res) {
                 _this.model = book_list_model_1.BookListModel.fromJSON(res);
             });
         }
         else {
             this.model.direction = "ASC";
-            this._httpService.getSortingCustomers(this.model.column, this.model.direction, this.model.page)
+            this._httpService.getSortingBooks(this.model.column, this.model.direction, this.model.page)
                 .subscribe(function (res) {
                 _this.model = book_list_model_1.BookListModel.fromJSON(res);
             });
@@ -62,7 +60,7 @@ var BookListComponent = (function () {
         }
         this.model.page = page;
         this.pager = this.pagerService.getPager(this.model.page, this.model.pageSize, this.model.totalPage);
-        this._httpService.getSortingCustomers(this.model.column, this.model.direction, this.model.page)
+        this._httpService.getSortingBooks(this.model.column, this.model.direction, this.model.page)
             .subscribe(function (res) {
             _this.model = book_list_model_1.BookListModel.fromJSON(res);
         });

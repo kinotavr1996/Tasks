@@ -19,11 +19,9 @@ export class BookListComponent implements OnInit {
     constructor(private _httpService: BookHttpService, private pagerService: PagerService) { }
 
     ngOnInit() {
-        this._httpService.getSortingCustomers()
+        this._httpService.getSortingBooks('caption', 'ASC', 1)
             .subscribe(res => {
-                console.log(res);
                 this.model = BookListModel.fromJSON(res);
-                console.log(this.model);
                 this._setPage(1);
             });
     }
@@ -38,14 +36,14 @@ export class BookListComponent implements OnInit {
         if (this.model.direction == 'ASC') {
             this.model.direction = "DESC";
             this.model.column = columnName;
-            this._httpService.getSortingCustomers(this.model.column, this.model.direction, this.model.page)
+            this._httpService.getSortingBooks(this.model.column, this.model.direction, this.model.page)
                 .subscribe(res => {
                     this.model = BookListModel.fromJSON(res);
                 });
         }
         else {
             this.model.direction = "ASC";
-            this._httpService.getSortingCustomers(this.model.column, this.model.direction, this.model.page)
+            this._httpService.getSortingBooks(this.model.column, this.model.direction, this.model.page)
                 .subscribe(res => {
                     this.model = BookListModel.fromJSON(res);
                 });
@@ -58,7 +56,7 @@ export class BookListComponent implements OnInit {
         }
         this.model.page = page;
         this.pager = this.pagerService.getPager(this.model.page, this.model.pageSize, this.model.totalPage);
-        this._httpService.getSortingCustomers(this.model.column, this.model.direction, this.model.page)
+        this._httpService.getSortingBooks(this.model.column, this.model.direction, this.model.page)
             .subscribe(res => {
                 this.model = BookListModel.fromJSON(res);
             });

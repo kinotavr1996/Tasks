@@ -10,7 +10,7 @@ export class BookHttpService {
         return this._httpService.get(AppConfig.urls.books + "/" + id)
             .map(res => res.json());
     }
-    getSortingCustomers(sortBy: string, orderBy: string, pageNumber: number) {
+    getSortingBooks(sortBy: string, orderBy: string, pageNumber: number) {
         return this._httpService.get(AppConfig.urls.getAllBook
             + "?sortOrder=" + sortBy + "&direction=" + orderBy + "&page=" + pageNumber)
             .map(res => res.json());
@@ -21,11 +21,11 @@ export class BookHttpService {
     }
     postCustomer(data) {
         return this._httpService.post(AppConfig.urls.books, data)
-            .map(res => res.json());
+            .map(res => res);
     }
     putCustomer(id, data) {
         return this._httpService.put(AppConfig.urls.books + "/" + id, data)
-            .map(res => res.json());
+            .map(res => res);
     }
     deleteCustomer(id) {
         return this._httpService.delete(AppConfig.urls.books + "/" + id)

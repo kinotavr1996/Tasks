@@ -11,7 +11,7 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 })
 export class BookEditComponent {
     model: BookEditModel;
-    id: number;    
+    id: number;
     private sub: any;
     constructor(private _httpService: BookHttpService,
         private route: ActivatedRoute,
@@ -31,8 +31,7 @@ export class BookEditComponent {
 
     onSubmitForm() {
         this._httpService.putCustomer(this.id, this.model)
-            .subscribe(res => {
-                this.model = BookEditModel.fromJSON(res);
+            .subscribe(res => {                
                 this.router.navigateByUrl("/spa/books/list");
             });
     }

@@ -17,13 +17,13 @@ export class BookAddComponent implements OnInit {
         this.model = new BookAddModel(null, null, null);
         this._httpService.getBooks()
             .subscribe(res => {
-                console.log(res);
                 this.model = BookAddModel.fromJSON(res);
             });
     }
     onSubmitForm() {
+        console.log(this.model);
         this._httpService.postCustomer(this.model)
-            .subscribe(res => {
+            .subscribe(res => {                
                 this.router.navigateByUrl("/spa/books/list");
             });
     }

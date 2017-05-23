@@ -1,10 +1,10 @@
 "use strict";
 var select_list_item_model_1 = require('./select-list-item.model');
 var BookEditModel = (function () {
-    function BookEditModel(id, caption, publishDate, writerIds, writerModel) {
+    function BookEditModel(id, caption, publishedDate, writerIds, writerModel) {
         this.id = id;
         this.caption = caption;
-        this.publishDate = publishDate;
+        this.publishedDate = publishedDate;
         this.writerIds = writerIds;
         this.writerModel = writerModel;
     }

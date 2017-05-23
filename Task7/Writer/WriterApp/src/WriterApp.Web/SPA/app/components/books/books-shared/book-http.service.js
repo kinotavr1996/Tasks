@@ -20,7 +20,7 @@ var BookHttpService = (function () {
         return this._httpService.get(config_1.AppConfig.urls.books + "/" + id)
             .map(function (res) { return res.json(); });
     };
-    BookHttpService.prototype.getSortingCustomers = function (sortBy, orderBy, pageNumber) {
+    BookHttpService.prototype.getSortingBooks = function (sortBy, orderBy, pageNumber) {
         return this._httpService.get(config_1.AppConfig.urls.getAllBook
             + "?sortOrder=" + sortBy + "&direction=" + orderBy + "&page=" + pageNumber)
             .map(function (res) { return res.json(); });
@@ -31,11 +31,11 @@ var BookHttpService = (function () {
     };
     BookHttpService.prototype.postCustomer = function (data) {
         return this._httpService.post(config_1.AppConfig.urls.books, data)
-            .map(function (res) { return res.json(); });
+            .map(function (res) { return res; });
     };
     BookHttpService.prototype.putCustomer = function (id, data) {
         return this._httpService.put(config_1.AppConfig.urls.books + "/" + id, data)
-            .map(function (res) { return res.json(); });
+            .map(function (res) { return res; });
     };
     BookHttpService.prototype.deleteCustomer = function (id) {
         return this._httpService.delete(config_1.AppConfig.urls.books + "/" + id)

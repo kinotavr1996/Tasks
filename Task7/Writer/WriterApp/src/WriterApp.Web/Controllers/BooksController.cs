@@ -100,7 +100,7 @@ namespace WriterApp.Web.Controllers
                 book.WriterBooks.Add(new WriterBook { WriterId = id });
             }
             _bookRepository.Add(book);
-            return Ok(book);
+            return Ok();
         }
 
         [HttpGet("{id}")]
@@ -144,7 +144,7 @@ namespace WriterApp.Web.Controllers
                 book.WriterBooks.Add(new WriterBook { WriterId = wid, BookId = id });
             }
             _bookRepository.Edit(book);
-            return Ok(book);
+            return Ok();
         }
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)

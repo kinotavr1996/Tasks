@@ -1,7 +1,5 @@
-﻿
-$(document).ready(function () {
+﻿$(window).load(function () {
     $(".chosen-select").chosen({ disable_search_threshold: 10 });
-    console.log(123);
     $("input[type=submit]").click(function (e) {
         e.preventDefault();
         if ($('.search-choice').length)

@@ -1,9 +1,9 @@
 "use strict";
 var select_list_item_model_1 = require('./select-list-item.model');
 var BookAddModel = (function () {
-    function BookAddModel(caption, publishDate, writers) {
+    function BookAddModel(caption, publishedDate, writers) {
         this.caption = caption;
-        this.publishDate = publishDate;
+        this.publishedDate = publishedDate;
         this.writers = writers;
     }
     BookAddModel.fromJSON = function (object) {

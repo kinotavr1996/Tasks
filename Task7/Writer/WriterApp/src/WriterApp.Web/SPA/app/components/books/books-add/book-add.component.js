@@ -22,12 +22,12 @@ var BookAddComponent = (function () {
         this.model = new book_add_model_1.BookAddModel(null, null, null);
         this._httpService.getBooks()
             .subscribe(function (res) {
-            console.log(res);
             _this.model = book_add_model_1.BookAddModel.fromJSON(res);
         });
     };
     BookAddComponent.prototype.onSubmitForm = function () {
         var _this = this;
+        console.log(this.model);
         this._httpService.postCustomer(this.model)
             .subscribe(function (res) {
             _this.router.navigateByUrl("/spa/books/list");

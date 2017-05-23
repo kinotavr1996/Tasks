@@ -5,11 +5,11 @@
     </div>
     <div class="form-group">
         <label for="lastName">Publish date:</label>
-        <input [(ngModel)]="model.publishDate" name="publishDate" type="date" class="form-control" required>
+        <input [(ngModel)]="model.publishedDate" name="publishedDate" type="date" class="form-control" required>
     </div>
     <div class="form-group">
         <label for="biography">Writers:</label>
-        <select (ngModelChange)="model.writerIds" type="text" class="form-control chosen-select" multiple name="writerModel" required>
+        <select [(ngModel)]="model.writerIds" type="text" class="form-control chosen-select" multiple name="writerModel" required>
             <option *ngFor="let customer of model?.writers" [value]="customer?.value">{{customer?.text}}</option>
         </select>
     </div>

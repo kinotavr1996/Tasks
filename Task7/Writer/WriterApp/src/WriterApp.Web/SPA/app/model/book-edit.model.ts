@@ -5,7 +5,7 @@ export class BookEditModel {
     constructor(
         public id: number,
         public caption: string,
-        public publishDate: Date,
+        public publishedDate: Date,
         public writerIds: number[],
         public writerModel: SelectListItem[]
     ) { }

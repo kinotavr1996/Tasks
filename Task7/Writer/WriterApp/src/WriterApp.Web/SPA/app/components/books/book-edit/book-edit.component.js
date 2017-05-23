@@ -34,7 +34,6 @@ var BookEditComponent = (function () {
         var _this = this;
         this._httpService.putCustomer(this.id, this.model)
             .subscribe(function (res) {
-            _this.model = book_edit_model_1.BookEditModel.fromJSON(res);
             _this.router.navigateByUrl("/spa/books/list");
         });
     };

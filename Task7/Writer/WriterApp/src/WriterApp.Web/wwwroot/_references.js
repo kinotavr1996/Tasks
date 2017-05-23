@@ -9,6 +9,7 @@
 /// <reference path="../spa/app/components/books/books-add/book-add.component.js" />
 /// <reference path="../spa/app/components/books/books-list/book-list.component.js" />
 /// <reference path="../spa/app/components/books/books-shared/book-http.service.js" />
+/// <reference path="../SPA/app/components/books/books-shared/writer-http.service.js" />
 /// <reference path="../spa/app/components/home/home.component.js" />
 /// <reference path="../spa/app/components/navmenu/navmenu.component.js" />
 /// <reference path="../spa/app/components/writers/writer.validator.js" />

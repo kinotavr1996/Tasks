@@ -11,7 +11,6 @@ import { RouterModule } from '@angular/router';
 import { booksRoutes } from './books.routing';
 import { PagerService } from "../../shared-component/paginator/paginator.component";
 
-
 @NgModule({
     imports: [
         CommonModule,
