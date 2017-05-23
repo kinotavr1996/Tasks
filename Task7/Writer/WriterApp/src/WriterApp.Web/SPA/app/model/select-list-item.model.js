@@ -5,7 +5,7 @@ var SelectListItem = (function () {
         this.text = text;
     }
     SelectListItem.fromJSON = function (object) {
-        return new SelectListItem(object['value'], object['text']);
+        return new SelectListItem(+object['value'], object['text']);
     };
     SelectListItem.fromJSONArray = function (array) {
         return array.map(function (obj) { return SelectListItem.fromJSON(obj); });

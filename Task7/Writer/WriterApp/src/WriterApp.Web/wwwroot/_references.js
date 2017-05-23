@@ -35,6 +35,7 @@
 /// <reference path="../spa/app/model/writer-add.model.js" />
 /// <reference path="../spa/app/model/writer-edit.model.js" />
 /// <reference path="../spa/app/model/writer-list.model.js" />
+/// <reference path="../spa/app/shared-component/autocomplete/autocomplete.component.js" />
 /// <reference path="../spa/app/shared-component/controls/controls.module.js" />
 /// <reference path="../spa/app/shared-component/controls/input/input.component.js" />
 /// <reference path="../spa/app/shared-component/paginator/paginator.component.js" />

@@ -1,12 +1,12 @@
 export class SelectListItem {
     constructor(
-        public value: string,
+        public value: number,
         public text: string
     ) { }
 
     static fromJSON(object: any): SelectListItem {
         return new SelectListItem(
-            object['value'],
+            +object['value'],
             object['text']
         );
     }

@@ -19,19 +19,45 @@ var BookAddComponent = (function () {
     }
     BookAddComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.model = new book_add_model_1.BookAddModel(null, null, null);
+        this.model = new book_add_model_1.BookAddModel(null, null, null, null);
         this._httpService.getBooks()
             .subscribe(function (res) {
             _this.model = book_add_model_1.BookAddModel.fromJSON(res);
         });
     };
+    BookAddComponent.prototype.getIds = function (val) {
+        this.model.writerIds = [];
+        for (var _i = 0, val_1 = val; _i < val_1.length; _i++) {
+            var a = val_1[_i];
+            this.model.writerIds.push(a);
+        }
+        if (this.model.writerIds.length > 0)
+            this.isActive = true;
+        else
+            this.isActive = false;
+    };
+    BookAddComponent.prototype.checker = function () {
+        if (this.model.writerIds != null)
+            return this.model.writerIds.length > 0;
+        else
+            return false;
+    };
     BookAddComponent.prototype.onSubmitForm = function () {
         var _this = this;
-        console.log(this.model);
-        this._httpService.postCustomer(this.model)
-            .subscribe(function (res) {
-            _this.router.navigateByUrl("/spa/books/list");
-        });
+        if (this.model.writerIds != null) {
+            if (this.model.writerIds.length > 0) {
+                this._httpService.postCustomer(this.model)
+                    .subscribe(function (res) {
+                    _this.router.navigateByUrl("/spa/books/list");
+                });
+            }
+            else {
+                alert('Choose writer`s');
+            }
+        }
+        else {
+            alert('Choose writer`s');
+        }
     };
     BookAddComponent = __decorate([
         core_1.Component({

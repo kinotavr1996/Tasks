@@ -30,7 +30,7 @@ import { HomeComponent } from './components/home/home.component';
     imports: [
         UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
         WritersModule,
-        BooksModule,
+        BooksModule,        
         RouterModule.forRoot([
             { path: '', redirectTo: 'spa', pathMatch: 'full' },
             { path: 'spa', component: HomeComponent },

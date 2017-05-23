@@ -1,3 +1,4 @@
+import { AutocompleteComponent } from './../../shared-component/autocomplete/autocomplete.component';
 import { BookHttpService } from './books-shared/book-http.service';
 import { BookAddComponent } from './books-add/book-add.component';
 import { BookEditComponent } from './book-edit/book-edit.component';
@@ -21,7 +22,8 @@ import { PagerService } from "../../shared-component/paginator/paginator.compone
         BooksComponent,
         BookListComponent,
         BookEditComponent,
-        BookAddComponent
+        BookAddComponent,
+        AutocompleteComponent
     ],
     providers: [
         BookHttpService,

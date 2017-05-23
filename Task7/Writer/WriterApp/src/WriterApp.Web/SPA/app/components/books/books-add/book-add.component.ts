@@ -10,21 +10,43 @@ import { BookAddModel } from "../../../model/book-add.model";
     styles: [require('./book-add.component.css')]
 })
 export class BookAddComponent implements OnInit {
-    model: BookAddModel;
+    public model: BookAddModel;    
     constructor(private _httpService: BookHttpService, private router: Router
     ) { }
     ngOnInit() {
-        this.model = new BookAddModel(null, null, null);
+        this.model = new BookAddModel(null, null, null, null);
         this._httpService.getBooks()
             .subscribe(res => {
                 this.model = BookAddModel.fromJSON(res);
             });
     }
+    getIds(val: number[]) {
+        this.model.writerIds = [];
+        for (let a of val)
+            this.model.writerIds.push(a);
+        if (this.model.writerIds.length > 0)
+            this.isActive = true;
+        else
+            this.isActive = false;
+    }
+    checker() {
+        if (this.model.writerIds != null)
+            return this.model.writerIds.length > 0;
+        else
+            return false;
+    }
     onSubmitForm() {
-        console.log(this.model);
-        this._httpService.postCustomer(this.model)
-            .subscribe(res => {                
-                this.router.navigateByUrl("/spa/books/list");
-            });
+        if (this.model.writerIds != null) {
+            if (this.model.writerIds.length > 0) {
+                this._httpService.postCustomer(this.model)
+                    .subscribe(res => {
+                        this.router.navigateByUrl("/spa/books/list");
+                    });
+            } else {
+                alert('Choose writer`s');
+            }
+        } else {
+            alert('Choose writer`s');
+        }
     }
 }

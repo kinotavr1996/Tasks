@@ -26,16 +26,32 @@ var BookEditComponent = (function () {
         });
         this._httpService.getBookById(this.id)
             .subscribe(function (res) {
-            console.log(res);
             _this.model = book_edit_model_1.BookEditModel.fromJSON(res);
         });
     };
+    BookEditComponent.prototype.getIds = function (val) {
+        this.model.writerIds = [];
+        for (var _i = 0, val_1 = val; _i < val_1.length; _i++) {
+            var a = val_1[_i];
+            this.model.writerIds.push(a);
+        }
+    };
     BookEditComponent.prototype.onSubmitForm = function () {
         var _this = this;
-        this._httpService.putCustomer(this.id, this.model)
-            .subscribe(function (res) {
-            _this.router.navigateByUrl("/spa/books/list");
-        });
+        if (this.model.writerIds != null) {
+            if (this.model.writerIds.length > 0) {
+                this._httpService.putCustomer(this.id, this.model)
+                    .subscribe(function (res) {
+                    _this.router.navigateByUrl("/spa/books/list");
+                });
+            }
+            else {
+                alert('Choose writer`s');
+            }
+        }
+        else {
+            alert('Choose writer`s');
+        }
     };
     BookEditComponent = __decorate([
         core_1.Component({

@@ -4,6 +4,7 @@ export class BookAddModel {
     constructor(
         public caption: string,
         public publishedDate: Date,
+        public writerIds: number[] = [],
         public writers: SelectListItem[]
     ) { }
 
@@ -11,6 +12,7 @@ export class BookAddModel {
         return new BookAddModel(
             object['caption'],
             object['publishDate'],
+            object['writerIds'],
             SelectListItem.fromJSONArray(object['writers'])
 
         );

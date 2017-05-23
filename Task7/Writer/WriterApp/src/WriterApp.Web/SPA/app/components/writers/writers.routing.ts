@@ -13,7 +13,6 @@ export const writersRoutes: Routes = [{
         { path: 'list', component: WriterListComponent },
         { path: ':id/edit', component: WriterEditComponent },
         { path: 'add', component: WriterAddComponent }
-
     ]
 }];
 

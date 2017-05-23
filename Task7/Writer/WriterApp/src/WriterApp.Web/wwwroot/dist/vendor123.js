@@ -1,4 +1,4 @@
-var vendor_2b867295628df849f98a =
+ar vendor_2b867295628df849f98a =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};

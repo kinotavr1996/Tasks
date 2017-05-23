@@ -24,15 +24,27 @@ export class BookEditComponent {
         });
         this._httpService.getBookById(this.id)
             .subscribe(res => {
-                console.log(res);
                 this.model = BookEditModel.fromJSON(res);
             });
     }
-
+    getIds(val: number[]) {
+        this.model.writerIds = [];
+        for (let a of val)
+            this.model.writerIds.push(a);
+    }
     onSubmitForm() {
-        this._httpService.putCustomer(this.id, this.model)
-            .subscribe(res => {                
-                this.router.navigateByUrl("/spa/books/list");
-            });
+        if (this.model.writerIds != null) {
+            if (this.model.writerIds.length > 0) {
+                this._httpService.putCustomer(this.id, this.model)
+                    .subscribe(res => {
+                        this.router.navigateByUrl("/spa/books/list");
+                    });
+            } else {
+                alert('Choose writer`s');
+            }
+        } else {
+            alert('Choose writer`s');
+        }
+        
     }
 }

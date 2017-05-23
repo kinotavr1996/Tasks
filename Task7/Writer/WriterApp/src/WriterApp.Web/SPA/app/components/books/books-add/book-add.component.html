@@ -9,9 +9,7 @@
     </div>
     <div class="form-group">
         <label for="biography">Writers:</label>
-        <select [(ngModel)]="model.writerIds" type="text" class="form-control chosen-select" multiple name="writerModel" required>
-            <option *ngFor="let customer of model?.writers" [value]="customer?.value">{{customer?.text}}</option>
-        </select>
+        <app-autocomplete (writersIdsChanged)="getIds($event)" [Ids] = "model.writerIds" [items]="model.writers" required></app-autocomplete>
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
 </form>

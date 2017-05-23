@@ -13,7 +13,7 @@
             <tr>
                 <td>{{customer?.caption}}</td>
                 <td>{{customer?.publishDate | date: 'dd/MM/yyyy'}}</td>
-                <td><span *ngFor="let author of customer?.writerModel">{{author.fullName}}</span></td>
+                <td> <span *ngFor="let author of customer?.writerModel">{{author.fullName}}</span> </td>
                 <td>
                     <a [routerLink]="['../', customer.id, 'edit']">Edit</a>|
                     <a (click)="delete(customer.id)">Delete</a>

@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var autocomplete_component_1 = require('./../../shared-component/autocomplete/autocomplete.component');
 var book_http_service_1 = require('./books-shared/book-http.service');
 var book_add_component_1 = require('./books-add/book-add.component');
 var book_edit_component_1 = require('./book-edit/book-edit.component');
@@ -32,7 +33,8 @@ var BooksModule = (function () {
                 book_component_1.BooksComponent,
                 book_list_component_1.BookListComponent,
                 book_edit_component_1.BookEditComponent,
-                book_add_component_1.BookAddComponent
+                book_add_component_1.BookAddComponent,
+                autocomplete_component_1.AutocompleteComponent
             ],
             providers: [
                 book_http_service_1.BookHttpService,
