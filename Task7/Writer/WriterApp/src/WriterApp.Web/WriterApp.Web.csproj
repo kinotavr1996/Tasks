@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <AssemblyName>WriterApp.Web</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>WriterApp.Web</PackageId>
+    <RuntimeFrameworkVersion>1.0.4</RuntimeFrameworkVersion>
+    <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;portable-net45+win8</PackageTargetFallback>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="wwwroot\**\*">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WriterApp.Data.Common\WriterApp.Data.Common.csproj" />
+    <ProjectReference Include="..\WriterApp.Data.Model\WriterApp.Data.Model.csproj" />
+    <ProjectReference Include="..\WriterApp.Repository\WriterApp.Repository.csproj" />
+    <ProjectReference Include="..\WriterApp.Repository.Implementation\WriterApp.Repository.Implementation.csproj" />
+    <ProjectReference Include="..\WriterApp.Data\WriterApp.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="1.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="1.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Routing" Version="1.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="1.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="1.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="1.0.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="1.0.0-beta-000021" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="1.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" Version="11.0.50727.1" />
+  </ItemGroup>
+
+  <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
+    <Exec Command="bower install" />
+    <Exec Command="dotnet bundle" />
+  </Target>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="BundlerMinifier.Core" Version="2.2.301" />
+  </ItemGroup>
+
+</Project>
