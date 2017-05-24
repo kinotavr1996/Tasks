@@ -10,7 +10,7 @@ import { BookAddModel } from "../../../model/book-add.model";
     styles: [require('./book-add.component.css')]
 })
 export class BookAddComponent implements OnInit {
-    public model: BookAddModel;    
+    public model: BookAddModel;
     constructor(private _httpService: BookHttpService, private router: Router
     ) { }
     ngOnInit() {
@@ -24,10 +24,6 @@ export class BookAddComponent implements OnInit {
         this.model.writerIds = [];
         for (let a of val)
             this.model.writerIds.push(a);
-        if (this.model.writerIds.length > 0)
-            this.isActive = true;
-        else
-            this.isActive = false;
     }
     checker() {
         if (this.model.writerIds != null)

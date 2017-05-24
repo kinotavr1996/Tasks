@@ -31,10 +31,6 @@ var BookAddComponent = (function () {
             var a = val_1[_i];
             this.model.writerIds.push(a);
         }
-        if (this.model.writerIds.length > 0)
-            this.isActive = true;
-        else
-            this.isActive = false;
     };
     BookAddComponent.prototype.checker = function () {
         if (this.model.writerIds != null)
