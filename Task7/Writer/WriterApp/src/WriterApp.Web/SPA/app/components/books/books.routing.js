@@ -1,9 +1,10 @@
 "use strict";
-var book_add_component_1 = require('./books-add/book-add.component');
-var book_list_component_1 = require('./books-list/book-list.component');
-var book_edit_component_1 = require('./book-edit/book-edit.component');
-var book_component_1 = require('./book.component');
-var router_1 = require('@angular/router');
+Object.defineProperty(exports, "__esModule", { value: true });
+var book_add_component_1 = require("./books-add/book-add.component");
+var book_list_component_1 = require("./books-list/book-list.component");
+var book_edit_component_1 = require("./book-edit/book-edit.component");
+var book_component_1 = require("./book.component");
+var router_1 = require("@angular/router");
 exports.booksRoutes = [{
         path: 'spa/books',
         component: book_component_1.BooksComponent,

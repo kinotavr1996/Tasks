@@ -34,7 +34,7 @@ export class BookAddComponent implements OnInit {
     onSubmitForm() {
         if (this.model.writerIds != null) {
             if (this.model.writerIds.length > 0) {
-                this._httpService.postCustomer(this.model)
+                this._httpService.postBook(this.model)
                     .subscribe(res => {
                         this.router.navigateByUrl("/spa/books/list");
                     });

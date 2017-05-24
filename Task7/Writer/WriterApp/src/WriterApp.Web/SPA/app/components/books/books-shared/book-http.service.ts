@@ -19,15 +19,15 @@ export class BookHttpService {
         return this._httpService.get(AppConfig.urls.createBook)
             .map(res => res.json());
     }
-    postCustomer(data) {
+    postBook(data) {
         return this._httpService.post(AppConfig.urls.books, data)
             .map(res => res);
     }
-    putCustomer(id, data) {
+    putBook(id, data) {
         return this._httpService.put(AppConfig.urls.books + "/" + id, data)
             .map(res => res);
     }
-    deleteCustomer(id) {
+    deleteBook(id) {
         return this._httpService.delete(AppConfig.urls.books + "/" + id)
             .map(res => res);
     }

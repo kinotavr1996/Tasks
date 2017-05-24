@@ -28,7 +28,7 @@ export class WriterListComponent implements OnInit {
 
     delete(id: number) {
         if (confirm("Are you shure ?")) {
-            this._httpService.deleteCustomer(id)
+            this._httpService.deleteWriter(id)
                 .subscribe(res => { this.ngOnInit(); });
         }
     }

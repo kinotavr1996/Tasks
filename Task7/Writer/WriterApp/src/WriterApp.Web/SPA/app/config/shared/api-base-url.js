@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var api_servers_enum_1 = require("./api-servers.enum");
 var ApiBaseUrl = (function () {
     function ApiBaseUrl() {

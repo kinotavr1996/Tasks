@@ -8,8 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var forms_1 = require('@angular/forms');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var forms_1 = require("@angular/forms");
 var validator_property_model_1 = require("../../../model/validator-property.model");
 exports.CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
@@ -67,47 +68,46 @@ var CustomInputComponent = (function () {
     CustomInputComponent.prototype.registerOnTouched = function (fn) {
         this.onTouchedCallback = fn;
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], CustomInputComponent.prototype, "type", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], CustomInputComponent.prototype, "name", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], CustomInputComponent.prototype, "label", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], CustomInputComponent.prototype, "placeholder", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], CustomInputComponent.prototype, "page", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', validator_property_model_1.ValidationPropertyModel)
-    ], CustomInputComponent.prototype, "validator", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], CustomInputComponent.prototype, "disabled", void 0);
-    CustomInputComponent = __decorate([
-        core_1.Component({
-            selector: 'custom-input',
-            templateUrl: './input.component.html',
-            styleUrls: ['./input.component.less',
-                './input-shared/input-for-admin-add-popup.less',
-                './input-shared/input-for-login.less',
-                './input-shared/input-for-admin-details.less'],
-            providers: [exports.CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], CustomInputComponent);
     return CustomInputComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], CustomInputComponent.prototype, "type", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], CustomInputComponent.prototype, "name", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], CustomInputComponent.prototype, "label", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], CustomInputComponent.prototype, "placeholder", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], CustomInputComponent.prototype, "page", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", validator_property_model_1.ValidationPropertyModel)
+], CustomInputComponent.prototype, "validator", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], CustomInputComponent.prototype, "disabled", void 0);
+CustomInputComponent = __decorate([
+    core_1.Component({
+        selector: 'custom-input',
+        templateUrl: './input.component.html',
+        styleUrls: ['./input.component.less',
+            './input-shared/input-for-admin-add-popup.less',
+            './input-shared/input-for-login.less',
+            './input-shared/input-for-admin-details.less'],
+        providers: [exports.CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
+    })
+], CustomInputComponent);
 exports.CustomInputComponent = CustomInputComponent;
 //# sourceMappingURL=input.component.js.map

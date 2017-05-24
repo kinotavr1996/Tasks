@@ -8,8 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var router_1 = require('@angular/router');
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var router_1 = require("@angular/router");
+var core_1 = require("@angular/core");
 var writer_http_service_1 = require("../writers-shared/writer-http.service");
 var writer_add_model_1 = require("../../../model/writer-add.model");
 var WriterAddComponent = (function () {
@@ -22,19 +23,19 @@ var WriterAddComponent = (function () {
     };
     WriterAddComponent.prototype.onSubmitForm = function () {
         var _this = this;
-        this._httpService.postCustomer(this.model)
+        this._httpService.postWriter(this.model)
             .subscribe(function (res) {
             _this.router.navigateByUrl("/spa/writers/list");
         });
     };
-    WriterAddComponent = __decorate([
-        core_1.Component({
-            template: require('./writer-add.component.html'),
-            styles: [require('./writer-add.component.css')]
-        }), 
-        __metadata('design:paramtypes', [writer_http_service_1.WriterHttpService, router_1.Router])
-    ], WriterAddComponent);
     return WriterAddComponent;
 }());
+WriterAddComponent = __decorate([
+    core_1.Component({
+        template: require('./writer-add.component.html'),
+        styles: [require('./writer-add.component.css')]
+    }),
+    __metadata("design:paramtypes", [writer_http_service_1.WriterHttpService, router_1.Router])
+], WriterAddComponent);
 exports.WriterAddComponent = WriterAddComponent;
 //# sourceMappingURL=writer-add.component.js.map

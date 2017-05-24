@@ -15,7 +15,7 @@ export class BookListComponent implements OnInit {
     editModel: BookModel;
     pager: any = {};
     pagedItems: any[];
-
+    query: string;
     constructor(private _httpService: BookHttpService, private pagerService: PagerService) { }
 
     ngOnInit() {
@@ -28,7 +28,7 @@ export class BookListComponent implements OnInit {
 
     delete(id: number) {
         if (confirm("Are you shure ?")) {
-            this._httpService.deleteCustomer(id)
+            this._httpService.deleteBook(id)
                 .subscribe(res => { this.ngOnInit(); });
         }
     }

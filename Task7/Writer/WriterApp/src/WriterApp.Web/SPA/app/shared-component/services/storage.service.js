@@ -8,8 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var config_1 = require('./../../config/config');
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var config_1 = require("./../../config/config");
+var core_1 = require("@angular/core");
 var StorageService = (function () {
     function StorageService() {
         this.keys = {
@@ -37,11 +38,11 @@ var StorageService = (function () {
     StorageService.prototype.removeItem = function (key) {
         localStorage.removeItem(this._getKey(key));
     };
-    StorageService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], StorageService);
     return StorageService;
 }());
+StorageService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], StorageService);
 exports.StorageService = StorageService;
 //# sourceMappingURL=storage.service.js.map

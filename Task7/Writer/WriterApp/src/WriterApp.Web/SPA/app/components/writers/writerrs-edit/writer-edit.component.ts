@@ -31,7 +31,7 @@ export class WriterEditComponent {
     }
 
     onSubmitForm() {
-        this._httpService.putCustomer(this.id, this.model)
+        this._httpService.putWriter(this.id, this.model)
             .subscribe(res => {
                 this.model = WriterEditModel.fromJSON(res);
                 this.router.navigateByUrl("/spa/writers/list");

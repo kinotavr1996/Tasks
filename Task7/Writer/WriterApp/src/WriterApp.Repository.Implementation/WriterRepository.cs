@@ -16,7 +16,7 @@ namespace WriterApp.Repository.Implementation
         }
         public Writer GetById(int id)
         {
-            return Find().AsNoTracking().FirstOrDefault(x => x.Id == id);
+            return Find().FirstOrDefault(x => x.Id == id);
         }
         public override IPagedList<Writer> GetPage(int page = 1, int pageSize = 20, Func<IQueryable<Writer>, IQueryable<Writer>> filter = null)
         {
@@ -50,7 +50,7 @@ namespace WriterApp.Repository.Implementation
             {
                 writerReposts.Add(new WriterReport { FirstBook = item.MinDate, LastBook = item.MaxDate, NumberOfBooks = item.Qty, FullName = item.FullName });
             }
-            return new PagedList<WriterReport>(filter(writerReposts.AsQueryable()), page, pageSize);
+            return new PagedList<WriterReport>(filter != null ? filter(writerReposts.AsQueryable()) : writerReposts.AsQueryable(), page, pageSize);
         }
         public override void Delete(int id)
         {

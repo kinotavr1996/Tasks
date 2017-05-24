@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var config_1 = require("../../../config/config");
 var http_service_1 = require("../../../shared-component/services/http.service");
-require('rxjs/Rx');
+require("rxjs/Rx");
 var BookHttpService = (function () {
     function BookHttpService(_httpService) {
         this._httpService = _httpService;
@@ -29,23 +30,23 @@ var BookHttpService = (function () {
         return this._httpService.get(config_1.AppConfig.urls.createBook)
             .map(function (res) { return res.json(); });
     };
-    BookHttpService.prototype.postCustomer = function (data) {
+    BookHttpService.prototype.postBook = function (data) {
         return this._httpService.post(config_1.AppConfig.urls.books, data)
             .map(function (res) { return res; });
     };
-    BookHttpService.prototype.putCustomer = function (id, data) {
+    BookHttpService.prototype.putBook = function (id, data) {
         return this._httpService.put(config_1.AppConfig.urls.books + "/" + id, data)
             .map(function (res) { return res; });
     };
-    BookHttpService.prototype.deleteCustomer = function (id) {
+    BookHttpService.prototype.deleteBook = function (id) {
         return this._httpService.delete(config_1.AppConfig.urls.books + "/" + id)
             .map(function (res) { return res; });
     };
-    BookHttpService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_service_1.HttpService])
-    ], BookHttpService);
     return BookHttpService;
 }());
+BookHttpService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_service_1.HttpService])
+], BookHttpService);
 exports.BookHttpService = BookHttpService;
 //# sourceMappingURL=book-http.service.js.map

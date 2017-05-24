@@ -1,5 +1,6 @@
 "use strict";
-var writer_model_1 = require('./writer.model');
+Object.defineProperty(exports, "__esModule", { value: true });
+var writer_model_1 = require("./writer.model");
 var BookModel = (function () {
     function BookModel(id, caption, publishDate, writerModel) {
         this.id = id;

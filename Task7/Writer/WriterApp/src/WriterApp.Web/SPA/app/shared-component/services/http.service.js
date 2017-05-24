@@ -8,14 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var Observable_1 = require('rxjs/Observable');
-var config_1 = require('./../../config/config');
-var storage_service_1 = require('./storage.service');
-var core_1 = require('@angular/core');
-require('rxjs/add/operator/map');
-require('rxjs/add/operator/catch');
-var router_1 = require('@angular/router');
-var http_1 = require('@angular/http');
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("rxjs/Observable");
+var config_1 = require("./../../config/config");
+var storage_service_1 = require("./storage.service");
+var core_1 = require("@angular/core");
+require("rxjs/add/operator/map");
+require("rxjs/add/operator/catch");
+var router_1 = require("@angular/router");
+var http_1 = require("@angular/http");
 var HttpService = (function () {
     function HttpService(_http, _storage, _router) {
         this._http = _http;
@@ -136,12 +137,14 @@ var HttpService = (function () {
         errorMessage = errorMessages.join(', ');
         return errorMessage;
     };
-    HttpService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http, storage_service_1.StorageService, router_1.Router])
-    ], HttpService);
     return HttpService;
 }());
+HttpService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http,
+        storage_service_1.StorageService,
+        router_1.Router])
+], HttpService);
 exports.HttpService = HttpService;
 ;
 ;

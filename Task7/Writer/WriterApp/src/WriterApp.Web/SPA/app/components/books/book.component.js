@@ -8,20 +8,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
 var BooksComponent = (function () {
     function BooksComponent() {
     }
     BooksComponent.prototype.ngOnInit = function () {
     };
-    BooksComponent = __decorate([
-        core_1.Component({
-            template: require('./book.component.html'),
-            styles: [require('./book.component.css')]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], BooksComponent);
     return BooksComponent;
 }());
+BooksComponent = __decorate([
+    core_1.Component({
+        template: require('./book.component.html'),
+        styles: [require('./book.component.css')]
+    }),
+    __metadata("design:paramtypes", [])
+], BooksComponent);
 exports.BooksComponent = BooksComponent;
 //# sourceMappingURL=book.component.js.map

@@ -1,6 +1,9 @@
 <br>
 <p>
     <button class="btn btn-primary" [routerLink]="['../', 'add']">Add book</button>
+    <input type="text" class="validate filter-input" [(ngModel)]=query>
+    <input type="submit" value="Search" class="btn btn-default" /> |
+
 </p>
 <div class="customer-list-container">
     <table class="table table-responsive">

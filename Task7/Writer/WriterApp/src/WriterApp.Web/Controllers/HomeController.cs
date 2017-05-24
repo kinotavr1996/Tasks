@@ -67,7 +67,7 @@ namespace WriterApp.Web.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("FirstName,LastName,DateOfBirth,Biography")] WriterCreateModel writer)
+        public IActionResult Create([Bind("FirstName,LastName,DateOfBirth,Biography")] WriterCreateModel writer)
         {
             if (ModelState.IsValid)
             {

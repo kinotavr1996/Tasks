@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var book_http_service_1 = require('./../books-shared/book-http.service');
-var book_list_model_1 = require('./../../../model/book-list.model');
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var book_http_service_1 = require("./../books-shared/book-http.service");
+var book_list_model_1 = require("./../../../model/book-list.model");
+var core_1 = require("@angular/core");
 var paginator_component_1 = require("../../../shared-component/paginator/paginator.component");
 var BookListComponent = (function () {
     function BookListComponent(_httpService, pagerService) {
@@ -31,7 +32,7 @@ var BookListComponent = (function () {
     BookListComponent.prototype.delete = function (id) {
         var _this = this;
         if (confirm("Are you shure ?")) {
-            this._httpService.deleteCustomer(id)
+            this._httpService.deleteBook(id)
                 .subscribe(function (res) { _this.ngOnInit(); });
         }
     };
@@ -65,14 +66,14 @@ var BookListComponent = (function () {
             _this.model = book_list_model_1.BookListModel.fromJSON(res);
         });
     };
-    BookListComponent = __decorate([
-        core_1.Component({
-            template: require('./book-list.component.html'),
-            styles: [require('./book-list.component.css')]
-        }), 
-        __metadata('design:paramtypes', [book_http_service_1.BookHttpService, paginator_component_1.PagerService])
-    ], BookListComponent);
     return BookListComponent;
 }());
+BookListComponent = __decorate([
+    core_1.Component({
+        template: require('./book-list.component.html'),
+        styles: [require('./book-list.component.css')]
+    }),
+    __metadata("design:paramtypes", [book_http_service_1.BookHttpService, paginator_component_1.PagerService])
+], BookListComponent);
 exports.BookListComponent = BookListComponent;
 //# sourceMappingURL=book-list.component.js.map

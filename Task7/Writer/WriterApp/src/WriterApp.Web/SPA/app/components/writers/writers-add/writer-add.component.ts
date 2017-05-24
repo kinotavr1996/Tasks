@@ -18,7 +18,7 @@ export class WriterAddComponent implements OnInit {
         this.model = new WriterAddModel(null, null, null, null);
     }
     onSubmitForm() {
-        this._httpService.postCustomer(this.model)
+        this._httpService.postWriter(this.model)
             .subscribe(res => {
                 this.router.navigateByUrl("/spa/writers/list");
             });

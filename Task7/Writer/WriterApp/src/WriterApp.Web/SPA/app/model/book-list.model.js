@@ -1,5 +1,6 @@
 "use strict";
-var book_model_1 = require('./book.model');
+Object.defineProperty(exports, "__esModule", { value: true });
+var book_model_1 = require("./book.model");
 var BookListModel = (function () {
     function BookListModel(filter, column, direction, hasNextPage, hasPrePage, pageSize, totalPage, page, bookModel) {
         this.filter = filter;

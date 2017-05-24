@@ -19,15 +19,15 @@ export class WriterHttpService {
         return this._httpService.get(AppConfig.urls.writer)
             .map(res => res.json());
     }
-    postCustomer(data) {
+    postWriter(data) {
         return this._httpService.post(AppConfig.urls.writer, data)
             .map(res => res.json());
     }
-    putCustomer(id, data) {
+    putWriter(id, data) {
         return this._httpService.put(AppConfig.urls.writer + "/" + id, data)
             .map(res => res.json());
     }
-    deleteCustomer(id) {
+    deleteWriter(id) {
         return this._httpService.delete(AppConfig.urls.writer + "/" + id)
             .map(res => res);
     }

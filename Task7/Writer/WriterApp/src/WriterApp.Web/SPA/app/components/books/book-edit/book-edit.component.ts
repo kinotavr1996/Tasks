@@ -35,7 +35,7 @@ export class BookEditComponent {
     onSubmitForm() {
         if (this.model.writerIds != null) {
             if (this.model.writerIds.length > 0) {
-                this._httpService.putCustomer(this.id, this.model)
+                this._httpService.putBook(this.id, this.model)
                     .subscribe(res => {
                         this.router.navigateByUrl("/spa/books/list");
                     });

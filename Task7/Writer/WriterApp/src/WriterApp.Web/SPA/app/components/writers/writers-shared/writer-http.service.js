@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var config_1 = require("../../../config/config");
 var http_service_1 = require("../../../shared-component/services/http.service");
-require('rxjs/Rx');
+require("rxjs/Rx");
 var WriterHttpService = (function () {
     function WriterHttpService(_httpService) {
         this._httpService = _httpService;
@@ -29,23 +30,23 @@ var WriterHttpService = (function () {
         return this._httpService.get(config_1.AppConfig.urls.writer)
             .map(function (res) { return res.json(); });
     };
-    WriterHttpService.prototype.postCustomer = function (data) {
+    WriterHttpService.prototype.postWriter = function (data) {
         return this._httpService.post(config_1.AppConfig.urls.writer, data)
             .map(function (res) { return res.json(); });
     };
-    WriterHttpService.prototype.putCustomer = function (id, data) {
+    WriterHttpService.prototype.putWriter = function (id, data) {
         return this._httpService.put(config_1.AppConfig.urls.writer + "/" + id, data)
             .map(function (res) { return res.json(); });
     };
-    WriterHttpService.prototype.deleteCustomer = function (id) {
+    WriterHttpService.prototype.deleteWriter = function (id) {
         return this._httpService.delete(config_1.AppConfig.urls.writer + "/" + id)
             .map(function (res) { return res; });
     };
-    WriterHttpService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_service_1.HttpService])
-    ], WriterHttpService);
     return WriterHttpService;
 }());
+WriterHttpService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_service_1.HttpService])
+], WriterHttpService);
 exports.WriterHttpService = WriterHttpService;
 //# sourceMappingURL=writer-http.service.js.map

@@ -1,5 +1,6 @@
 "use strict";
-var writer_model_1 = require('./writer.model');
+Object.defineProperty(exports, "__esModule", { value: true });
+var writer_model_1 = require("./writer.model");
 var WriterListModel = (function () {
     function WriterListModel(filter, column, direction, hasNextPage, hasPrePage, pageSize, totalPage, page, writerModel) {
         this.filter = filter;

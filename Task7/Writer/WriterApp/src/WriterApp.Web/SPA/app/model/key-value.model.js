@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var KeyValueModel = (function () {
     function KeyValueModel(key, value) {
         this.key = key;

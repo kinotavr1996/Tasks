@@ -30,17 +30,20 @@ namespace WriterApp.Repository.Implementation
             var book = Find().Include("WriterBooks").SingleOrDefault(x => x.Id == model.Id);
             book.Caption = model.Caption;
             book.PublishedDate = model.PublishedDate;
-            var ids = book.WriterBooks.Select(x => x.WriterId).ToList();
-            foreach (var wb in model.WriterBooks.ToList())
+            if (book.WriterBooks != null && book.WriterBooks.Count > 0)
             {
-                if (!ids.Contains(wb.WriterId))
-                    book.WriterBooks.Add(new WriterBook { WriterId = wb.WriterId });
-            }
-            ids = model.WriterBooks.Select(x => x.WriterId).ToList();
-            foreach (var wb in book.WriterBooks.ToList())
-            {
-                if (!ids.Contains(wb.WriterId))
-                    book.WriterBooks.Remove(book.WriterBooks.Where(y => y.WriterId == wb.WriterId).SingleOrDefault());
+                var ids = book.WriterBooks.Select(x => x.WriterId).ToList();
+                foreach (var wb in model.WriterBooks.ToList())
+                {
+                    if (!ids.Contains(wb.WriterId))
+                        book.WriterBooks.Add(new WriterBook { WriterId = wb.WriterId });
+                }
+                ids = model.WriterBooks.Select(x => x.WriterId).ToList();
+                foreach (var wb in book.WriterBooks.ToList())
+                {
+                    if (!ids.Contains(wb.WriterId))
+                        book.WriterBooks.Remove(book.WriterBooks.Where(y => y.WriterId == wb.WriterId).SingleOrDefault());
+                }
             }
             SaveChanges();
         }
