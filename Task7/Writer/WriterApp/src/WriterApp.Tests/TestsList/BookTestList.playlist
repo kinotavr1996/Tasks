@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="BookApp.Tests.BookRepositoryTests.GetBookById" /><Add Test="BookApp.Tests.BookRepositoryTests.AddBook" /><Add Test="BookApp.Tests.BookRepositoryTests.GetBooksWithParametrs" /><Add Test="BookApp.Tests.BookRepositoryTests.DeleteBook" /><Add Test="BookApp.Tests.BookRepositoryTests.EditBook" /></Playlist>

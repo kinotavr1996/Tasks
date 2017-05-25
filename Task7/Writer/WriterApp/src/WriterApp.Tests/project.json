@@ -1,0 +1,34 @@
+﻿{
+  "version": "1.0.0-*",
+  "testRunner": "xunit",
+  "dependencies": {
+    "Microsoft.NETCore.App": {
+      "version": "1.0.1",
+      "type": "platform"
+    },
+    "Microsoft.EntityFrameworkCore": "1.1.2",
+    "NETStandard.Library": "1.6.1",
+    "WriterApp.Data": "1.0.0-*",
+    "WriterApp.Data.Common": "1.0.0-*",
+    "WriterApp.Repository": "1.0.0-*",
+    "WriterApp.Data.Model": "1.0.0-*",
+    "WriterApp.Repository.Implementation": "1.0.0-*",
+    "WriterApp.Web": "1.0.0",
+    "xunit": "2.2.0",
+    "Microsoft.EntityFrameworkCore.InMemory": "1.1.2",
+    "Microsoft.AspNetCore.Mvc": "1.0.1",
+    "Moq": "4.7.10",
+    "Microsoft.NET.Test.Sdk": "15.0.0"
+  },
+
+
+  "frameworks": {
+    "netcoreapp1.0": {
+      "imports": [
+        "dotnet5.6",
+        "portable-net45+win8"
+      ]
+    }
+
+  }
+}
