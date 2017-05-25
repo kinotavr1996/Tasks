@@ -24,6 +24,7 @@ namespace BookApp.Tests
             }
             using (var context = new WriterContext(options))
             {
+                var repository = new BookRepository(context);
                 Assert.Equal(1, context.Books.Count());
                 Assert.Equal("Piece and War", context.Books.Single().Caption);
                 Assert.Equal("03/02/0001", context.Books.Single().PublishedDate.Date.ToString("dd/MM/yyyy"));
@@ -41,12 +42,9 @@ namespace BookApp.Tests
             {
                 var repository = new BookRepository(context);
                 repository.Add(new Book { Caption = "Mahov", PublishedDate = new DateTime().Date });
-                repository.Add(new Book { Caption = "Mahov", PublishedDate = new DateTime(1185, 2, 3) });
-            }
-            using (var context = new WriterContext(options))
-            {
-                Assert.Equal(1, context.Books.Where(w => w.Id == 1).Count());
-            }
+                repository.Add(new Book { Caption = "Oleg", PublishedDate = new DateTime(1185, 2, 3) });
+                Assert.Equal("Mahov", repository.GetById(1).Caption);
+            }            
         }
         [Fact]
         public void DeleteBook()

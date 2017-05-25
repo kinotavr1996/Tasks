@@ -56,16 +56,19 @@ namespace WriterApp.Repository.Implementation
         {
             var writer = Find().SingleOrDefault(x => x.Id == id);
             if(writer != null)
-                Remove(writer) ;
+                Remove(writer);
         }
         public override void Edit(Writer writer)
         {
             var _writer = Find().SingleOrDefault(x => x.Id == writer.Id);
-            _writer.FirstName = writer.FirstName;
-            _writer.LastName = writer.LastName;
-            _writer.DateOfBirth = writer.DateOfBirth;
-            _writer.Biography = writer.Biography;
-            SaveChanges();
+            if (_writer != null)
+            {
+                _writer.FirstName = writer.FirstName;
+                _writer.LastName = writer.LastName;
+                _writer.DateOfBirth = writer.DateOfBirth;
+                _writer.Biography = writer.Biography;
+                SaveChanges();
+            }
         }
     }
 }

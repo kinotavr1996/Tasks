@@ -21,7 +21,7 @@ namespace WriterApp.Tests
             using (var context = new WriterContext(options))
             {
                 var repository = new WriterRepository(context);
-                repository.Add(new Writer { LastName = "Gaevskiy", FirstName = "Oleg", DateOfBirth = new DateTime(1,2,3), Biography = "It`s biography" });
+                repository.Add(new Writer { LastName = "Gaevskiy", FirstName = "Oleg", DateOfBirth = new DateTime(1, 2, 3), Biography = "It`s biography" });
             }
             using (var context = new WriterContext(options))
             {
@@ -30,7 +30,6 @@ namespace WriterApp.Tests
                 Assert.Equal("Oleg", context.Writers.Single().FirstName);
                 Assert.Equal("03/02/0001", context.Writers.Single().DateOfBirth.Date.ToString("dd/MM/yyyy"));
                 Assert.Equal("It`s biography", context.Writers.Single().Biography);
-
             }
         }
 
@@ -46,18 +45,16 @@ namespace WriterApp.Tests
                 var repository = new WriterRepository(context);
                 repository.Add(new Writer { LastName = "Gaevskiy", FirstName = "Oleg", DateOfBirth = new DateTime(), Biography = "It`s biography" });
                 repository.Add(new Writer { LastName = "Oleg", FirstName = "Gaevskiy", DateOfBirth = new DateTime(), Biography = "It`s biography" });
+                Assert.Equal("Gaevskiy", repository.GetById(1).LastName);
             }
-            using (var context = new WriterContext(options))
-            {
-                Assert.Equal(1, context.Writers.Where(w => w.Id == 1).Count());
-            }
+
         }
         [Fact]
         public void DeleteWriter()
         {
             var options = new DbContextOptionsBuilder<WriterContext>()
                 .UseInMemoryDatabase(databaseName: "DeleteWriter")
-                .Options; 
+                .Options;
             using (var context = new WriterContext(options))
             {
                 var repository = new WriterRepository(context);
@@ -80,8 +77,8 @@ namespace WriterApp.Tests
             {
                 var repository = new WriterRepository(context);
                 repository.Add(new Writer { LastName = "Gaevskiy", FirstName = "Oleg", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
-                repository.Edit(new Writer { Id = 1, LastName = "Oleg", FirstName = "Gaevskiy", DateOfBirth = new DateTime(1,2,3), Biography = "It`s new biography" });
-            } 
+                repository.Edit(new Writer { Id = 1, LastName = "Oleg", FirstName = "Gaevskiy", DateOfBirth = new DateTime(1, 2, 3), Biography = "It`s new biography" });
+            }
             using (var context = new WriterContext(options))
             {
                 Assert.Equal("Gaevskiy", context.Writers.Single().FirstName);
@@ -114,7 +111,7 @@ namespace WriterApp.Tests
             writerList.Add(new Book { Caption = "Makedonsky", PublishedDate = new DateTime().Date });
             return writerList;
         }
-       
+
         [Fact]
         public void GetWritersWithParametrs()
         {
@@ -133,8 +130,26 @@ namespace WriterApp.Tests
                 Assert.Equal(5, repository.GetPage(0, 5, (query) => query).Count());
                 Assert.Equal(repository.Get().Count(), repository.GetPage(0, 100, (query) => query).Count());
                 Assert.Equal(repository.Get().Count(), repository.GetPage().Count());
-                Assert.Equal(0, repository.GetPage(100,0).Count());
-                Assert.Equal(0, repository.GetPage(100).Count()); 
+                Assert.Equal(0, repository.GetPage(100, 0).Count());
+                Assert.Equal(0, repository.GetPage(100).Count());
+
+                var sortableListByASC = repository.GetPage(1, 10, query => query.OrderBy(x => x.FirstName));
+                Assert.Equal("Ivan", sortableListByASC.ToList()[0].FirstName);
+                Assert.Equal("Loloshovich", sortableListByASC.ToList()[1].FirstName);
+
+                var sortableListByDESC = repository.GetPage(1, 10, query => query.OrderByDescending(x => x.FirstName));
+                Assert.Equal("Sergiy", sortableListByDESC.ToList()[0].FirstName);
+                Assert.Equal("Petro", sortableListByDESC.ToList()[1].FirstName);
+
+                var fiteredList = repository.GetPage(1, 10, query => query.Where(s => s.FirstName.ToUpper().Contains("Ol".ToUpper()) || s.LastName.ToUpper().Contains("Ol".ToUpper())));
+                Assert.Equal(3, fiteredList.Count());
+
+                var fiteredList_2 = repository.GetPage(2, 10, query => query.Where(s => s.FirstName.ToUpper().Contains("Ol".ToUpper()) || s.LastName.ToUpper().Contains("Ol".ToUpper())));
+                Assert.Equal(0, fiteredList_2.Count());
+
+                Assert.Equal(2,repository.GetPage(2, 4, (query) => query).Count());
+                
+
             }
         }
         public List<WriterBook> InitWriterBookList()
@@ -168,11 +183,11 @@ namespace WriterApp.Tests
                 {
                     bRepository.Add(b);
                 }
-                foreach(var wb in InitWriterBookList())
+                foreach (var wb in InitWriterBookList())
                 {
                     context.WriterBooks.Add(wb);
                 }
-                
+
                 context.SaveChanges();
 
                 Assert.Equal(6, wRepository.GetReportsPage().Count());

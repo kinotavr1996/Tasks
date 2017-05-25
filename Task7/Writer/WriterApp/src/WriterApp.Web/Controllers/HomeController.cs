@@ -17,14 +17,14 @@ namespace WriterApp.Web.Controllers
         {
             _writerRepository = writerRepository;
         }
-        public IQueryable<Writer> ApplyFilter(IQueryable<Writer> query, string searchString)
+        private IQueryable<Writer> ApplyFilter(IQueryable<Writer> query, string searchString)
         {
             if (!String.IsNullOrEmpty(searchString))
                 return query.Where(s => s.FirstName.ToUpper().Contains(searchString.ToUpper()) || s.LastName.ToUpper().Contains(searchString.ToUpper()));
             else
                 return query;
         }
-        public IQueryable<Writer> ApplySortOrder(IQueryable<Writer> query, string sortOrder, string direction)
+        private IQueryable<Writer> ApplySortOrder(IQueryable<Writer> query, string sortOrder, string direction)
         {
             switch (sortOrder)
             {
@@ -67,7 +67,7 @@ namespace WriterApp.Web.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("FirstName,LastName,DateOfBirth,Biography")] WriterCreateModel writer)
+        public async Task<IActionResult> Create([Bind("FirstName,LastName,DateOfBirth,Biography")] WriterCreateModel writer)
         {
             if (ModelState.IsValid)
             {
@@ -100,7 +100,7 @@ namespace WriterApp.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(WriterEditModel writer)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && _writerRepository.GetById(writer.Id) != null)
             {
                 _writerRepository.Edit(new Writer
                 {
