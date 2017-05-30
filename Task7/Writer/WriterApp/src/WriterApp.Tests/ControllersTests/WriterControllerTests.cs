@@ -23,6 +23,7 @@ namespace WriterApp.Tests.ControllersTests
             Assert.NotNull(controller.Create());
             Assert.IsNotType<RedirectToActionResult>(controller.Create());
         }
+
         [Fact]
         public void ChangePageWithASC_ReturnsAViewResult()
         {
@@ -46,6 +47,7 @@ namespace WriterApp.Tests.ControllersTests
             Assert.Equal("Petrovich Petro", resultModel.Items[1].FullName);
             mock.Verify(m => m.GetPage(2, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()), Times.Exactly(1));
         }
+
         [Fact]
         public void StartHomePage_ReturnsAViewResult()
         {
@@ -91,7 +93,7 @@ namespace WriterApp.Tests.ControllersTests
             Assert.IsNotType<RedirectToActionResult>(result);
             Assert.Equal(4, resultModel.Items.Count);
             Assert.Equal("Petrovich Petro", resultModel.Items[0].FullName);
-            Assert.Equal("Ololo Loloshovich", resultModel.Items[1].FullName);           
+            Assert.Equal("Ololo Loloshovich", resultModel.Items[1].FullName);
 
             mock.Verify(m => m.GetPage(1, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()), Times.Exactly(1));
         }
@@ -118,6 +120,7 @@ namespace WriterApp.Tests.ControllersTests
 
             mock.Verify(m => m.GetPage(1, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()), Times.Exactly(1));
         }
+
         [Fact]
         public void UseFilter_ChangePage_ReturnsAViewResult()
         {
@@ -136,11 +139,11 @@ namespace WriterApp.Tests.ControllersTests
             Assert.NotNull(result);
             Assert.IsNotType<RedirectToActionResult>(result);
             Assert.Equal(1, resultModel.Items.Count);
-            Assert.Equal("Gaevskiy Oleg", resultModel.Items[0].FullName);            
+            Assert.Equal("Gaevskiy Oleg", resultModel.Items[0].FullName);
 
             mock.Verify(m => m.GetPage(2, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()), Times.Exactly(1));
-
         }
+
         [Fact]
         public void AddWriter_ReturnsAViewResult_WithWriterModel()
         {
@@ -197,6 +200,7 @@ namespace WriterApp.Tests.ControllersTests
             Assert.Equal("Index", redirectToActionResult.ActionName);
             mock.Verify(m => m.Add(It.IsAny<Writer>()), Times.Once);
         }
+
         [Fact]
         public void EditWriter_ReturnsAViewResult_WithWriterEditModel()
         {
@@ -297,6 +301,7 @@ namespace WriterApp.Tests.ControllersTests
             writerList.Add(new Writer { LastName = "Makedonsky", FirstName = "Oleksandr", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
             return writerList;
         }
+
         public List<Writer> InitWritersListWithSameRecords()
         {
             List<Writer> writerList = new List<Writer>();
