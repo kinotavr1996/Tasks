@@ -23,19 +23,29 @@ namespace WriterApp.Tests.ControllersTests
             Assert.NotNull(controller.Create());
             Assert.IsNotType<RedirectToActionResult>(controller.Create());
         }
-
-        public List<Writer> InitWritersList()
+        [Fact]
+        public void ChangePageWithASC_ReturnsAViewResult()
         {
-            List<Writer> writerList = new List<Writer>();
-            writerList.Add(new Writer { LastName = "Gaevskiy", FirstName = "Oleg", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
-            writerList.Add(new Writer { LastName = "Ivanov", FirstName = "Ivan", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
-            writerList.Add(new Writer { LastName = "Mahov", FirstName = "Sergiy", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
-            writerList.Add(new Writer { LastName = "Ololo", FirstName = "Loloshovich", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
-            writerList.Add(new Writer { LastName = "Petrovich", FirstName = "Petro", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
-            writerList.Add(new Writer { LastName = "Makedonsky", FirstName = "Oleksandr", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
-            return writerList;
-        }
+            var mock = new Mock<IWriterRepository>();
+            var controller = new HomeController(mock.Object);
+            var myset = new List<Writer>();
+            foreach (var w in InitWritersList())
+            {
+                myset.Add(w);
+            }
+            mock.Setup(x => x.GetPage(2, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()))
+                .Returns<int, int, Func<IQueryable<Writer>, IQueryable<Writer>>>((page, pageSize, filter) => new PagedList<Writer>(filter(myset.AsQueryable()), page, pageSize));
 
+            var result = (ViewResult)controller.Index(null, "ASC", null, null, 2).Result;
+            var resultModel = (WriterListViewModel)result.Model;
+
+            Assert.NotNull(result);
+            Assert.IsNotType<RedirectToActionResult>(result);
+            Assert.Equal(2, resultModel.Items.Count);
+            Assert.Equal("Ololo Loloshovich", resultModel.Items[0].FullName);
+            Assert.Equal("Petrovich Petro", resultModel.Items[1].FullName);
+            mock.Verify(m => m.GetPage(2, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()), Times.Exactly(1));
+        }
         [Fact]
         public void StartHomePage_ReturnsAViewResult()
         {
@@ -46,44 +56,97 @@ namespace WriterApp.Tests.ControllersTests
             {
                 myset.Add(w);
             }
-
             mock.Setup(x => x.GetPage(1, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()))
                 .Returns<int, int, Func<IQueryable<Writer>, IQueryable<Writer>>>((page, pageSize, filter) => new PagedList<Writer>(filter(myset.AsQueryable()), page, pageSize));
 
-            var result_1 = (ViewResult)controller.Index(null, null, null, null, null).Result;
-            var result_1_Model = (WriterListViewModel)result_1.Model;
+            var result = (ViewResult)controller.Index(null, null, null, null, null).Result;
+            var resultModel = (WriterListViewModel)result.Model;
 
-            var result_2 = (ViewResult)controller.Index("lastName", "DESC", "Ol", null, 1).Result;
-            var result_2_Model = (WriterListViewModel)result_2.Model;
+            Assert.NotNull(result);
+            Assert.IsNotType<RedirectToActionResult>(result);
+            Assert.Equal(4, resultModel.Items.Count);
+            Assert.Equal("Gaevskiy Oleg", resultModel.Items[0].FullName);
+            Assert.Equal("Ivanov Ivan", resultModel.Items[1].FullName);
 
-            var result_3 = (ViewResult)controller.Index("Qwerty", "ASC", null, "eg", 100).Result;
-            var result_3_Model = (WriterListViewModel)result_3.Model;
+            mock.Verify(m => m.GetPage(1, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()), Times.Exactly(1));
 
-            Assert.NotNull(result_1);
-            Assert.IsNotType<RedirectToActionResult>(result_1);
-            Assert.Equal(4, result_1_Model.Items.Count);
-            Assert.Equal("Gaevskiy Oleg", result_1_Model.Items[0].FullName);
-            Assert.Equal("Ivanov Ivan", result_1_Model.Items[1].FullName);
-
-            Assert.NotNull(result_2);
-            Assert.IsNotType<RedirectToActionResult>(result_2);
-            Assert.Equal(3, result_2_Model.Items.Count);
-            Assert.Equal("Ololo Loloshovich", result_2_Model.Items[0].FullName);
-            Assert.Equal("Makedonsky Oleksandr", result_2_Model.Items[1].FullName);
-
-            Assert.NotNull(result_3);
-            Assert.IsNotType<RedirectToActionResult>(result_3);
-            Assert.Equal(1, result_3_Model.Items.Count);
-
-            mock.Verify(m => m.GetPage(1, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()), Times.Exactly(2));
         }
+        [Fact]
+        public void SortList_DistinctDESC_ReturnsAViewResult()
+        {
+            var mock = new Mock<IWriterRepository>();
+            var controller = new HomeController(mock.Object);
+            var myset = new List<Writer>();
+            foreach (var w in InitWritersList())
+            {
+                myset.Add(w);
+            }
+            mock.Setup(x => x.GetPage(1, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()))
+                .Returns<int, int, Func<IQueryable<Writer>, IQueryable<Writer>>>((page, pageSize, filter) => new PagedList<Writer>(filter(myset.AsQueryable()), page, pageSize));
 
+            var result = (ViewResult)controller.Index("fullName", "DESC", null, null, null).Result;
+            var resultModel = (WriterListViewModel)result.Model;
+
+            Assert.NotNull(result);
+            Assert.IsNotType<RedirectToActionResult>(result);
+            Assert.Equal(4, resultModel.Items.Count);
+            Assert.Equal("Petrovich Petro", resultModel.Items[0].FullName);
+            Assert.Equal("Ololo Loloshovich", resultModel.Items[1].FullName);           
+
+            mock.Verify(m => m.GetPage(1, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()), Times.Exactly(1));
+        }
+        [Fact]
+        public void UseFilter_ReturnsAViewResult()
+        {
+            var mock = new Mock<IWriterRepository>();
+            var controller = new HomeController(mock.Object);
+            var myset = new List<Writer>();
+            foreach (var w in InitWritersList())
+            {
+                myset.Add(w);
+            }
+            mock.Setup(x => x.GetPage(1, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()))
+                .Returns<int, int, Func<IQueryable<Writer>, IQueryable<Writer>>>((page, pageSize, filter) => new PagedList<Writer>(filter(myset.AsQueryable()), page, pageSize));
+            var result = (ViewResult)controller.Index("fullName", "DESC", "Ol", null, null).Result;
+            var resultModel = (WriterListViewModel)result.Model;
+
+            Assert.NotNull(result);
+            Assert.IsNotType<RedirectToActionResult>(result);
+            Assert.Equal(3, resultModel.Items.Count);
+            Assert.Equal("Ololo Loloshovich", resultModel.Items[0].FullName);
+            Assert.Equal("Makedonsky Oleksandr", resultModel.Items[1].FullName);
+
+            mock.Verify(m => m.GetPage(1, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()), Times.Exactly(1));
+        }
+        [Fact]
+        public void UseFilter_ChangePage_ReturnsAViewResult()
+        {
+            var mock = new Mock<IWriterRepository>();
+            var controller = new HomeController(mock.Object);
+            var myset = new List<Writer>();
+            foreach (var w in InitWritersListWithSameRecords())
+            {
+                myset.Add(w);
+            }
+            mock.Setup(x => x.GetPage(2, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()))
+                .Returns<int, int, Func<IQueryable<Writer>, IQueryable<Writer>>>((page, pageSize, filter) => new PagedList<Writer>(filter(myset.AsQueryable()), page, pageSize));
+            var result = (ViewResult)controller.Index(null, null, null, "ga", 2).Result;
+            var resultModel = (WriterListViewModel)result.Model;
+
+            Assert.NotNull(result);
+            Assert.IsNotType<RedirectToActionResult>(result);
+            Assert.Equal(1, resultModel.Items.Count);
+            Assert.Equal("Gaevskiy Oleg", resultModel.Items[0].FullName);            
+
+            mock.Verify(m => m.GetPage(2, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()), Times.Exactly(1));
+
+        }
         [Fact]
         public void AddWriter_ReturnsAViewResult_WithWriterModel()
         {
             var mockRepo = new Mock<IWriterRepository>();
             var validator = new DeepDiveValidator();
-
+            mockRepo.Setup(m => m.Add(It.IsAny<Writer>()));
             HomeController controller = new HomeController(mockRepo.Object);
             controller.ModelState.AddModelError("FirstName", "First name is required");
 
@@ -109,6 +172,8 @@ namespace WriterApp.Tests.ControllersTests
             Assert.IsNotType<RedirectToActionResult>(result);
             Assert.Equal("The field FirstName must be a string with a maximum length of 256.", errorListForModelWithLongName[0].ErrorMessage);
             Assert.Equal("The field LastName must be a string with a maximum length of 256.", errorListForModelWithLongName[1].ErrorMessage);
+
+            mockRepo.Verify(m => m.Add(It.IsAny<Writer>()), Times.Exactly(0));
         }
 
         [Fact]
@@ -220,5 +285,34 @@ namespace WriterApp.Tests.ControllersTests
             Assert.Equal("Index", redirectToActionResult.ActionName);
             mock.Verify(m => m.Delete(It.IsAny<int>()), Times.Once);
         }
+
+        public List<Writer> InitWritersList()
+        {
+            List<Writer> writerList = new List<Writer>();
+            writerList.Add(new Writer { LastName = "Gaevskiy", FirstName = "Oleg", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            writerList.Add(new Writer { LastName = "Ivanov", FirstName = "Ivan", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            writerList.Add(new Writer { LastName = "Mahov", FirstName = "Sergiy", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            writerList.Add(new Writer { LastName = "Ololo", FirstName = "Loloshovich", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            writerList.Add(new Writer { LastName = "Petrovich", FirstName = "Petro", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            writerList.Add(new Writer { LastName = "Makedonsky", FirstName = "Oleksandr", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            return writerList;
+        }
+        public List<Writer> InitWritersListWithSameRecords()
+        {
+            List<Writer> writerList = new List<Writer>();
+            writerList.Add(new Writer { LastName = "Gaevskiy", FirstName = "Oleg", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            writerList.Add(new Writer { LastName = "Gaevskiy", FirstName = "Oleg", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            writerList.Add(new Writer { LastName = "Gaevskiy", FirstName = "Oleg", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            writerList.Add(new Writer { LastName = "Gaevskiy", FirstName = "Oleg", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            writerList.Add(new Writer { LastName = "Gaevskiy", FirstName = "Oleg", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            writerList.Add(new Writer { LastName = "Ivanov", FirstName = "Ivan", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            writerList.Add(new Writer { LastName = "Mahov", FirstName = "Sergiy", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            writerList.Add(new Writer { LastName = "Ololo", FirstName = "Loloshovich", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            writerList.Add(new Writer { LastName = "Petrovich", FirstName = "Petro", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            writerList.Add(new Writer { LastName = "Makedonsky", FirstName = "Oleksandr", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+
+            return writerList;
+        }
+
     }
 }

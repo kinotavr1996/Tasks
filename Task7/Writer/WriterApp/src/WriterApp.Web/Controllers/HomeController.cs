@@ -51,22 +51,13 @@ namespace WriterApp.Web.Controllers
                 writerList.Page = 1;
             else
                 writerList.Filter = currentFilter;
-            var writers = _writerRepository.GetPage(writerList.Page, writerList.PageSize, (query) => ApplySortOrder(ApplyFilter(query, searchString), writerList.Order.Column, writerList.Order.Direction));
-            if (writers != null)
+            var writers = _writerRepository.GetPage(writerList.Page, writerList.PageSize, (query) => ApplySortOrder(ApplyFilter(query, writerList.Filter), writerList.Order.Column, writerList.Order.Direction));
+            foreach (var c in writers)
             {
-                foreach (var c in writers)
-                {
-                    writerList.Items.Add(new WriterGridModel { Id = c.Id, FullName = $"{c.LastName} {c.FirstName}", DateOfBirth = c.DateOfBirth, Biography = c.Biography });
-                }
-                writerList.TotalPages = (int)Math.Ceiling(writers.TotalCount / (double)writerList.PageSize);
+                writerList.Items.Add(new WriterGridModel { Id = c.Id, FullName = $"{c.LastName} {c.FirstName}", DateOfBirth = c.DateOfBirth, Biography = c.Biography });
             }
-            else
-            {
-                writerList.TotalPages = 0;
-                writerList.Items.Add(new WriterGridModel { });
-            }
+            writerList.TotalPages = (int)Math.Ceiling(writers.TotalCount / (double)writerList.PageSize);
             return View(writerList);
-
         }
 
         [HttpGet]
