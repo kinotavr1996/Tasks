@@ -44,7 +44,7 @@ namespace BookApp.Tests
                 repository.Add(new Book { Caption = "Mahov", PublishedDate = new DateTime().Date });
                 repository.Add(new Book { Caption = "Oleg", PublishedDate = new DateTime(1185, 2, 3) });
                 Assert.Equal("Mahov", repository.GetById(1).Caption);
-            }            
+            }
         }
         [Fact]
         public void DeleteBook()

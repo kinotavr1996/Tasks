@@ -45,6 +45,14 @@ namespace WriterApp.Tests.ControllersTests
             Assert.Equal(2, resultModel.Items.Count);
             Assert.Equal("Ololo Loloshovich", resultModel.Items[0].FullName);
             Assert.Equal("Petrovich Petro", resultModel.Items[1].FullName);
+
+            Assert.Equal("ASC", resultModel.Order.Direction);
+            Assert.Equal(2, resultModel.TotalPages);
+            Assert.Equal(resultModel.Page, 2);
+            Assert.Equal(resultModel.PageSize, 4);
+            Assert.Null(resultModel.Order.Column);
+            Assert.Null(resultModel.Filter);
+
             mock.Verify(m => m.GetPage(2, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()), Times.Exactly(1));
         }
 
@@ -70,8 +78,14 @@ namespace WriterApp.Tests.ControllersTests
             Assert.Equal("Gaevskiy Oleg", resultModel.Items[0].FullName);
             Assert.Equal("Ivanov Ivan", resultModel.Items[1].FullName);
 
-            mock.Verify(m => m.GetPage(1, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()), Times.Exactly(1));
+            Assert.Equal(2, resultModel.TotalPages);
+            Assert.Equal(1, resultModel.Page);
+            Assert.Equal(4, resultModel.PageSize);
+            Assert.Null(resultModel.Order.Column);
+            Assert.Null(resultModel.Filter);
+            Assert.Equal("ASC", resultModel.Order.Direction);
 
+            mock.Verify(m => m.GetPage(1, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()), Times.Exactly(1));
         }
         [Fact]
         public void SortList_DistinctDESC_ReturnsAViewResult()
@@ -94,6 +108,13 @@ namespace WriterApp.Tests.ControllersTests
             Assert.Equal(4, resultModel.Items.Count);
             Assert.Equal("Petrovich Petro", resultModel.Items[0].FullName);
             Assert.Equal("Ololo Loloshovich", resultModel.Items[1].FullName);
+
+            Assert.Equal(2, resultModel.TotalPages);
+            Assert.Equal(1, resultModel.Page);
+            Assert.Equal(4, resultModel.PageSize);
+            Assert.Equal("fullName", resultModel.Order.Column);
+            Assert.Null(resultModel.Filter);
+            Assert.Equal("DESC", resultModel.Order.Direction);
 
             mock.Verify(m => m.GetPage(1, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()), Times.Exactly(1));
         }
@@ -118,6 +139,13 @@ namespace WriterApp.Tests.ControllersTests
             Assert.Equal("Ololo Loloshovich", resultModel.Items[0].FullName);
             Assert.Equal("Makedonsky Oleksandr", resultModel.Items[1].FullName);
 
+            Assert.Equal(1, resultModel.TotalPages);
+            Assert.Equal(1, resultModel.Page);
+            Assert.Equal(4, resultModel.PageSize);
+            Assert.Equal("fullName", resultModel.Order.Column);
+            Assert.Equal("Ol", resultModel.Filter);
+            Assert.Equal("DESC", resultModel.Order.Direction);
+
             mock.Verify(m => m.GetPage(1, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()), Times.Exactly(1));
         }
 
@@ -140,6 +168,13 @@ namespace WriterApp.Tests.ControllersTests
             Assert.IsNotType<RedirectToActionResult>(result);
             Assert.Equal(1, resultModel.Items.Count);
             Assert.Equal("Gaevskiy Oleg", resultModel.Items[0].FullName);
+
+            Assert.Equal(2, resultModel.TotalPages);
+            Assert.Equal(2, resultModel.Page);
+            Assert.Equal(4, resultModel.PageSize);
+            Assert.Null(resultModel.Order.Column);
+            Assert.Equal("ga", resultModel.Filter);
+            Assert.Equal("ASC", resultModel.Order.Direction);
 
             mock.Verify(m => m.GetPage(2, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()), Times.Exactly(1));
         }
