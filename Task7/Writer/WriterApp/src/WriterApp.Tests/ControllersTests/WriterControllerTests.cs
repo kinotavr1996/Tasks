@@ -5,6 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 using Moq;
 using WriterApp.Web.Controllers;
 using WriterApp.Data.Model;
+using System.Collections.Generic;
+using System;
+using System.Linq;
+using WriterApp.Data.Common.Pagination;
 
 namespace WriterApp.Tests.ControllersTests
 {
@@ -19,24 +23,59 @@ namespace WriterApp.Tests.ControllersTests
             Assert.NotNull(controller.Create());
             Assert.IsNotType<RedirectToActionResult>(controller.Create());
         }
+
+        public List<Writer> InitWritersList()
+        {
+            List<Writer> writerList = new List<Writer>();
+            writerList.Add(new Writer { LastName = "Gaevskiy", FirstName = "Oleg", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            writerList.Add(new Writer { LastName = "Ivanov", FirstName = "Ivan", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            writerList.Add(new Writer { LastName = "Mahov", FirstName = "Sergiy", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            writerList.Add(new Writer { LastName = "Ololo", FirstName = "Loloshovich", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            writerList.Add(new Writer { LastName = "Petrovich", FirstName = "Petro", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            writerList.Add(new Writer { LastName = "Makedonsky", FirstName = "Oleksandr", DateOfBirth = new DateTime().Date, Biography = "It`s biography" });
+            return writerList;
+        }
+
         [Fact]
         public void StartHomePage_ReturnsAViewResult()
         {
             var mock = new Mock<IWriterRepository>();
             var controller = new HomeController(mock.Object);
+            var myset = new List<Writer>();
+            foreach (var w in InitWritersList())
+            {
+                myset.Add(w);
+            }
 
-            var result_1 = controller.Index(null,null,null,null,null);
-            var result_2 = controller.Index("QWERTY", "Qwerty", "Ol", null, 1);
-            var result_3 = controller.Index("QWERTY", "Qwerty", "Ol", "eg", 100);
+            mock.Setup(x => x.GetPage(1, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()))
+                .Returns<int, int, Func<IQueryable<Writer>, IQueryable<Writer>>>((page, pageSize, filter) => new PagedList<Writer>(filter(myset.AsQueryable()), page, pageSize));
+
+            var result_1 = (ViewResult)controller.Index(null, null, null, null, null).Result;
+            var result_1_Model = (WriterListViewModel)result_1.Model;
+
+            var result_2 = (ViewResult)controller.Index("lastName", "DESC", "Ol", null, 1).Result;
+            var result_2_Model = (WriterListViewModel)result_2.Model;
+
+            var result_3 = (ViewResult)controller.Index("Qwerty", "ASC", null, "eg", 100).Result;
+            var result_3_Model = (WriterListViewModel)result_3.Model;
 
             Assert.NotNull(result_1);
             Assert.IsNotType<RedirectToActionResult>(result_1);
+            Assert.Equal(4, result_1_Model.Items.Count);
+            Assert.Equal("Gaevskiy Oleg", result_1_Model.Items[0].FullName);
+            Assert.Equal("Ivanov Ivan", result_1_Model.Items[1].FullName);
 
             Assert.NotNull(result_2);
             Assert.IsNotType<RedirectToActionResult>(result_2);
+            Assert.Equal(3, result_2_Model.Items.Count);
+            Assert.Equal("Ololo Loloshovich", result_2_Model.Items[0].FullName);
+            Assert.Equal("Makedonsky Oleksandr", result_2_Model.Items[1].FullName);
 
             Assert.NotNull(result_3);
             Assert.IsNotType<RedirectToActionResult>(result_3);
+            Assert.Equal(1, result_3_Model.Items.Count);
+
+            mock.Verify(m => m.GetPage(1, 4, It.IsAny<Func<IQueryable<Writer>, IQueryable<Writer>>>()), Times.Exactly(2));
         }
 
         [Fact]
@@ -61,7 +100,7 @@ namespace WriterApp.Tests.ControllersTests
             {
                 FirstName = "OlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOleg",
                 LastName = "OlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOleOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOleggOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOleg",
-                DateOfBirth = new System.DateTime(1996, 5, 2),
+                DateOfBirth = new DateTime(1996, 5, 2),
                 Biography = "Work in ArtyGeek"
             };
             var errorListForModelWithLongName = validator.Validate(modelWithLongName);
@@ -70,7 +109,6 @@ namespace WriterApp.Tests.ControllersTests
             Assert.IsNotType<RedirectToActionResult>(result);
             Assert.Equal("The field FirstName must be a string with a maximum length of 256.", errorListForModelWithLongName[0].ErrorMessage);
             Assert.Equal("The field LastName must be a string with a maximum length of 256.", errorListForModelWithLongName[1].ErrorMessage);
-
         }
 
         [Fact]
@@ -78,40 +116,37 @@ namespace WriterApp.Tests.ControllersTests
         {
             var mock = new Mock<IWriterRepository>();
             var controller = new HomeController(mock.Object);
+            var validator = new DeepDiveValidator();
+            var writer = new Writer { };
+            mock.Setup(m => m.Add(It.IsAny<Writer>()));
             var model = new WriterCreateModel()
             {
                 FirstName = "Oleg",
                 LastName = "Gaevskiy",
-                DateOfBirth = new System.DateTime(1996, 5, 2),
+                DateOfBirth = new DateTime(1996, 5, 2),
                 Biography = "Work in ArtyGeek"
             };
             var result = controller.Create(model);
             var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result.Result);
             Assert.Null(redirectToActionResult.ControllerName);
             Assert.Equal("Index", redirectToActionResult.ActionName);
+            mock.Verify(m => m.Add(It.IsAny<Writer>()), Times.Once);
         }
         [Fact]
         public void EditWriter_ReturnsAViewResult_WithWriterEditModel()
         {
             var mockRepo = new Mock<IWriterRepository>();
             var validator = new DeepDiveValidator();
-
+            var writer = new Writer { Id = 1 };
+            mockRepo.Setup(x => x.GetById(writer.Id)).Returns(writer);
+            mockRepo.Setup(x => x.Edit(It.IsAny<Writer>()));
             HomeController controller = new HomeController(mockRepo.Object);
-            var model = new WriterCreateModel()
-            {
-                FirstName = "Oleg",
-                LastName = "Gaevskiy",
-                DateOfBirth = new System.DateTime(1996, 5, 2),
-                Biography = "Work in ArtyGeek"
-            };
-            controller.Create(model);
-
             var editModel = new WriterEditModel()
             {
                 Id = 1,
                 FirstName = " ",
                 LastName = " ",
-                DateOfBirth = new System.DateTime(1997, 6, 3),
+                DateOfBirth = new DateTime(1997, 6, 3),
                 Biography = "Work in ArtyGeek Forever"
             };
             var errorListForModel = validator.Validate(editModel);
@@ -121,13 +156,12 @@ namespace WriterApp.Tests.ControllersTests
             var result = controller.Edit(editModel);
             Assert.NotNull(result);
             Assert.IsNotType<RedirectToActionResult>(result);
-
             var modelWithLongName = new WriterEditModel()
             {
                 Id = 1,
                 FirstName = "OlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOleg",
                 LastName = "OlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOleOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOleggOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOlegOleg",
-                DateOfBirth = new System.DateTime(1996, 5, 2),
+                DateOfBirth = new DateTime(1996, 5, 2),
                 Biography = "Work in ArtyGeek"
             };
             var errorListForModelWithLongName = validator.Validate(modelWithLongName);
@@ -149,6 +183,7 @@ namespace WriterApp.Tests.ControllersTests
             Assert.NotNull(result);
             Assert.IsNotType<RedirectToActionResult>(result);
 
+            mockRepo.Verify(m => m.Edit(It.IsAny<Writer>()), Times.Exactly(2));
         }
 
         [Fact]
@@ -158,27 +193,19 @@ namespace WriterApp.Tests.ControllersTests
             var writer = new Writer { Id = 1 };
             mock.Setup(x => x.GetById(writer.Id)).Returns(writer);
             var controller = new HomeController(mock.Object);
-
-            var model = new WriterCreateModel()
-            {
-                FirstName = "Oleg",
-                LastName = "Gaevskiy",
-                DateOfBirth = new System.DateTime(1996, 5, 2),
-                Biography = "Work in ArtyGeek"
-            };
-            controller.Create(model);
             var editModel = new WriterEditModel()
             {
                 Id = 1,
                 FirstName = "Gaevskiy",
                 LastName = "Oleg",
-                DateOfBirth = new System.DateTime(1997, 6, 3),
+                DateOfBirth = new DateTime(1997, 6, 3),
                 Biography = "Work in ArtyGeek Forever"
             };
             var result = controller.Edit(editModel);
             var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result.Result);
             Assert.Null(redirectToActionResult.ControllerName);
             Assert.Equal("Index", redirectToActionResult.ActionName);
+            mock.Verify(m => m.GetById(writer.Id), Times.Once);
         }
 
         [Fact]
@@ -186,19 +213,12 @@ namespace WriterApp.Tests.ControllersTests
         {
             var mock = new Mock<IWriterRepository>();
             var controller = new HomeController(mock.Object);
-
-            var model = new WriterCreateModel()
-            {
-                FirstName = "Oleg",
-                LastName = "Gaevskiy",
-                DateOfBirth = new System.DateTime(1996, 5, 2),
-                Biography = "Work in ArtyGeek"
-            };
-            controller.Create(model);
+            mock.Setup(m => m.Delete(It.IsAny<int>()));
             var result = controller.Delete(1);
             var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result.Result);
             Assert.Null(redirectToActionResult.ControllerName);
             Assert.Equal("Index", redirectToActionResult.ActionName);
+            mock.Verify(m => m.Delete(It.IsAny<int>()), Times.Once);
         }
     }
 }
