@@ -1,12 +1,12 @@
-import { Observable } from 'rxjs/Observable';
-import { AppConfig } from './../../config/config';
-import { KeyValueModel } from './../../model/key-value.model';
-import { StorageService } from './storage.service';
-import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import { Router } from '@angular/router';
-import { Headers, Http, Response } from '@angular/http';
+import { Observable } from "rxjs/Observable";
+import { AppConfig } from "./../../config/config";
+import { KeyValueModel } from "./../../model/key-value.model";
+import { StorageService } from "./storage.service";
+import { Injectable } from "@angular/core";
+import "rxjs/add/operator/map";
+import "rxjs/add/operator/catch";
+import { Router } from "@angular/router";
+import { Headers, Http, Response } from "@angular/http";
 
 @Injectable()
 export class HttpService {
@@ -21,9 +21,9 @@ export class HttpService {
     private prepareHeaders(headersRaw: KeyValueModel[]) {
         const headers = new Headers();
 
-        headers.append('Access-Control-Allow-Origin', '*');
+        headers.append("Access-Control-Allow-Origin", "*");
         if (headersRaw == null) {
-            headers.append('Content-Type', 'application/json');
+            headers.append("Content-Type", "application/json");
         } else {
             headersRaw.forEach((item) => {
                 headers.append(item.key, item.value);
@@ -31,7 +31,7 @@ export class HttpService {
         }
 
         const token = this._storage.getItem(this._storage.keys.accessToken);
-        headers.append('Authorization', 'bearer ' + token);
+        headers.append("Authorization", "bearer " + token);
         return headers;
     }
 
@@ -105,19 +105,19 @@ export class HttpService {
         }
         if (error.status === 404) {
             console.log(error);
-            this._router.navigate(['/spa']);
+            this._router.navigate(["/spa"]);
         }
         if (error.status === 401) {
             this._storage.removeItem(this._storage.keys.user);
             this._storage.removeItem(this._storage.keys.accessToken);
             this._storage.removeItem(this._storage.keys.expiresIn);
-            this._router.navigate(['/spa']);
+            this._router.navigate(["/spa"]);
             return;
         }
     }
 
-    private formErrorMessage(error): string {
-        let errorMessage = 'Oops, something wrong!';
+    private formErrorMessage(error: any): string {
+        let errorMessage = "Oops, something wrong!";
         let serverErrors = [];
 
         if (error && error._body) {
@@ -134,7 +134,7 @@ export class HttpService {
             }
         }
 
-        errorMessage = errorMessages.join(', ');
+        errorMessage = errorMessages.join(", ");
         return errorMessage;
     }
 }

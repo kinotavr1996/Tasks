@@ -1,5 +1,5 @@
-import { Component, Input, forwardRef } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, Input, forwardRef } from "@angular/core";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 import { ValidationPropertyModel } from "../../../model/validator-property.model";
 
 
@@ -11,12 +11,12 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 };
 
 @Component({
-    selector: 'custom-input',
-    templateUrl: './input.component.html',
-    styleUrls: ['./input.component.less',
-        './input-shared/input-for-admin-add-popup.less',
-        './input-shared/input-for-login.less',
-        './input-shared/input-for-admin-details.less'],
+    selector: "custom-input",
+    templateUrl: "./input.component.html",
+    styleUrls: ["./input.component.less",
+        "./input-shared/input-for-admin-add-popup.less",
+        "./input-shared/input-for-login.less",
+        "./input-shared/input-for-admin-details.less"],
     providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
 })
 export class CustomInputComponent implements ControlValueAccessor {
@@ -29,7 +29,7 @@ export class CustomInputComponent implements ControlValueAccessor {
     @Input() disabled: boolean = false;
 
     // The internal data model
-    private innerValue: any = '';
+    private innerValue: any = "";
 
     // Placeholders for the callbacks which are later providesd
     // by the Control Value Accessor

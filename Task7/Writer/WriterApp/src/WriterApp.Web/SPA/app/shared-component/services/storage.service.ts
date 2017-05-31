@@ -1,16 +1,16 @@
-import { AppConfig } from './../../config/config';
-import { Injectable } from '@angular/core';
+import { AppConfig } from "./../../config/config";
+import { Injectable } from "@angular/core";
 
 @Injectable()
 export class StorageService {
     private keyPrefix: string;
 
     public keys = {
-        'user': 'user',
-        'accessToken': 'AccessToken',
-        'expiresIn': 'ExpiresIn',
-        'language': 'lang',
-        'loginCredentials': 'loginCredentials'
+        "user": "user",
+        "accessToken": "AccessToken",
+        "expiresIn": "ExpiresIn",
+        "language": "lang",
+        "loginCredentials": "loginCredentials"
     };
 
     constructor() {
@@ -19,7 +19,7 @@ export class StorageService {
 
     private _getKey(key: string): string {
         key = key.trim();
-        if (key.length < 0) { return ''; }
+        if (key.length < 0) { return ""; }
         return `${this.keyPrefix}_${key}`;
     }
 
@@ -28,7 +28,7 @@ export class StorageService {
     }
 
     public getItem(key: string): any {
-        return '';
+        return "";
     }
     public removeItem(key: string): void {
         localStorage.removeItem(this._getKey(key));

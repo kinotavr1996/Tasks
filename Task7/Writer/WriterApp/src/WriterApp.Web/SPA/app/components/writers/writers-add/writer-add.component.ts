@@ -1,17 +1,17 @@
-import { ActivatedRoute, Router } from '@angular/router';
-import { WriterValidatior } from './../writer.validator';
-import { Component, Input, OnInit, Inject } from '@angular/core';
+import { ActivatedRoute, Router } from "@angular/router";
+import { Component, Input, OnInit, Inject } from "@angular/core";
 import { WriterModel } from "../../../model/writer.model";
 import { WriterHttpService } from "../writers-shared/writer-http.service";
 import { PagerService } from "../../../shared-component/paginator/paginator.component";
 import { WriterAddModel } from "../../../model/writer-add.model";
 
 @Component({
-    template: require('./writer-add.component.html'),
-    styles: [require('./writer-add.component.css')]
+    template: require("./writer-add.component.html"),
+    styles: [require("./writer-add.component.css")]
 })
 export class WriterAddComponent implements OnInit {
     model: WriterAddModel;
+    public title: 'Test Tour of Heroes';
     constructor(private _httpService: WriterHttpService, private router: Router
     ) { }
     ngOnInit() {

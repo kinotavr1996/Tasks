@@ -1,12 +1,12 @@
-import { BookHttpService } from './../books-shared/book-http.service';
-import { BookListModel } from './../../../model/book-list.model';
-import { Component, Input, OnInit } from '@angular/core';
+import { BookHttpService } from "./../books-shared/book-http.service";
+import { BookListModel } from "./../../../model/book-list.model";
+import { Component, Input, OnInit } from "@angular/core";
 import { BookModel } from "../../../model/book.model";
 import { PagerService } from "../../../shared-component/paginator/paginator.component";
 
 @Component({
-    template: require('./book-list.component.html'),
-    styles: [require('./book-list.component.css')]
+    template: require("./book-list.component.html"),
+    styles: [require("./book-list.component.css")]
 })
 export class BookListComponent implements OnInit {
     isAddVisible: boolean = false;
@@ -19,7 +19,7 @@ export class BookListComponent implements OnInit {
     constructor(private _httpService: BookHttpService, private pagerService: PagerService) { }
 
     ngOnInit() {
-        this._httpService.getSortingBooks('caption', 'ASC', 1)
+        this._httpService.getSortingBooks("caption", "ASC", 1)
             .subscribe(res => {
                 this.model = BookListModel.fromJSON(res);
                 this._setPage(1);
@@ -33,7 +33,7 @@ export class BookListComponent implements OnInit {
         }
     }
     sort(columnName: string) {
-        if (this.model.direction == 'ASC') {
+        if (this.model.direction == "ASC") {
             this.model.direction = "DESC";
             this.model.column = columnName;
             this._httpService.getSortingBooks(this.model.column, this.model.direction, this.model.page)

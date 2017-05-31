@@ -1,12 +1,12 @@
-import { WriterListModel } from './../../../model/writer-list.model';
-import { Component, Input, OnInit } from '@angular/core';
+import { WriterListModel } from "./../../../model/writer-list.model";
+import { Component, Input, OnInit } from "@angular/core";
 import { WriterModel } from "../../../model/writer.model";
 import { WriterHttpService } from "../writers-shared/writer-http.service";
 import { PagerService } from "../../../shared-component/paginator/paginator.component";
 
 @Component({
-    template: require('./writer-list.component.html'),
-    styles: [require('./writer-list.component.css')]
+    template: require("./writer-list.component.html"),
+    styles: [require("./writer-list.component.css")]
 })
 export class WriterListComponent implements OnInit {
     isAddVisible: boolean = false;
@@ -33,7 +33,7 @@ export class WriterListComponent implements OnInit {
         }
     }
     sort(columnName: string) {
-        if (this.model.direction == 'ASC') {
+        if (this.model.direction == "ASC") {
             this.model.direction = "DESC";
             this.model.column = columnName;
             this._httpService.getSortingCustomers(this.model.column, this.model.direction, this.model.page)

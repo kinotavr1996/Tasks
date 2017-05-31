@@ -1,21 +1,21 @@
 <br>
 <p>
-    <button class="btn btn-primary" [routerLink]="['../', 'add']">Add writer</button>
+    <button class="btn btn-primary" [routerLink]="["../", "add"]">Add writer</button>
 </p>
 <div class="customer-list-container">
     <table class="table table-responsive">
         <thead class="table-header">
-        <th class="table-cell table-name" (click)="sort('fullName');">Full Name</th>
-        <th class="table-cell table-date" (click)="sort('date');">Birthdate</th>
+        <th class="table-cell table-name" (click)="sort("fullName");">Full Name</th>
+        <th class="table-cell table-date" (click)="sort("date");">Birthdate</th>
         <th class="table-cell table-status">Biography</th>
         </thead>
         <tbody class="table-row" *ngFor="let customer of model?.writerModel">
             <tr>
                 <td>{{customer?.fullName}}</td>
-                <td>{{customer?.dateOfBirth | date: 'dd/MM/yyyy'}}</td>
+                <td>{{customer?.dateOfBirth | date: "dd/MM/yyyy"}}</td>
                 <td>{{customer?.biography}}</td>
                 <td>
-                    <a [routerLink]="['../', customer.id, 'edit']">Edit</a>|
+                    <a [routerLink]="["../", customer.id, "edit"]">Edit</a>|
                     <a (click)="delete(customer.id)">Delete</a>
                 </td>
             </tr>

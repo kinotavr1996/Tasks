@@ -1,13 +1,13 @@
-import { ActivatedRoute, Router } from '@angular/router';
-import { Component, Input, OnInit, Inject } from '@angular/core';
+import { ActivatedRoute, Router } from "@angular/router";
+import { Component, Input, OnInit, Inject } from "@angular/core";
 import { BookModel } from "../../../model/book.model";
 import { BookHttpService } from "../books-shared/book-http.service";
 import { PagerService } from "../../../shared-component/paginator/paginator.component";
 import { BookAddModel } from "../../../model/book-add.model";
 
 @Component({
-    template: require('./book-add.component.html'),
-    styles: [require('./book-add.component.css')]
+    template: require("./book-add.component.html"),
+    styles: [require("./book-add.component.css")]
 })
 export class BookAddComponent implements OnInit {
     public model: BookAddModel;
@@ -39,10 +39,10 @@ export class BookAddComponent implements OnInit {
                         this.router.navigateByUrl("/spa/books/list");
                     });
             } else {
-                alert('Choose writer`s');
+                alert("Choose writer`s");
             }
         } else {
-            alert('Choose writer`s');
+            alert("Choose writer`s");
         }
     }
 }

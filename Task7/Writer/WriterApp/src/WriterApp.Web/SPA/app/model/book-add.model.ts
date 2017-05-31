@@ -1,4 +1,4 @@
-import { SelectListItem } from './select-list-item.model';
+import { SelectListItem } from "./select-list-item.model";
 
 export class BookAddModel {
     constructor(
@@ -10,10 +10,10 @@ export class BookAddModel {
 
     static fromJSON(object: any): BookAddModel {
         return new BookAddModel(
-            object['caption'],
-            object['publishDate'],
-            object['writerIds'],
-            SelectListItem.fromJSONArray(object['writers'])
+            object["caption"],
+            object["publishDate"],
+            object["writerIds"],
+            SelectListItem.fromJSONArray(object["writers"])
 
         );
     }

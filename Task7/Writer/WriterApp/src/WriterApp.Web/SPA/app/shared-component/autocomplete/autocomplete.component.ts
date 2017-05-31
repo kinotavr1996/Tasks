@@ -1,13 +1,17 @@
-import { SelectListItem } from './../../model/select-list-item.model';
-import { Component, ElementRef, EventEmitter, Input, Output, OnInit, Inject } from '@angular/core';
+import { Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
+import { SelectListItem } from "./../../model/select-list-item.model";
+import { Input, ElementRef } from '@angular/core';
+
 
 @Component({
-    selector: 'app-autocomplete',
+    selector: "app-autocomplete",
     host: {
-        '(document:click)': 'handleClick($event)',
+        "(document:click)": "handleClick($event)",
     },
-    template: require('./autocomplete.component.html'),
-    styles: [require('./autocomplete.component.css')]
+    template: require("./autocomplete.component.html"),
+    styles: [require("./autocomplete.component.css")]
 })
 
 export class AutocompleteComponent {
@@ -15,9 +19,9 @@ export class AutocompleteComponent {
     @Input() Ids: number[] = [];
     @Output() writersIdsChanged = new EventEmitter<number[]>();
     public writerIds: number[] = [];
-    public query = '';
-    public filteredList = [];
-    public elementRef;
+    public query = "";
+    public filteredList: any[] = [];
+    public elementRef: any;
     public selected: SelectListItem[] = [];
     selectedIdx: number;
 
@@ -25,11 +29,11 @@ export class AutocompleteComponent {
         this.elementRef = myElement;
         this.selectedIdx = -1;
     }
-    ngOnInit() {
+    public ngOnInit(): void {
         if (this.Ids !== null && this.items !== null) {
-            for (var _i = 0; _i < this.Ids.length; _i++) {
+            for (var _i: number = 0; _i < this.Ids.length; _i++) {
                 for (var w of this.items) {
-                    if (w.value == this.Ids[_i]) {
+                    if (w.value === this.Ids[_i]) {
                         this.selected.push(new SelectListItem(w.value, w.text));
                     }
                 }
@@ -38,26 +42,28 @@ export class AutocompleteComponent {
     }
     filter(event: any) {
         if (this.query != "") {
-            this.filteredList = this.items.filter(function (el) {
+            this.filteredList = this.items.filter(function (el: any) {
                 return el.text.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
             }.bind(this));
         }
     }
     checker(item: SelectListItem) {
-        for (var e of this.selected)
-            if (e.value == item.value)
+        for (var e of this.selected) {
+            if (e.value === item.value) {
                 return true;
+            }
+        }
     }
-    select(item) {
+    select(item: any) {
         this.selected.push(item);
-        this.query = '';        
+        this.query = "";
         this.writerIds = [];
         for (let w of this.selected)
             this.writerIds.push(w.value);
         this.writersIdsChanged.emit(this.writerIds);
     }
 
-    remove(item) {
+    remove(item: any) {
         this.selected.splice(this.selected.indexOf(item), 1);
         this.filteredList = this.items;
         this.writerIds = [];
@@ -72,7 +78,7 @@ export class AutocompleteComponent {
         }
         this.selectedIdx = -1;
     }
-    handleClick(event) {
+    handleClick(event: any) {
         this.filteredList = this.items;
         var clickedComponent = event.target;
         var inside = false;

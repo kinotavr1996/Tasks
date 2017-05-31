@@ -1,4 +1,4 @@
-import { WriterModel } from './writer.model';
+import { WriterModel } from "./writer.model";
 export class BookModel {
     constructor(
         public id: number,
@@ -9,10 +9,10 @@ export class BookModel {
 
     static fromJSON(object: any): BookModel {
         return new BookModel(
-            object['id'],
-            object['caption'],
-            object['publishedDate'],
-            WriterModel.fromJSONArray(object['writers'])
+            object["id"],
+            object["caption"],
+            object["publishedDate"],
+            WriterModel.fromJSONArray(object["writers"])
         );
     }
     static fromJSONArray(array: Array<Object>): BookModel[] {

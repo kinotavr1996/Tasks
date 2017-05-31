@@ -1,4 +1,4 @@
-import { WriterModel } from './writer.model';
+import { WriterModel } from "./writer.model";
 export class WriterListModel {
     constructor(
         public filter: string,
@@ -14,15 +14,15 @@ export class WriterListModel {
 
     static fromJSON(object: any): WriterListModel {
         return new WriterListModel(
-            object['filter'],
-            object['order']['column'],
-            object['order']['direction'],
-            object['hasNextPage'],
-            object['hasPreviousPage'],
-            object['pageSize'],
-            object['totalPages'],
-            object['page'],
-            WriterModel.fromJSONArray(object['items'])
+            object["filter"],
+            object["order"]["column"],
+            object["order"]["direction"],
+            object["hasNextPage"],
+            object["hasPreviousPage"],
+            object["pageSize"],
+            object["totalPages"],
+            object["page"],
+            WriterModel.fromJSONArray(object["items"])
         );
     }
 

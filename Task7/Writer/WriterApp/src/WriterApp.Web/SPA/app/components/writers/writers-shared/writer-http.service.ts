@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { AppConfig } from "../../../config/config";
 import { HttpService } from "../../../shared-component/services/http.service";
-import 'rxjs/Rx';
+import "rxjs/Rx";
 @Injectable()
 export class WriterHttpService {
     constructor(private _httpService: HttpService) { }
@@ -19,15 +19,15 @@ export class WriterHttpService {
         return this._httpService.get(AppConfig.urls.writer)
             .map(res => res.json());
     }
-    postWriter(data) {
+    postWriter(data:any) {
         return this._httpService.post(AppConfig.urls.writer, data)
             .map(res => res.json());
     }
-    putWriter(id, data) {
+    putWriter(id:number, data:any) {
         return this._httpService.put(AppConfig.urls.writer + "/" + id, data)
             .map(res => res.json());
     }
-    deleteWriter(id) {
+    deleteWriter(id:number) {
         return this._httpService.delete(AppConfig.urls.writer + "/" + id)
             .map(res => res);
     }

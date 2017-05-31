@@ -1,6 +1,6 @@
 <br>
 <p>
-    <button class="btn btn-primary" [routerLink]="['../', 'add']">Add book</button>
+    <button class="btn btn-primary" [routerLink]="["../", "add"]">Add book</button>
     <input type="text" class="validate filter-input" [(ngModel)]=query>
     <input type="submit" value="Search" class="btn btn-default" /> |
 
@@ -8,17 +8,17 @@
 <div class="customer-list-container">
     <table class="table table-responsive">
         <thead class="table-header">
-        <th class="table-cell table-name" (click)="sort('caption');">Caption</th>
-        <th class="table-cell table-date" (click)="sort('date');">Publish Date</th>
+        <th class="table-cell table-name" (click)="sort("caption");">Caption</th>
+        <th class="table-cell table-date" (click)="sort("date");">Publish Date</th>
         <th class="table-cell table-status">Authors</th>
         </thead>
         <tbody class="table-row" *ngFor="let customer of model?.bookModel">
             <tr>
                 <td>{{customer?.caption}}</td>
-                <td>{{customer?.publishDate | date: 'dd/MM/yyyy'}}</td>
+                <td>{{customer?.publishDate | date: "dd/MM/yyyy"}}</td>
                 <td> <span *ngFor="let author of customer?.writerModel">{{author.fullName}}</span> </td>
                 <td>
-                    <a [routerLink]="['../', customer.id, 'edit']">Edit</a>|
+                    <a [routerLink]="["../", customer.id, "edit"]">Edit</a>|
                     <a (click)="delete(customer.id)">Delete</a>
                 </td>
             </tr>

@@ -1,7 +1,7 @@
 export class PagerService {
-    range(start, count) {
+    range(start: number, count: number) {
         return Array.apply(0, Array(count))
-            .map(function (element, index) {
+            .map(function (element: any, index: any) {
                 return index + start;
             });
     }

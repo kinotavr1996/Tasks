@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { AppConfig } from "../../../config/config";
 import { HttpService } from "../../../shared-component/services/http.service";
-import 'rxjs/Rx';
+import "rxjs/Rx";
 @Injectable()
 export class BookHttpService {
     constructor(private _httpService: HttpService) { }
@@ -19,15 +19,15 @@ export class BookHttpService {
         return this._httpService.get(AppConfig.urls.createBook)
             .map(res => res.json());
     }
-    postBook(data) {
+    postBook(data:any) {
         return this._httpService.post(AppConfig.urls.books, data)
             .map(res => res);
     }
-    putBook(id, data) {
+    putBook(id:number, data:any) {
         return this._httpService.put(AppConfig.urls.books + "/" + id, data)
             .map(res => res);
     }
-    deleteBook(id) {
+    deleteBook(id:number) {
         return this._httpService.delete(AppConfig.urls.books + "/" + id)
             .map(res => res);
     }

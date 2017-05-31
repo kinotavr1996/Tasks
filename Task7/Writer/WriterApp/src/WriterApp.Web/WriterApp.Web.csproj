@@ -52,4 +52,13 @@
     <DotNetCliToolReference Include="BundlerMinifier.Core" Version="2.2.301" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="SPA\app\components\app\app.component.spec.js">
+      <DependentUpon>app.component.spec.ts</DependentUpon>
+    </None>
+    <None Update="SPA\app\components\app\app.component.spec.js.map">
+      <DependentUpon>app.component.spec.js</DependentUpon>
+    </None>
+  </ItemGroup>
+
 </Project>

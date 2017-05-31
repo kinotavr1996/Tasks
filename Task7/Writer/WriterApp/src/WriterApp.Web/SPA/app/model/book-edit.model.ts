@@ -1,4 +1,4 @@
-import { SelectListItem } from './select-list-item.model';
+import { SelectListItem } from "./select-list-item.model";
 
 
 export class BookEditModel {
@@ -12,11 +12,11 @@ export class BookEditModel {
 
     static fromJSON(object: any): BookEditModel {
         return new BookEditModel(
-            object['id'],
-            object['caption'],
-            object['publishedDate'],
-            object['writerIds'],
-            SelectListItem.fromJSONArray(object['writers'])
+            object["id"],
+            object["caption"],
+            object["publishedDate"],
+            object["writerIds"],
+            SelectListItem.fromJSONArray(object["writers"])
         );
     }
     static fromJSONArray(array: Array<Object>): BookEditModel[] {

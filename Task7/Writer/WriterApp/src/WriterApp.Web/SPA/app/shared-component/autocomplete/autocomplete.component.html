@@ -4,7 +4,7 @@
 <div class="suggestions" *ngIf="filteredList?.length > 0">
     <ul  *ngFor="let item of filteredList">
         <li>
-            <a [ngClass] ="{'disabled': checker(item)}" (click)="select(item)">{{item.text}}</a>
+            <a [ngClass] ="{"disabled": checker(item)}" (click)="select(item)">{{item.text}}</a>
         </li>
     </ul>
 </div>

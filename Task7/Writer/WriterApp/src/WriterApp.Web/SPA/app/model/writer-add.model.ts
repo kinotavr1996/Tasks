@@ -8,10 +8,10 @@ export class WriterAddModel {
 
     static fromJSON(object: any): WriterAddModel {
         return new WriterAddModel(
-            object['firstName'],
-            object['lastName'],
-            object['dateOfBirth'],
-            object['biography']
+            object["firstName"],
+            object["lastName"],
+            object["dateOfBirth"],
+            object["biography"]
         );
     }
     static fromJSONArray(array: Array<Object>): WriterAddModel[] {

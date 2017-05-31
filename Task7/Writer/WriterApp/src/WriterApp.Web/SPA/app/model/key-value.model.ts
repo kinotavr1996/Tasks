@@ -6,8 +6,8 @@ export class KeyValueModel {
 
     static fromJSON(object: any): KeyValueModel {
         return new KeyValueModel(
-            object['key'],
-            object['value']
+            object["key"],
+            object["value"]
         );
     }
 

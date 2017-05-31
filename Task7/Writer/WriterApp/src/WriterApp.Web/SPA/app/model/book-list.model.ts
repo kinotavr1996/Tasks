@@ -1,4 +1,4 @@
-import { BookModel } from './book.model';
+import { BookModel } from "./book.model";
 export class BookListModel {
     constructor(
         public filter: string,
@@ -14,15 +14,15 @@ export class BookListModel {
 
     static fromJSON(object: any): BookListModel {
         return new BookListModel(
-            object['filter'],
-            object['order']['column'],
-            object['order']['direction'],
-            object['hasNextPage'],
-            object['hasPreviousPage'],
-            object['pageSize'],
-            object['totalPages'],
-            object['page'],
-            BookModel.fromJSONArray(object['items'])
+            object["filter"],
+            object["order"]["column"],
+            object["order"]["direction"],
+            object["hasNextPage"],
+            object["hasPreviousPage"],
+            object["pageSize"],
+            object["totalPages"],
+            object["page"],
+            BookModel.fromJSONArray(object["items"])
         );
     }
 

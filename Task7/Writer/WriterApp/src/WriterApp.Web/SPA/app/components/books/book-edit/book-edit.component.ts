@@ -1,13 +1,13 @@
-import { BookEditModel } from './../../../model/book-edit.model';
+import { BookEditModel } from "./../../../model/book-edit.model";
 import { BookHttpService } from "../books-shared/book-http.service";
 import { PagerService } from "../../../shared-component/paginator/paginator.component";
-import { Router, ActivatedRoute, Params } from '@angular/router';
-import 'rxjs/add/operator/switchMap';
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from "@angular/router";
+import "rxjs/add/operator/switchMap";
+import { Component, Input, Output, EventEmitter, OnInit } from "@angular/core";
 
 @Component({
-    template: require('./book-edit.component.html'),
-    styles: [require('./book-edit.component.css')]
+    template: require("./book-edit.component.html"),
+    styles: [require("./book-edit.component.css")]
 })
 export class BookEditComponent {
     model: BookEditModel;
@@ -20,7 +20,7 @@ export class BookEditComponent {
 
     ngOnInit() {
         this.sub = this.route.params.subscribe(params => {
-            this.id = +params['id'];
+            this.id = +params["id"];
         });
         this._httpService.getBookById(this.id)
             .subscribe(res => {
@@ -40,10 +40,10 @@ export class BookEditComponent {
                         this.router.navigateByUrl("/spa/books/list");
                     });
             } else {
-                alert('Choose writer`s');
+                alert("Choose writer`s");
             }
         } else {
-            alert('Choose writer`s');
+            alert("Choose writer`s");
         }
         
     }

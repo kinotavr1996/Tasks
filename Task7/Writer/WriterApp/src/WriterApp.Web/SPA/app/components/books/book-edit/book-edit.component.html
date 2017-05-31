@@ -6,7 +6,7 @@
     </div>
     <div class="form-group">
         <label for="publishedDate">Publish date:</label>
-        <input [ngModel]="model.publishedDate| date:'yyyy-MM-dd'" (ngModelChange)="model.publishedDate = $event" name="publishedDate" type="date" class="form-control" required>
+        <input [ngModel]="model.publishedDate| date:"yyyy-MM-dd"" (ngModelChange)="model.publishedDate = $event" name="publishedDate" type="date" class="form-control" required>
     </div>
     <div class="form-group">
         <label for="writers">Writers:</label>
