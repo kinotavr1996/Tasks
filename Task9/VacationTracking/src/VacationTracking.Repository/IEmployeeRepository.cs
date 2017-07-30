@@ -28,7 +28,9 @@ namespace VacationTracking.Repository
         /// Get Employee list
         /// </summary>
         /// <returns>Return a Employee collection</returns>
-        IEnumerable<Employee> GetAll();
+        List<Employee> GetAll();
+
+        Employee GetByEmail(string email);
 
         IPagedList<Employee> GetReportsPage(int page = 1, int pageSize = 20, Func<IQueryable<Employee>, IQueryable<Employee>> filter = null);
 

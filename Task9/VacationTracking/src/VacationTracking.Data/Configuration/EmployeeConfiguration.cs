@@ -16,12 +16,12 @@ namespace VacationTracking.Data.Configuration
             entity.Property(c => c.PasswordClear).IsRequired();
             entity.Property(c => c.StartDate).IsRequired();
             entity.Property(c => c.EndDate).IsRequired();
-            /*entity.HasOne(c => c.Role)
+            entity.HasOne(c => c.Role)
                 .WithOne(r => r.Employee)
-                .HasForeignKey<Role>(f => f.Employee.RoleId);
+                .HasForeignKey<Role>(f => f.EmployeeId);
             entity.HasMany(c => c.Requests)
                     .WithOne(f => f.Employee)
-                    .HasForeignKey(c => c.EmployeeId);   */
+                    .HasForeignKey(c => c.EmployeeId);
         }
     }
 }

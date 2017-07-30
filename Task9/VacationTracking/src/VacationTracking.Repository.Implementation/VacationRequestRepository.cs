@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using VacationTracking.Data.Common.Pagination;
 using VacationTracking.Data.Context;
@@ -24,6 +25,10 @@ namespace VacationTracking.Repository.Implementations
         {
             var item = Find().SingleOrDefault(x => x.Id == id);
             Remove(item);
+        }
+        public IEnumerable<VacationRequest> GetByUserId(int id)
+        {
+            return Find().Where(x => x.EmployeeId == id);
         }
         public override void Edit(VacationRequest model)
         {

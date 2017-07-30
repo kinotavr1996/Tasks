@@ -12,6 +12,8 @@
         /// </summary>
         public string Name { get; set; }
 
+        public int EmployeeId { get; set; }
+
         public Employee Employee { get; set; }
     }
 }

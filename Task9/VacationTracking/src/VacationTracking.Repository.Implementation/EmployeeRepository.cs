@@ -27,9 +27,13 @@ namespace VacationTracking.Repository.Implementations
             var book = Find().SingleOrDefault(x => x.Id == id);
             Remove(book);
         }
-        public IEnumerable<Employee> GetAll()
+        public Employee GetByEmail(string email)
         {
-            return Find().Select(x => x).AsEnumerable();
+            return Find().Where(x => x.Email == email).FirstOrDefault();
+        }
+        public List<Employee> GetAll()
+        {
+            return Find().Select(x => x).ToList();
         }
         public Employee GetEmployeeByLoginPassword(string login, byte[] passwordHash)
         {

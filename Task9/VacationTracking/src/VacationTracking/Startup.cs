@@ -46,13 +46,21 @@ namespace VacationTracking
             services.AddCors();
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
-            services.AddDbContext<VacationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("vacation_db"), b => b.MigrationsAssembly("VacationTracking.Data")));
+            services.AddDbContext<VacationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("VacationDb"), b => b.MigrationsAssembly("VacationTracking.Data")));
             services.AddMvc(options => options.MaxModelValidationErrors = 50);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            app.UseCookieAuthentication(new CookieAuthenticationOptions
+            {
+                AuthenticationScheme = "Cookies",
+                LoginPath = new Microsoft.AspNetCore.Http.PathString("/api/Account/Login"),
+                AutomaticAuthenticate = true,
+                AutomaticChallenge = true
+            });
+
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 

@@ -63,11 +63,6 @@ namespace VacationTracking.Data.Models
 
         public bool AutoLogon { get; set;  }
 
-        /// <summary>
-        /// Error Model
-        /// </summary>
-        public ErrorModel Error { get; set; }
-
         public Role Role { get; set; }
 
         public List<VacationRequest> Requests { get; set; }

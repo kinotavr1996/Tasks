@@ -11,7 +11,7 @@ namespace VacationTracking.Data.Models
         /// <summary>
         /// Employee Id
         /// </summary>
-        public string EmployeeId { get; set; }
+        public int EmployeeId { get; set; }
 
         /// <summary>
         /// Approved by manager

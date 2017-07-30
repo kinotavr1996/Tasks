@@ -11,9 +11,9 @@ namespace VacationTracking.Data.Configuration
             entity.ToTable("Role");
             entity.HasKey(c => c.Id);
             entity.Property(c => c.Name).IsRequired();
-            /*entity.HasOne(c => c.Employee)
+            entity.HasOne(c => c.Employee)
                 .WithOne(x => x.Role)
-                .HasForeignKey<Employee>(c => c.RoleId);   */
+                .HasForeignKey<Employee>(c => c.RoleId);
 		}
 	}
 }

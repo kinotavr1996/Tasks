@@ -29,7 +29,7 @@ namespace VacationTracking.Repository.Implementations
         {
             return Find().Select(x => x).AsEnumerable();
         }
-
+       
         public override void Edit(VacationPolicy model)
         {
             var item = Find().SingleOrDefault(x => x.Id == model.Id);
